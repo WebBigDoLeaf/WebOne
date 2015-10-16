@@ -17,6 +17,15 @@
         <controllerFile controllerName="Dbdemo">
           <actionMethod actionName="index"/>
         </controllerFile>
+        <controllerFile controllerName="Login">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="Main">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="Home">
+          <actionMethod actionName="index"/>
+        </controllerFile>
       </controllersDirectory>
       <formsDirectory enabled="false"/>
       <layoutsDirectory enabled="false"/>
@@ -35,6 +44,15 @@
             <viewScriptFile forActionName="index"/>
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="Dbdemo">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Login">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Main">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Home">
             <viewScriptFile forActionName="index"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>

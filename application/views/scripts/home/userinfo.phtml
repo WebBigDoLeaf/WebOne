@@ -1,0 +1,124 @@
+
+			   
+ <head>  
+<script type="text/javascript" src="<?php echo $baseUrl;?>/WebOne/public/script/geo.js"></script>
+<script type="text/javascript" src="<?php echo $baseUrl;?>/WebOne/public/script/getDates.js"></script>
+
+</head>
+
+<body>
+<form action="userinfo" method="POST" class="form_top tl" >
+
+<div class="tab" style="overflow:hidden;">
+    <a href="#">个人资料</a>
+	<a href="portrait" >头像设置</a>
+	<div style="clear:both"></div>
+</div>
+
+<dl class="profile_list">
+    <dt >昵称</dt>
+    <dd>
+    	<div ></div>
+		<input name="nick" id="nick_tb" type="text" class="welcomeCenter photo_png" value="HanQIqi"/>
+	
+    </dd>
+</dl>
+
+<dl class="profile_list">
+    <dt class="fl">性别</dt>
+    <dd>
+    
+	<input name="gender" type="radio" value="0" checked='checked'>&nbsp;男</input> &nbsp; 
+	<input name="gender" type="radio" value="1">&nbsp;女</input> 
+    
+    </dd>
+</dl>
+
+<dl class="profile_list">
+    <dt class="fl inputtop">生日</dt>
+    <dd>
+    <p class="fl">
+		<select name="year" onchange="initDate()"  >
+		
+		   <script type="text/javascript">  
+                var year=new Date().getFullYear();  
+                for(var i = year - 30;i <= year + 30; i++){  
+                    document.write("<option value=" + i + ">" + i + "</option>");  
+                }  
+            </script>  
+		
+		</select>
+		<select name="month"  onchange="initDate()">
+		     <script type="text/javascript">  
+                for(var i = 1; i <= 12; i++){  
+                    document.write("<option value=" + i + ">" + i + "</option>");  
+                }  
+            </script>  
+		</select>       
+         <select name="day">  
+            <script type="text/javascript">  
+                for(var i = 1; i <= 31; i++){  
+                    document.write("<option value=" + i + ">" + i + "</option>");  
+                }  
+            </script>  
+          </select> 
+        
+        
+	</p>    
+    </dd>
+</dl>
+
+
+<dl class="profile_list">
+    <dt class="fl">所在地</dt>
+    <dd >
+    <select name="province" id="location1" style="height:35px;padding:5px 0;">
+    <option></option> 
+    </select> &nbsp; 
+    <select name="city" id=location2 style="height:35px;" id="city_sel">
+    <option></option>
+    </select>
+    <select name="town" id=location3 style="height:35px;" id="city_sel">
+    <option></option>
+    </select>
+    <input id="address" name="address" type="hidden" value="" />
+    </dd>
+</dl>
+
+<dl class="profile_list">
+    <dt class="fl">兴趣</dt>
+    <dd>
+    <select name="hobby" id="hobby" style="height:35px;padding:5px 0;">
+    <option>跑步</option>
+    <option>篮球</option>
+    <option>足球</option>
+    <option>羽毛球</option>
+    <option>乒乓球</option>
+    <option>游泳</option>
+    <option>自行车</option>
+    <option>其他</option>
+    
+    
+    </select>
+    </dd>
+</dl>
+<input  type="submit" hidefocus="true" value="保存">
+
+</form>
+<script>
+window.onload =function() {setup();preselect();promptinfo();}
+function promptinfo()
+{
+    var address = document.getElementById('address');
+    var s1 = document.getElementById('location1');
+    var s2 = document.getElementById('location2');
+    var s3 = document.getElementById('location3');
+    address.value = s1.value + s2.value + s3.value;
+}
+</script>
+
+
+
+
+</body>
+

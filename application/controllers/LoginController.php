@@ -21,13 +21,13 @@ class LoginController extends BaseController
      $name=$this->getRequest()->getParam('account');
      $password=$this->getRequest()->getParam('password');
         
-        
+        /*
        $name=$_POST['account'];
        $password=$_POST['password'];
        
        echo $name;
        echo $password;
-       
+       */
        
        $User=new UserModel();
 

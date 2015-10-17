@@ -2,10 +2,16 @@
  <head>  
 <script type="text/javascript" src="<?php echo $baseUrl;?>/WebOne/public/script/geo.js"></script>
 <script type="text/javascript" src="<?php echo $baseUrl;?>/WebOne/public/script/getDates.js"></script>
+<script type="text/javascript" src="<?php echo $baseUrl;?>/WebOne/public/script/jquery.js"></script>
+<script type="text/javascript" src="<?php echo $baseUrl;?>/WebOne/public/script/getAddress.js"></script>
 
 </head>
 
 <body>
+
+
+
+
 <form action="userinfo" method="POST" class="form_top tl" >
 
 <div>
@@ -23,7 +29,7 @@
     <dt >昵称</dt>
     <dd>
     	<div ></div>
-		<input name="nick" id="nick_tb" type="text" class="welcomeCenter photo_png" value="HanQIqi"/>
+		<input name="nick" id="nick_tb" type="text" class="welcomeCenter photo_png" value="<?=$this->info[0][name] ?>"/>
 	
     </dd>
 </dl>
@@ -42,24 +48,20 @@
     <dt class="fl inputtop">生日</dt>
     <dd>
     <p class="fl">
-		<select name="year" onchange="initDate()"  >
+		<select name="year"  id="year" onchange="initDate()"  >
 		
-		   <script type="text/javascript">  
-                var year=new Date().getFullYear();  
-                for(var i = year - 30;i <= year + 30; i++){  
-                    document.write("<option value=" + i + ">" + i + "</option>");  
-                }  
-            </script>  
-		
+		   
 		</select>
-		<select name="month"  onchange="initDate()">
+		<select name="month"  id="month" onchange="initDate()">
+		
 		     <script type="text/javascript">  
                 for(var i = 1; i <= 12; i++){  
                     document.write("<option value=" + i + ">" + i + "</option>");  
                 }  
             </script>  
+            
 		</select>       
-         <select name="day">  
+         <select name="day" id="day">  
             <script type="text/javascript">  
                 for(var i = 1; i <= 31; i++){  
                     document.write("<option value=" + i + ">" + i + "</option>");  
@@ -79,10 +81,10 @@
     <select name="province" id="location1" style="height:35px;padding:5px 0;">
     <option></option> 
     </select> &nbsp; 
-    <select name="city" id=location2 style="height:35px;" id="city_sel">
+    <select name="city" id="location2" style="height:35px;" >
     <option></option>
     </select>
-    <select name="town" id=location3 style="height:35px;" id="city_sel">
+    <select name="town" id="location3" style="height:35px;" >
     <option></option>
     </select>
     <input id="address" name="address" type="hidden" value="" />
@@ -93,24 +95,29 @@
     <dt class="fl">兴趣</dt>
     <dd>
     <select name="hobby" id="hobby" style="height:35px;padding:5px 0;">
-    <option>跑步</option>
-    <option>篮球</option>
-    <option>足球</option>
-    <option>羽毛球</option>
-    <option>乒乓球</option>
-    <option>游泳</option>
-    <option>LOL</option>
-    <option>其他</option>
+    <option value="跑步">跑步</option>
+    <option value="篮球">篮球</option>
+    <option value="足球">足球</option>
+    <option value="羽毛球">羽毛球</option>
+    <option value="乒乓球">乒乓球</option>
+    <option value="游泳">游泳</option>
+    <option value="LOL">LOL</option>
+    <option value="其他">其他</option>
     
     
     </select>
     </dd>
 </dl>
-<input  type="submit" hidefocus="true" value="保存">
+<input  type="submit" hidefocus="true" value="保存" onclick="promptinfo()");
+>
 
 </form>
 <script>
-window.onload =function() {setup();preselect();promptinfo();}
+//region_init("select_province","select_city","select_area");  
+            
+window.onload =function() {setup();preselect();promptinfo();
+
+}
 function promptinfo()
 {
     var address = document.getElementById('address');
@@ -118,7 +125,45 @@ function promptinfo()
     var s2 = document.getElementById('location2');
     var s3 = document.getElementById('location3');
     address.value = s1.value + s2.value + s3.value;
+    $("#location1").find("option[value="+"<?=$this->info[0][sheng]?>"+"]").attr("selected",true);
+    change(1);
+    $("#location2").find("option[value="+"<?=$this->info[0][shi]?>"+"]").attr("selected",true);
+    change(2);
+    $("#location3").find("option[value="+"<?=$this->info[0][xian]?>"+"]").attr("selected",true);
+    
 }
+
+
+$("#hobby").find("option[value="+"<?=$this->info[0][interest]?>"+"]").attr("selected",true);
+
+
+  //  document.getElementById("year").onchange();
+
+//  alert($("#year").find("option[value="+"<?=$this->brith[0]?>"+"]").value);
+
+function setdate()
+{
+      var year=new Date().getFullYear();  
+	
+	  for(var i = year - 80;i <= year; i++){  
+          document.write("<option value=" + i + ">" + i + "</option>");  
+      }  
+	  $("#year").find("option[value="+"<?=$this->brith[0]?>"+"]").attr("selected",true);
+      
+}
+//$("#year").find("option[value="+"<?=$this->brith[0]?>"+"]").attr("selected",true);
+
+
+
+
+
+
+
+//new Option("文本","值",true,true)
+
+
+ 
+
 </script>
 
 

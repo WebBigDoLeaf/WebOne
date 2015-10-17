@@ -34,10 +34,36 @@ class HomeController extends BaseController
        
        $db=$userinfo->getAdapter();
        $where=$db->quoteInto("userid=?",'1');
-       echo $where;
        $res=$userinfo->fetchAll($where,$order,$count,$offset)->toArray();
        
-        print_r($res);    
+       
+       
+       print_r($res);   
+       
+      if(count($res)>0)
+      {
+          $birth=preg_split("/-/", $res[0][birth]);
+          
+          print_r($birth);
+          
+          
+          $this->view->info=$res;
+          $this->view->birth=$birth;
+          
+          
+          
+          
+      }else{
+          
+          
+          
+          
+          
+          
+      }
+
+        
+        
         
     }
     

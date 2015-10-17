@@ -1,10 +1,14 @@
 <?php
+require_once 'BaseController.php';
+require_once APPLICATION_PATH.'/models/userinfoModel.php';
 
-class HomeController extends Zend_Controller_Action
+class HomeController extends BaseController
 {
 
     public function init()
     {
+        parent::init();
+        
         /* Initialize action controller here */
     }
 
@@ -21,11 +25,19 @@ class HomeController extends Zend_Controller_Action
     }
     
     public function userinfoAction()
-    {
+    {    
         
-       $arr=$this->getRequest()->getParam;
+        
+       $id=$this->getRequest()->getParam('id');
+        
+       $userinfo=new userinfoModel();
        
-       print_r($arr);   
+       $db=$userinfo->getAdapter();
+       $where=$db->quoteInto("userid=?",'1');
+       echo $where;
+       $res=$userinfo->fetchAll($where,$order,$count,$offset)->toArray();
+       
+        print_r($res);    
         
     }
     

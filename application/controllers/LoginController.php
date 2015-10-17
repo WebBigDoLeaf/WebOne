@@ -17,18 +17,17 @@ class LoginController extends BaseController
     
     public function loginAction()
     {
-        
-     
-        
+              
      $name=$this->getRequest()->getParam('account');
      $password=$this->getRequest()->getParam('password');
         
-        /*
+        
        $name=$_POST['account'];
        $password=$_POST['password'];
+       
        echo $name;
        echo $password;
-       */
+       
        
        $User=new UserModel();
 
@@ -81,7 +80,7 @@ class LoginController extends BaseController
        if(($User->insert($set)>0))
        {
         
-           //进入登陆界面
+           //鏌ヨ鎴愬姛璺宠浆
           $this->render('ok');
                       
        }else{           
@@ -93,7 +92,7 @@ class LoginController extends BaseController
     }else{
           
           $this->view->info='2';       
-        //重新进入注册界面,账号重复
+           //璐﹀彿宸茬粡鍒涘缓
           $this->_forward('error');
         
         

@@ -29,41 +29,61 @@ class HomeController extends BaseController
         
         
        $id=$this->getRequest()->getParam('id');
+       $result=$this->getRequest()->getParam('update');
+       
         
-       $userinfo=new userinfoModel();
+       //用来进行提示界面操作成功的操作
+       if($result!='success')
+       {
+           $result=111;
+       }
        
-       $db=$userinfo->getAdapter();
-       $where=$db->quoteInto("userid=?",'1');
-       $res=$userinfo->fetchAll($where,$order,$count,$offset)->toArray();
-       
-       
-       
-       print_r($res);   
-       
+      $userinfo=new userinfoModel();    
+      $res=$userinfo->getUserinfo($id);
+      
       if(count($res)>0)
       {
-          $birth=preg_split("/-/", $res[0][birth]);
-          
-          print_r($birth);
-          
-          
+          $birth=preg_split("/-/", $res[0][birth]);         
           $this->view->info=$res;
-          $this->view->birth=$birth;
+          $this->view->birth=$birth;    
           
-          
-          
-          
-      }else{
-          
-          
-          
-          
-          
-          
+          $this->view->result=$result;
+      }else{        
+          //网页出现故障 
       }
-
+      
+    }
+    
+    
+    public function updateinfoAction()
+    {
+        
+      
+        $res=$this->getRequest()->getParams();
+        $birth=$res[year]."-".$res[month]."-".$res[day];
         
         
+        $arr=array(
+   //      'userid'=>$res[address],
+         'sex'=>$res[gender],
+         'name'=>$res[nick],
+         'sheng'=>$res[province],
+         'shi'=>$res[city],
+         'xian'=>$res[town],
+         'birth'=>$birth,
+         'interest'=>$res[hobby]            
+        );
+        
+        $userinfo=new userinfoModel();
+        $rows_affected=$userinfo->updateUserinfo($arr,$res[address]);
+        
+        if($rows_affected>0)
+        {
+           $this->view->id=$res[address];
+           $this->view->res=1;
+        }else{
+           $this->view->res=2;
+        }
         
     }
     

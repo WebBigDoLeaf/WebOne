@@ -1,6 +1,7 @@
 <?php
 require_once 'BaseController.php';
 require_once APPLICATION_PATH.'/models/UserModel.php';
+require_once APPLICATION_PATH.'/models/userinfoModel.php';
 
 
 class LoginController extends BaseController
@@ -11,41 +12,23 @@ class LoginController extends BaseController
         parent::init();
         
         /* Initialize action controller here */
+        
     }
 
-  
-    
     public function loginAction()
     {
               
      $name=$this->getRequest()->getParam('account');
      $password=$this->getRequest()->getParam('password');
         
-        /*
-       $name=$_POST['account'];
-       $password=$_POST['password'];
-       
-       echo $name;
-       echo $password;
-       */
-       
-       $User=new UserModel();
-
-       $where="email='$name' And password='$password'";
-       echo $where;
-     
-       
-    $res=$User->fetchAll($where)->toArray();
-          
+     $User=new UserModel();
+      
+     $res=$User->validate($name, $password);
     if(count($res)==1)
     {
-      
        $this->view->info=$res;
-       $this->_forward('home','Home');
-    
+       $this->_forward('home','Home');    
     }else{
-        
-        
        $this->_forward('index','Index'); 
     }
        
@@ -59,15 +42,8 @@ class LoginController extends BaseController
         $name=$this->getRequest()->getParam('name');
          
         
-        $User=new UserModel();
-     
-        
-        $where="email='$account'";
-        
-        $res=$User->fetchAll($where)->toArray();
-        
-    
-    if(count($res)==0)
+        $User=new UserModel();        
+    if($User->ifRegister($account))
     {
         
         $set=array(
@@ -76,13 +52,31 @@ class LoginController extends BaseController
             'name'=>$name,
             'email'=>$account           
         );
-              
+
+         //在注册用户的时候顺带着要建一个用户个人信息
        if(($User->insert($set)>0))
        {
-        
-           //查询成功跳转
+            
+         $where="email='$account'";
+         $result=$User->fetchAll($where)->toArray();
+           
+           $info=array(
+               'userid'=>$result[0][id],
+               'sex'=>'M',  
+               'name'=>$result[0][name],
+               'sheng'=>'北京市',
+               'shi'=>'北京市',
+               'xian'=>'东城区',
+               'birth'=>'1994-5-29',
+               'interest'=>'跑步'
+           );
+           
+           $userinfo=new userinfoModel();
+           if($userinfo->insert($info)>0)
+           {
+               //注册账号成功
           $this->render('ok');
-                      
+           }
        }else{           
            $this->view->info='1';           
            $this->_forward('error');
@@ -97,12 +91,7 @@ class LoginController extends BaseController
         
         
     }
-    
-        
-        
-        
-        
-        
+                   
     }
        
     public function errorAction()

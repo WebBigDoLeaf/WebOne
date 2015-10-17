@@ -1,0 +1,20 @@
+<script  type='text/javascript'>
+
+switch(<?=$this->res?>)
+{
+case 1:
+//更新用户信息成功
+	
+window.location='/WebOne/public/Home/userinfo?id=<?=$this->id?>&update=success';
+break;
+
+case 2:
+//更新用户信息失败
+history.back();
+break;
+
+}
+
+
+
+</script> 

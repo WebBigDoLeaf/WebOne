@@ -12,9 +12,9 @@
 
 
 
-<form action="userinfo" method="POST" class="form_top tl" >
+<form action="updateinfo" method="POST" class="form_top tl" >
 
-<div>
+<div name="result" id="result">
 
 
 </div>
@@ -38,8 +38,8 @@
     <dt class="fl">性别</dt>
     <dd>
     
-	<input name="gender" type="radio" value="0" checked='checked'>&nbsp;男</input> &nbsp; 
-	<input name="gender" type="radio" value="1">&nbsp;女</input> 
+	<input name="gender" id="M"type="radio" value="M" checked='checked'>&nbsp;男</input> &nbsp; 
+	<input name="gender" id="W" type="radio" value="W">&nbsp;女</input> 
     
     </dd>
 </dl>
@@ -50,7 +50,6 @@
     <p class="fl">
 		<select name="year"  id="year" onchange="initDate()"  >
 		
-		   
 		</select>
 		<select name="month"  id="month" onchange="initDate()">
 		
@@ -108,65 +107,60 @@
     </select>
     </dd>
 </dl>
-<input  type="submit" hidefocus="true" value="保存" onclick="promptinfo()");
->
+<input  type="submit" hidefocus="true" value="保存" >
 
 </form>
 <script>
-//region_init("select_province","select_city","select_area");  
             
-window.onload =function() {setup();preselect();promptinfo();
+window.onload =function() {setup();preselect();promptinfo();setdate();}
 
-}
 function promptinfo()
 {
     var address = document.getElementById('address');
     var s1 = document.getElementById('location1');
     var s2 = document.getElementById('location2');
     var s3 = document.getElementById('location3');
-    address.value = s1.value + s2.value + s3.value;
+    address.value ="<?=$this->info[0][userid]?>";
+    //change(0);
     $("#location1").find("option[value="+"<?=$this->info[0][sheng]?>"+"]").attr("selected",true);
     change(1);
     $("#location2").find("option[value="+"<?=$this->info[0][shi]?>"+"]").attr("selected",true);
     change(2);
     $("#location3").find("option[value="+"<?=$this->info[0][xian]?>"+"]").attr("selected",true);
-    
+      
+    document.getElementById('<?=$this->info[0][sex]?>').checked=true;    
 }
 
 
 $("#hobby").find("option[value="+"<?=$this->info[0][interest]?>"+"]").attr("selected",true);
 
 
-  //  document.getElementById("year").onchange();
+if('<?=$this->result?>'=='success')
+{
+	$("#result").append("<p>更新完成</p>");
+}
 
-//  alert($("#year").find("option[value="+"<?=$this->brith[0]?>"+"]").value);
+  
 
 function setdate()
 {
-      var year=new Date().getFullYear();  
-	
-	  for(var i = year - 80;i <= year; i++){  
-          document.write("<option value=" + i + ">" + i + "</option>");  
-      }  
-	  $("#year").find("option[value="+"<?=$this->brith[0]?>"+"]").attr("selected",true);
+        var year=new Date().getFullYear();  
+	 // var years=document.getElementById("year");
+		
+	  for(var i = year - 80;i <= year; i++){    
+		  //years.options.add(new Option(i,i));
+		  $("#year").append("<option value=" + i + ">" + i + "</option>")
+      }        
+	  $("#year").find("option[value="+"<?=$this->birth[0]?>"+"]").attr("selected",true);
+	  $("#month").find("option[value="+"<?=$this->birth[1]?>"+"]").attr("selected",true);	  
+	  initDate();
+	  $("#day").find("option[value="+"<?=$this->birth[2]?>"+"]").attr("selected",true);
       
 }
-//$("#year").find("option[value="+"<?=$this->brith[0]?>"+"]").attr("selected",true);
 
 
-
-
-
-
-
-//new Option("文本","值",true,true)
-
-
- 
 
 </script>
-
-
 
 
 </body>

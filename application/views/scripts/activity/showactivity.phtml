@@ -1,0 +1,9 @@
+<h1>活动信息</h1>
+<table>
+<tr><td>name:</td><td><?= $this->result['name'] ?></td></tr>
+<tr><td>content:</td><td><?= $this->result['content'] ?></td></tr>
+<tr><td>begin:</td><td><?= $this->result['begin'] ?></td></tr>
+<tr><td>end:</td><td><?= $this->result['end'] ?></td></tr>
+<tr><td>nums:</td><td><?= $this->result['nums'] ?></td></tr>
+<tr><td><input type="button"  onclick="window.location.href='/WebOne/public/activity/modifyactivityui?activityid=<?=$this->result['id']?>'" value='修改'></td><td><input type="button"  onclick="window.location.href='#'" value='删除'></td></tr>
+</table>

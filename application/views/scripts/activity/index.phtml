@@ -1,0 +1,18 @@
+<h1>当前活动</h1>
+<table width = '500px'>
+  <tr bgcolor = 'gray'>
+    <td>name</td>
+    <td>nums</td>
+    <td>begin</td>
+    <td>end</td>
+  </tr>
+  <?php foreach ($this->result as $info) {?>
+  <tr>
+    <td><a href='/WebOne/public/activity/showactivity?activityid=<?=$info['id']?>'><?= $info['name'] ?></a></td>
+    <td><?= $info['nums'] ?></td>
+    <td><?= $info['begin'] ?></td>
+    <td><?= $info['end'] ?></td>
+  </tr>
+  <?php }?>
+</table>
+

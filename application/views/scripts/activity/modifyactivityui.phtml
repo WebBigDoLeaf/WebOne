@@ -1,0 +1,11 @@
+<h1>活动信息</h1>
+<form action='/WebOne/public/activity/modifyactivity?activityid=<?=$this->result['id']?>' method="post">
+<table>
+<tr><td>name:</td><td><input type='text' name='name' value = '<?= $this->result['name']?>'/></td></tr>
+<tr><td>content:</td><td><input type='text' name='content' value = '<?= $this->result['content']?>'/></td></tr>
+<tr><td>begin:</td><td><input type='text' name='begin' value = '<?= $this->result['begin']?>'/></td></tr>
+<tr><td>end:</td><td><input type='text' name='end' value = '<?= $this->result['end']?>'/></td></tr>
+<tr><td>nums:</td><td><input type='text' name='nums' value = '<?= $this->result['nums']?>'/></td></tr>
+<tr><td><input type='submit' value='保存'/></td></tr>
+</table>
+</form>

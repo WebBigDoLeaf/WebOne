@@ -14,6 +14,8 @@ class ActivityController extends BaseController
         
         $activity = new ActivityModel();
         $db = $activity->getAdapter();
+        
+        //按开始时间倒序展示10条记录
         $where = '1=1';
         $order = 'begin desc';
         $count = 10;
@@ -26,8 +28,7 @@ class ActivityController extends BaseController
     {
         
     }
-    
-    
+        
     public function addactivityAction()
     {
         $name = $this->getRequest()->getParam('name');
@@ -43,8 +44,7 @@ class ActivityController extends BaseController
             'name' => $name
         );
         
-        
-        
+        //添加一个新活动
         $activity = new ActivityModel();
        
         if($activity -> insert($set) > 0){
@@ -63,6 +63,7 @@ class ActivityController extends BaseController
         $table = new ActivityModel();
         $result = $table -> find($activityid) -> toArray();
         
+        //展示活动具体内容
         $this -> view -> result = $result[0];
     }
     
@@ -91,6 +92,7 @@ class ActivityController extends BaseController
             'name' => $name
         );
         
+        //修改活动信息
         $table = new ActivityModel();
         $db = $table->getAdapter();
         
@@ -107,6 +109,26 @@ class ActivityController extends BaseController
         $this->_forward('result2','globals');
         
     }
+    
+    public function deleteactivityAction(){
+        $activityid = $this->getRequest()->getParam('activityid','0');
+        
+        //删除一条活动
+        $table = new ActivityModel();
+        $db = $table->getAdapter();
+        
+        $where = $db->quoteInto('id = ?', $activityid);
+        
+        if($table->delete($where) > 0){
+            $this->view->info = 'success';
+        }
+        else{
+            $this->view->info = 'fail';
+        }
+        
+        $this->_forward('result2','globals');
+    }
 
+    public function chooseactivityAction(){}
 }
 

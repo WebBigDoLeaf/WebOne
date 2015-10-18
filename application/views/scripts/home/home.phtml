@@ -1,4 +1,63 @@
-<div id="view-content">
-	<p>Welcome <?php  echo $this->info[0][name] ?></p>
-	<a href="/WebOne/public/Home/userinfo?id=<?=$this->info[0][id]?>"><?php  echo $this->info[0][name] ?></a>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="<?php echo $baseUrl;?>/WebOne/public/css/bootstrap.min.css">
+    <script type="text/javascript" src="<?php echo $baseUrl;?>/WebOne/public/script/jquery.js"></script>
+    <script type="text/javascript" src="<?php echo $baseUrl;?>/WebOne/public/script/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="<?php echo $baseUrl;?>/WebOne/public/css/home.css">
+    <title>home</title>
+</head>
+
+
+<body>
+
+<div class="container">
+
+<div class="home_nav" >
+<ul class="nav nav-tabs">
+<li class="li"><a href=#>首页</a></li>
+<li class="li"><a href=#>健康</a></li>
+<li class="li"><a href=#>运动</a></li>
+<li class="li"><a href=#>活动</a></li>
+<li class="li"><a href=#>建议</a></li>
+<li class="dropdown">
+     <a  class="dropdown-toggle" data-toggle="dropdown" href=#>
+       <?=$this->info[0][name]?>
+       <span class="caret"></span>
+     </a>
+
+    <ul class="dropdown-menu">
+       <li class="divider"></li>
+       <li class="li"><a href=#>个人设置</a></li>
+       <li class="li"><a href=#>退出登录</a></li>
+    </ul>
+</li>
+</ul>
 </div>
+
+<div id="userHeader">
+ <div class="row" >
+   <div class="userHeaderImg">
+    <a href="#">
+     <img class="userHeaderImgStyle" src="<?php echo $baseUrl;?>/WebOne/public/image/initial.png" border=0 width="220" />
+    </a>
+   </div>
+    <div id="userinfo">
+	 <p>Welcome <?php  echo $this->info[0][name] ?></p>
+	 <a href="/WebOne/public/Home/userinfo?id=<?=$this->info[0][id]?>"><?php  echo $this->info[0][name] ?></a>
+   </div>
+  </div>
+</div>
+
+<div class="content">
+
+<div class="panel panel-default">
+   <div class="panel-body">
+    <h2><span>健康</span>days</h2> 
+   </div>
+</div>
+  
+
+</div>
+
+</div>
+</body>

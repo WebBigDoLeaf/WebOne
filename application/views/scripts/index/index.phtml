@@ -1,5 +1,4 @@
 <head>
-
 <script type="text/javascript" src="<?php echo $baseUrl;?>/WebOne/public/script/jquery.js"></script>
 <script type="text/javascript" src="<?php echo $baseUrl;?>/WebOne/public/script/index.js"></script>
 </head>
@@ -14,7 +13,7 @@
       <form class='form-signin' action="/WebOne/public/Login/login" method="post">
                     <div class="form-group">
                         <label class="control-label">账号</label>
-                        <input type='email' id='inputEmail' name='account'class='form-control' placeholder='Email address' required autofocus>
+                        <input type='email' id='inputEmail' name='account'class='form-control' placeholder='邮箱' required autofocus>
                     </div>
                     <div class="form-group">
                         <label class="control-label">密码</label>
@@ -22,7 +21,7 @@
                     </div>
                     <div class='checkbox'>
                         <label>
-                            <input type='checkbox' value='remember-me'> 记住
+                            <input type='checkbox' id='checkbox' name='check' onchange="Check()" value='0'> 记住我
                         </label>
                     </div>
                     <input type="submit" id="submit" name="submit" value="登陆"/>
@@ -56,11 +55,11 @@
                     </div>
                     <div class="form-group">
                         <label class="control-label">验证码</label>
-                        <input type="text" id="sureCode" class="form-control" name="code" placeholder="SureCode" required>
+                        <input type="text" id="sureCode" name="surecode" class="form-control" name="code" placeholder="SureCode" required>
                         <img src="<?php echo $baseUrl;?>/WebOne/public/tool/validcode.php" style="width:100px;height:25px;" id="code"/>  
                         <a href="javascript:changeCode()">看不清，换一张</a>  
                     </div>   
-                   <input type="submit" id="submit" name="submit" value="提交"/>                                
+                   <input type="submit" id="submit" name="submit" value="注册"/>                                
                 </form>
        <div id="register content">
          <p>已有账号<a href="/WebOne/public/Index/index?type=1">[登陆]</a></p>
@@ -82,6 +81,37 @@ showRegister();
 function changeCode(){  
     document.getElementById("code").src = "<?php echo $baseUrl;?>/WebOne/public/tool/validcode.php?id="+Math.random();  
 }  
+
+
+if('<?=$this->account?>'!='null'&&'<?=$this->password?>'!='null')
+{
+     setCookie();
+}
+
+function setCookie()
+{
+	 document.getElementById("inputEmail").value='<?=$this->account?>';
+	 document.getElementById("inputPassword").value='<?=$this->password?>';
+	 document.getElementById("checkbox").checked=true;
+
+	 if(document.getElementById("checkbox").checked)
+	 {
+		 document.getElementById("checkbox").value=1;
+	 }
+}
+
+function Check()
+{
+	if(document.getElementById("checkbox").checked)
+	{
+	 document.getElementById("checkbox").value=1;
+	}else{
+     document.getElementById("checkbox").value=0;
+			
+	}	
+}
+
+
 </script>
 </body>
 

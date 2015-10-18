@@ -17,7 +17,17 @@ class IndexController extends Zend_Controller_Action
         if($type==1||$type==2)
         {            
             $this->view->type=$type;
+        }else{
+            $this->view->type=3;
+            
         }
+        
+       // if($_COOKIE['account']!='null'&&$_COOKIE['password']!='null')
+        //{
+        $this->view->account=$_COOKIE["account"];
+        $this->view->password=$_COOKIE["password"];
+        
+        
     }
 
 

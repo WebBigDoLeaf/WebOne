@@ -15,6 +15,13 @@ class HomeController extends BaseController
     public function homeAction()
     {
         // action body   
+      //  echo $_COOKIE["account"];
+        
+        
+     //   print_r( $this->cookie);
+        
+        
+        
     }
     
     

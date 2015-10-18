@@ -20,32 +20,58 @@ class LoginController extends BaseController
               
      $name=$this->getRequest()->getParam('account');
      $password=$this->getRequest()->getParam('password');
-        
+     
+     $check=$this->getRequest()->getParam('check');
+     
+     
+    
+     if($check==1)
+     {     
+         setcookie("account",$name,time()+86400,"/");
+         setcookie("password",$password,time()+86400,"/");          
+     }else{
+         setcookie("account","null",time()+86400,"/");
+         setcookie("password","null",time()+86400,"/");
+         
+     }
+     
+
+     
      $User=new UserModel();
       
      $res=$User->validate($name, $password);
+     
+     
     if(count($res)==1)
     {
        $this->view->info=$res;
+       $this->view->cookie=$_COOKIE;
        $this->_forward('home','Home');    
     }else{
        $this->_forward('index','Index'); 
     }
        
-        
+    
+    
+    
+    
     }
+    
+    
     
     public function registerAction()
     {
         $account=$this->getRequest()->getParam('account');
         $password=$this->getRequest()->getParam('password');
         $name=$this->getRequest()->getParam('name');
-         
-        
-        $User=new UserModel();        
-    if($User->ifRegister($account))
+        $code=$this->getRequest()->getParam('surecode');
+       
+    if($code==$_SESSION["validcode"])
     {
-        
+        $User=new UserModel();        
+   if($User->ifRegister($account))
+    {
+         
         $set=array(
             'account'=>$account,
             'password'=>$password,
@@ -73,15 +99,14 @@ class LoginController extends BaseController
            
            $userinfo=new userinfoModel();
            if($userinfo->insert($info)>0)
-           {
-               //注册账号成功
+           {              //注册账号成功
           $this->render('ok');
            }
-       }else{           
+           }else{           
            $this->view->info='1';           
            $this->_forward('error');
            
-       }
+            }
                
     }else{
           
@@ -89,6 +114,16 @@ class LoginController extends BaseController
            //账号已经创建
           $this->_forward('error');
         
+        
+    }
+    
+    
+    }else{
+        $this->view->info='3';
+        
+        $this->render('error');
+        
+        //验证码输入错误
         
     }
                    

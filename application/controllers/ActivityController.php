@@ -1,6 +1,8 @@
 <?php
 require_once 'BaseController.php';
 require_once APPLICATION_PATH.'/models/ActivityModel.php';
+require_once APPLICATION_PATH.'/models/UserModel.php';
+require_once APPLICATION_PATH.'/models/User_ActivityModel.php';
 class ActivityController extends BaseController
 {
 
@@ -129,6 +131,71 @@ class ActivityController extends BaseController
         $this->_forward('result2','globals');
     }
 
-    public function chooseactivityAction(){}
+    public function chooseactivityAction(){
+        $activityid = $this->getRequest()->getParam('activityid','0');
+        $account = $_COOKIE["account"];
+        
+        
+        $usertable = new UserModel();
+        $db1 = $usertable->getAdapter();
+        
+        $table = new User_ActivityModel();
+        $db2 = $table->getAdapter();
+        
+        $activitytable = new ActivityModel();
+        $db3 = $activitytable->getAdapter();
+        
+        //查找当前用户ID
+        $result = $usertable -> fetchRow($db1->quoteInto('email = ?', $account)) ->toArray();
+        $uid = $result['id'];
+        
+        //检查是否该用户参加过此活动
+        $where = $db2->quoteInto('userid = ? ', $uid).$db2->quoteInto('AND activityid = ?', $activityid);
+        $flag0 = count($table->fetchAll($where) ->toArray()) ;
+        
+
+        
+        if($flag0 !=0){
+            $this->view->info = '已参加';
+            $this->_forward('result2','globals');
+            return;
+        }
+        
+        
+        
+        //添加一条记录
+        $set = array(
+            'userid'=>$uid,
+            'activityid'=>$activityid
+        );
+        
+        $flag1 = $table -> insert($set); 
+        
+        //活动列表更新nums
+        $nums = $activitytable->find($activityid)->toArray()[0]['nums'];
+        $nums++;
+        $numsset = array(
+            'nums'=>$nums
+        );
+
+        $where = $db3->quoteInto('id = ?', $activityid);
+        
+        $flag2 = $activitytable->update($numsset, $where);
+        
+        
+        /* echo $flag1;
+        echo $flag2;
+        exit(); */
+        //判断是否成功
+        if($flag1 > 0 && $flag2 > 0){
+            $this->view->info = 'success';
+        }
+        else{
+            $this->view->info = 'fail';
+        }
+        
+        $this->_forward('result2','globals');
+        
+    }
 }
 

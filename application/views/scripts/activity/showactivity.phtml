@@ -5,5 +5,9 @@
 <tr><td>begin:</td><td><?= $this->result['begin'] ?></td></tr>
 <tr><td>end:</td><td><?= $this->result['end'] ?></td></tr>
 <tr><td>nums:</td><td><?= $this->result['nums'] ?></td></tr>
-<tr><td><input type="button"  onclick="window.location.href='/WebOne/public/activity/modifyactivityui?activityid=<?=$this->result['id']?>'" value='修改'></td><td><input type="button"   onclick="window.location.href='/WebOne/public/activity/deleteactivity?activityid=<?=$this->result['id']?>'" value='删除'></td></tr>
+<tr>
+    <td><input type="button"  onclick="window.location.href='/WebOne/public/activity/chooseactivity?activityid=<?=$this->result['id']?>'" value='参与'></td>
+    <td><input type="button"  onclick="window.location.href='/WebOne/public/activity/modifyactivityui?activityid=<?=$this->result['id']?>'" value='修改'></td>
+    <td><input type="button"  onclick="window.location.href='/WebOne/public/activity/deleteactivity?activityid=<?=$this->result['id']?>'" value='删除'></td>
+</tr>
 </table>

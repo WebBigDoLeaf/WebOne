@@ -1,0 +1,64 @@
+<head>
+<link rel="stylesheet" href="<?php echo $baseUrl;?>/WebOne/public/css/bootstrap.min.css">
+<script type="text/javascript" src="<?php echo $baseUrl;?>/WebOne/public/script/jquery.js"></script>
+<script type="text/javascript" src="<?php echo $baseUrl;?>/WebOne/public/script/bootstrap.min.js"></script>
+<link rel="stylesheet" href="<?php echo $baseUrl;?>/WebOne/public/css/nav.css">
+<link rel="stylesheet" href="<?php echo $baseUrl;?>/WebOne/public/css/portrait.css">
+</head>
+
+
+
+<body>
+       <div id="info_setup">
+           <p id="person_set">个人设置</p>
+           <div class="col-md-2" id="myScrollspy">
+               <ul class="nav nav-tabs nav-stacked  text-center" data-spy="affix" data-offset-top="125">
+                 <li class="active"><a href="#section-1"  >基本信息</a></li>
+                 <li><a href="#section-2">账号安全</a></li>
+               </ul>
+           </div>
+        </div>
+        
+ <div id="panel">
+   <div class="panel panel-success" id="info_panel">
+      <div name="result" id="result"></div>
+        <ul class="nav nav-tabs">
+          <li><a href="userinfo?id=<?=$_SESSION["userinfo"][0][id]?>">个人资料</a></li>
+          <li class="active"><a href=#>头像设置</a></li>
+        </ul>	
+        
+       <div class="userHeaderImg" id="userImg">
+         <a href="#">
+           <img class="userHeaderImgStyle" src="<?php echo $baseUrl;?>/WebOne/public/image/initial.png" border=0 width="220" />
+         </a>
+       </div>
+        
+       <div id="remind">
+       <div> <?php
+      $path=$_SERVER['DOCUMENT_ROOT']."/WebOne/public/tool/updateImage.php";
+      include($path);
+      ?>
+       </div>
+       <p id="word2">注意：头像图片只支持jpeg,jpg,png,gif,bmp格式;头像文件须小于5M;</p></br>
+       </div>
+       
+                 
+        
+        
+        
+    </div>
+  </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+</body>

@@ -3,7 +3,7 @@ require_once 'Zend/Auth/Adapter/Dbtable.php';
 
 
 
-//³õÊ¼»¯µÄÊı¾İ¿â
+//ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½İ¿ï¿½
 class BaseController extends Zend_Controller_Action
 {
 
@@ -15,8 +15,12 @@ class BaseController extends Zend_Controller_Action
         $dbconfig = new Zend_Config_Ini($url , "sqlite");
         $db = Zend_Db::factory( $dbconfig->db);
         Zend_Db_Table::setDefaultAdapter($db);
-        $authAdapter = new Zend_Auth_Adapter_DbTable($db);//ÓÃÓÚÊı¾İ¿âAuthÑéÖ¤
-        Zend_Registry::set('authAdapter', $authAdapter);//½«Zend_Auth_Adapter_DbTableÊµÀı±£´æÔÚÈ«¾Ö£¬¹©ºóÃæÊ¹ÓÃ       
+        $authAdapter = new Zend_Auth_Adapter_DbTable($db);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½İ¿ï¿½Authï¿½ï¿½Ö¤
+        Zend_Registry::set('authAdapter', $authAdapter);//ï¿½ï¿½Zend_Auth_Adapter_DbTableÊµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È«ï¿½Ö£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½       
+        
+        //å¼€å¯ä¼šè®®
+        session_start();
+        
     }
 
     public function indexAction()

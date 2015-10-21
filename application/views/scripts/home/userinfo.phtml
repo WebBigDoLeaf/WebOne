@@ -1,112 +1,111 @@
 			   
- <head>  
+<head>  
+<link rel="stylesheet" href="<?php echo $baseUrl;?>/WebOne/public/css/bootstrap.min.css">
+<link rel="stylesheet" href="<?php echo $baseUrl;?>/WebOne/public/css/nav.css">
+<link rel="stylesheet" href="<?php echo $baseUrl;?>/WebOne/public/css/userinfo.css">
 <script type="text/javascript" src="<?php echo $baseUrl;?>/WebOne/public/script/geo.js"></script>
 <script type="text/javascript" src="<?php echo $baseUrl;?>/WebOne/public/script/getDates.js"></script>
 <script type="text/javascript" src="<?php echo $baseUrl;?>/WebOne/public/script/jquery.js"></script>
-<script type="text/javascript" src="<?php echo $baseUrl;?>/WebOne/public/script/getAddress.js"></script>
-
+<script type="text/javascript" src="<?php echo $baseUrl;?>/WebOne/public/script/bootstrap.min.js"></script>
 </head>
 
 <body>
 
-<form action="updateinfo" method="POST" class="form_top tl" >
+        <div id="info_setup">
+           <p id="person_set">个人设置</p>
+           <div class="col-md-2" id="myScrollspy">
+               <ul class="nav nav-tabs nav-stacked  text-center" data-spy="affix" data-offset-top="125">
+                 <li class="active"><a href="#section-1"  >基本信息</a></li>
+                 <li><a href="#section-2">账号安全</a></li>
+               </ul>
+           </div>
+        </div>
+        
+<div id="panel">
+  <div class="panel panel-success" id="info_panel">
+      <div name="result" id="result"></div>
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#">个人资料</a></li>
+          <li><a href="portrait" >头像设置</a></li>
+        </ul>	
+   <form action="updateinfo" method="POST" class="form_top tl" id="info_form" >
+     
 
-<div name="result" id="result">
+      <dl class="profile_list">
+        <dt >昵称</dt>
+        <dd>
+    	  <div ></div>
+		  <input name="nick" id="nick_tb" type="text" class="welcomeCenter photo_png" value="<?=$this->info[0][name] ?>"/>
+        </dd>
+      </dl>
 
+      <dl class="profile_list">
+        <dt class="fl">性别</dt>
+        <dd>   
+	      <input name="gender" id="M"type="radio" value="M" checked='checked'>&nbsp;男</input> &nbsp; 
+	      <input name="gender" id="W" type="radio" value="W">&nbsp;女</input>    
+        </dd>
+      </dl>
 
+      <dl class="profile_list">
+         <dt class="fl inputtop">生日</dt>
+         <dd>
+           <p class="fl">
+		      <select name="year"  id="year" onchange="initDate()" ></select>
+		      <select name="month"  id="month" onchange="initDate()">		
+		         <script type="text/javascript">  
+                    for(var i = 1; i <= 12; i++){  
+                       document.write("<option value=" + i + ">" + i + "</option>");  
+                    }  
+                 </script>              
+	          </select>       
+              <select name="day" id="day">  
+                 <script type="text/javascript">  
+                    for(var i = 1; i <= 31; i++){  
+                      document.write("<option value=" + i + ">" + i + "</option>");  
+                    }   
+                 </script>  
+              </select>        
+	        </p>    
+          </dd>
+       </dl>
+
+       <dl class="profile_list">
+          <dt class="fl">所在地</dt>
+          <dd >
+            <select name="province" id="location1" style="height:35px;padding:5px 0;">
+              <option></option> 
+            </select> &nbsp; 
+            <select name="city" id="location2" style="height:35px;" >
+              <option></option>
+            </select>
+            <select name="town" id="location3" style="height:35px;" >
+              <option></option>
+            </select>
+           <input id="address" name="address" type="hidden" value="" />
+         </dd>
+       </dl>
+
+       <dl class="profile_list">
+         <dt class="fl">兴趣</dt>
+         <dd>
+           <select name="hobby" id="hobby" style="height:35px;padding:5px 0;">
+             <option value="跑步">跑步</option>
+             <option value="篮球">篮球</option>
+             <option value="足球">足球</option>
+             <option value="羽毛球">羽毛球</option>
+             <option value="乒乓球">乒乓球</option>
+             <option value="游泳">游泳</option>
+             <option value="LOL">LOL</option>
+             <option value="其他">其他</option>
+          </select>
+        </dd>
+       </dl>
+       <input  type="submit"  class="btn btn-success"  id="submit" hidefocus="true" value="保存" >
+   </form>
+ </div>
 </div>
 
-<div class="tab" style="overflow:hidden;">
-    <a href="#">个人资料</a>
-	<a href="portrait" >头像设置</a>
-	<div style="clear:both"></div>
-</div>
-
-<dl class="profile_list">
-    <dt >昵称</dt>
-    <dd>
-    	<div ></div>
-		<input name="nick" id="nick_tb" type="text" class="welcomeCenter photo_png" value="<?=$this->info[0][name] ?>"/>
-	
-    </dd>
-</dl>
-
-<dl class="profile_list">
-    <dt class="fl">性别</dt>
-    <dd>
-    
-	<input name="gender" id="M"type="radio" value="M" checked='checked'>&nbsp;男</input> &nbsp; 
-	<input name="gender" id="W" type="radio" value="W">&nbsp;女</input> 
-    
-    </dd>
-</dl>
-
-<dl class="profile_list">
-    <dt class="fl inputtop">生日</dt>
-    <dd>
-    <p class="fl">
-		<select name="year"  id="year" onchange="initDate()"  >
-		
-		</select>
-		<select name="month"  id="month" onchange="initDate()">
-		
-		     <script type="text/javascript">  
-                for(var i = 1; i <= 12; i++){  
-                    document.write("<option value=" + i + ">" + i + "</option>");  
-                }  
-            </script>  
-            
-		</select>       
-         <select name="day" id="day">  
-            <script type="text/javascript">  
-                for(var i = 1; i <= 31; i++){  
-                    document.write("<option value=" + i + ">" + i + "</option>");  
-                }  
-            </script>  
-          </select> 
-        
-        
-	</p>    
-    </dd>
-</dl>
-
-
-<dl class="profile_list">
-    <dt class="fl">所在地</dt>
-    <dd >
-    <select name="province" id="location1" style="height:35px;padding:5px 0;">
-    <option></option> 
-    </select> &nbsp; 
-    <select name="city" id="location2" style="height:35px;" >
-    <option></option>
-    </select>
-    <select name="town" id="location3" style="height:35px;" >
-    <option></option>
-    </select>
-    <input id="address" name="address" type="hidden" value="" />
-    </dd>
-</dl>
-
-<dl class="profile_list">
-    <dt class="fl">兴趣</dt>
-    <dd>
-    <select name="hobby" id="hobby" style="height:35px;padding:5px 0;">
-    <option value="跑步">跑步</option>
-    <option value="篮球">篮球</option>
-    <option value="足球">足球</option>
-    <option value="羽毛球">羽毛球</option>
-    <option value="乒乓球">乒乓球</option>
-    <option value="游泳">游泳</option>
-    <option value="LOL">LOL</option>
-    <option value="其他">其他</option>
-    
-    
-    </select>
-    </dd>
-</dl>
-<input  type="submit" hidefocus="true" value="保存" >
-
-</form>
 <script>
             
 window.onload =function() {setup();preselect();promptinfo();setdate();}

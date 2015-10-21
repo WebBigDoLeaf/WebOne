@@ -39,6 +39,7 @@ class HomeController extends BaseController
        $id=$this->getRequest()->getParam('id');
        $result=$this->getRequest()->getParam('update');
        
+       
         
        //用来进行提示界面操作成功的操作
        if($result!='success')
@@ -51,6 +52,7 @@ class HomeController extends BaseController
       
       if(count($res)>0)
       {
+                    
           $birth=preg_split("/-/", $res[0][birth]);         
           $this->view->info=$res;
           $this->view->birth=$birth;    
@@ -97,9 +99,12 @@ class HomeController extends BaseController
     
     public function portraitAction()
     {
-    
+        
+        
+        
     }
-
+    
+   
 
 }
 

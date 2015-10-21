@@ -23,7 +23,7 @@
 	$img = imagecreatetruecolor($width,$height);
 	
 	//填充背景色
-	$backcolor = imagecolorallocate($img,0,0,0);
+	$backcolor = imagecolorallocate($img,189,252,201);
 	imagefill($img,0,0,$backcolor);
 	
 	//获取随机较深颜色 

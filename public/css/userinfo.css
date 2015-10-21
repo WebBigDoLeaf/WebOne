@@ -1,0 +1,59 @@
+@CHARSET "UTF-8";
+
+
+#info_setup{
+	position:relative;
+    left:150px;
+	top:110px;
+	height:250px;
+}
+#person_set{
+	font-size:30px;
+	
+}
+#word{
+	position:relative;
+	left:30px;
+}
+
+
+#panel{
+	position:absolute;
+	left:450px;
+	top:100px;
+	height:600px;	
+	width:520px;
+}
+#info_panel{
+	height:600px;
+	width:520px;
+}
+
+#info_form{
+	position:relative;
+	left:40px;
+}
+
+#tab{
+	position:ralative;
+	top:-50px;
+	
+	
+}
+dd{
+	position:relative;
+	top:-10px;
+	left:45px;
+	
+}
+
+dt{
+	position:relative;
+	top:10px;
+}
+
+#submit{
+	position:relative;
+	left:70px;
+	width:100px;	
+}

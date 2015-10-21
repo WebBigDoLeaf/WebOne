@@ -2,6 +2,8 @@
  <link rel="stylesheet" href="<?php echo $baseUrl;?>/WebOne/public/css/bootstrap.min.css">
 <script type="text/javascript" src="<?php echo $baseUrl;?>/WebOne/public/script/jquery.js"></script>
 <script type="text/javascript" src="<?php echo $baseUrl;?>/WebOne/public/script/index.js"></script>
+ <link rel="stylesheet" href="<?php echo $baseUrl;?>/WebOne/public/css/index.css">
+
 </head>
 <body>
 <div id="welcome">
@@ -12,64 +14,71 @@
 	</h1>
     <div class="modal-body">
       <form class='form-signin' action="/WebOne/public/Login/login" method="post">
-                    <div class="form-group">
-                        <label class="control-label">账号</label>
-                        <input type='email' id='inputEmail' name='account'class='form-control' placeholder='邮箱' required autofocus>
+                    <div class="form-group" id="form">
+                        <p class="control-label" id="word" style="width: 80px;">账号</p>
+                        <input type='email' id='inputEmail' name='account'class='form-control' placeholder='account' required autofocus>
                     </div>
-                    <div class="form-group">
-                        <label class="control-label">密码</label>
+                    <div class="form-group" id="form">
+                        <p class="control-label" id="word" style="width: 80px;">密码</p>
                         <input type='password' id='inputPassword' name='password' class='form-control' placeholder='Password' required>
                     </div>
-                    <div class='checkbox'>
+                    <div class='checkbox' id='checkbox'>
                         <label>
-                            <input type='checkbox' id='checkbox' name='check' onchange="Check()" value='0'> 记住我
+                            <input type='checkbox'name='check' onchange="Check()" value='0'> 
+                            <p id="remember">记住我</p>
                         </label>
                     </div>
-                    <input type="submit" id="submit" name="submit" value="登陆"/>
+                    <input type="submit" class="btn btn-success" id="submit_bt" name="submit" value="登陆"/>
        </form>
     </div>
     
       <div id="login_content">
          <p>还没有注册账号？<a href="/WebOne/public/Index/index?type=2">[立即注册]</a></p>
       </div>
-      
      </div>
 
      
      <div class="register"  id="register" style="display: none;">
-     
-	 
+  	 
 	     <h1 id="reagister_head">注册账号</h1>
-
+            <div id="register_form">
              <form class='form-signin' action="/WebOne/public/Login/register" method="post">           
                     <div class="form-group">
-                        <label class="control-label">邮箱</label>
+                        <label class="control-label" id="word">邮箱</label>
                         <input type='email' id='inEmail' name="account" class='form-control' placeholder='Email address' required autofocus>
                     </div>
                        <div class="form-group">
-                        <label class="control-label">姓名</label>
+                        <label class="control-label" id="word">姓名</label>
                         <input type="text" id="inName" name="name" class="form-control" placeholder="Name" required>
                     </div>
                     <div class="form-group">
-                        <label class="control-label">密码</label>
+                        <label class="control-label" id="word">密码</label>
                         <input type='password' id='inPassword' name="password" class='form-control' placeholder='Password' required>
                     </div>
                     <div class="form-group">
-                        <label class="control-label">验证码</label>
+                        <label class="control-label" id="word">验证码</label>
                         <input type="text" id="sureCode" name="surecode" class="form-control" name="code" placeholder="SureCode" required>
-                        <img src="<?php echo $baseUrl;?>/WebOne/public/tool/validcode.php" style="width:100px;height:25px;" id="code"/>  
-                        <a href="javascript:changeCode()">看不清，换一张</a>  
-                    </div>   
-                   <input type="submit" id="submit" name="submit" value="注册"/>                                
+                        <img src="<?php echo $baseUrl;?>/WebOne/public/tool/validcode.php" style="width:80px;height:25px;" id="code" onclick="changeCode()" />  
+                   </div>   
+                   <input type="submit" class="btn btn-success" id="register_bt" name="submit" value="注册"/>                                
                 </form>
-       <div id="register content">
-         <p>已有账号<a href="/WebOne/public/Index/index?type=1">[登陆]</a></p>
+             </div>   
+       <div id="register_content">
+         <p>已有账号?<a href="/WebOne/public/Index/index?type=1">[登陆]</a></p>
        </div>				
      </div>  
        
 </div>
 
 <script>
+
+
+window.onload =function(){  putoffNav();  }
+
+
+function putoffNav(){	
+	$("#nav_common").hide();	
+	}
 
 if(<?=$this->type?>==1)
 {

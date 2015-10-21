@@ -1,0 +1,115 @@
+@CHARSET "UTF-8";
+
+/*登陆页面*/
+#login_head
+{
+	position:absolute;
+	left:320px;
+	top:100px;
+}
+.modal-body
+{
+	position:absolute;
+	left:310px;
+	top:140px;
+}
+#form
+{   
+	height:46px;
+}
+#inputEmail,#inputPassword
+{
+    position:relative;
+	width:200px;
+	left:40px;
+}
+#word
+{
+	position:relative;
+	left:0;
+	top:34px;
+	font-size:14px;
+}
+#checkbox
+{
+	position:relative;
+	left:11px;
+	top:10px;
+}
+#remember
+{
+	 position:relative;
+	 top:2px;
+	 font-size:7px;
+}
+
+#submit_bt
+{
+	position:relative;
+	left:10px;
+	width:68px;
+}
+#login_content
+{
+	position:relative;
+	top:90px;
+	left:720px;
+}
+
+
+/*注册页面*/
+
+
+#reagister_head
+{
+    position:absolute;
+	left:360px;
+	top:110px;
+	
+	
+}
+#register_form
+{
+	
+	position:absolute;
+	left:380px;
+	top:160px;
+}
+
+
+#inEmail,#inName,#inPassword
+{
+    position:relative;
+	width:200px;
+	left:40px;
+}
+#sureCode
+{
+	position:relative;
+	width:90px;
+	left:50px;
+}
+#code
+{   position:relative;
+    top:-28px;
+	left:145px;
+}
+#register_bt
+{
+	position:relative;
+	left:45px;
+	width:128px;
+}
+
+#register_content
+{
+	position:relative;
+	top:120px;
+	left:810px;
+	
+}
+
+
+
+
+

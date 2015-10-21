@@ -42,8 +42,9 @@ class LoginController extends BaseController
      $res=$User->validate($name, $password);
      
      
-    if(count($res)==1)
+    if(count($res)==1)  
     {
+	   $_SESSION["userinfo"] = $res;       
        $this->view->info=$res;
        $this->view->cookie=$_COOKIE;
        $this->_forward('home','Home');    
@@ -51,10 +52,7 @@ class LoginController extends BaseController
        $this->_forward('index','Index'); 
     }
        
-    
-    
-    
-    
+
     }
     
     

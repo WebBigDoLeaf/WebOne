@@ -14,3 +14,17 @@
 	position:relative;
 	left:25px;
 }
+
+#nav_home{
+	position:absolute;
+	left:250px;
+}
+#lis{
+	position:relative;
+	left:100px;
+}
+#pos{
+	position:relative;
+	top:10px;
+	left:160px;
+}

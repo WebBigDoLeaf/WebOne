@@ -23,7 +23,6 @@ class LoginController extends BaseController
      
      $check=$this->getRequest()->getParam('check');
      
-     echo $check;
     
      if($check==1)
      {     

@@ -31,7 +31,7 @@ $watertype=1;      //水印类型(1为文字,2为图片)
 $waterposition=1;     //水印位置(1为左下角,2为右下角,3为左上角,4为右上角,5为居中);
 $waterstring="健康days";  //水印字符串
 $waterimg="xplore.gif";    //水印图片
-$imgpreview=1;      //是否生成预览图(1为生成,其他为不生成);
+$imgpreview=2;      //是否生成预览图(1为生成,其他为不生成);
 $imgpreviewsize=1/2;    //缩略图比例
 $id=$_SESSION["userinfo"][0][id];
 ?>
@@ -43,7 +43,7 @@ $id=$_SESSION["userinfo"][0][id];
 <body>
 <form enctype="multipart/form-data" method="post" name="upform">
   <input name="upfile" id="upfile" type="file">
-  <input type="submit"  class="btn btn-success"  id="submit" hidefocus="true" value="上传"><br>
+  <input type="submit"  class="btn btn-success"  id="submit" hidefocus="true" value="上传" onclick="javascript:skip()"><br>
 </form>
 
 <?php
@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     $image_size = getimagesize($filename);
     $pinfo=pathinfo($file["name"]);
     $ftype=$pinfo['extension'];
-    $destination = $destination_folder.$id.".".$ftype;
+    $destination = $destination_folder.$id."."."jpg";
     /*
     if (file_exists($destination) && $overwrite != true)
     {
@@ -91,9 +91,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     
     if(!move_uploaded_file ($filename, $destination))
     {
-        echo "移动文件出错";
+        echo " <font color=red id=update_success> 移动文件出错 </font><br>";
         exit;
     }
+    header("Location: http://localhost:8081/WebOne/public/Home/portrait?type=success");
+    exit;
 
     $pinfo=pathinfo($destination);
     $fname=$pinfo["basename"];
@@ -168,7 +170,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         imagedestroy($simage);
     }
 
-    if($imgpreview==2)
+    if($imgpreview==1)
     {
     echo "<br>图片预览:<br>";
     echo "<img src=\"".$destination."\" width=".($image_size[0]*$imgpreviewsize)." height=".($image_size[1]*$imgpreviewsize);
@@ -176,5 +178,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     }
 }
 ?>
+
+
 </body>
 </html>

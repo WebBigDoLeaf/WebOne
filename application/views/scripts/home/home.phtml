@@ -42,7 +42,9 @@
  <div class="row" >
    <div class="userHeaderImg">
     <a href="#">
-     <img class="userHeaderImgStyle" src="<?php echo $baseUrl;?>/WebOne/public/image/initial.png" border=0 width="220" />
+       <?php         
+       echo "<img class=userHeaderImgStyle src=$this->path border=0 width=220 height=220 />";
+       ?>    
     </a>
    </div>
     <div id="userinfo">

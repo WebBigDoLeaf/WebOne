@@ -14,16 +14,35 @@ class ActivityController extends BaseController
     public function indexAction()
     {
         
-        $activity = new ActivityModel();
-        $db = $activity->getAdapter();
+        //实现分页
+        $page=$this->getRequest()->getParam('page');
         
+        
+        
+        $activity = new ActivityModel();        
+        $db = $activity->getAdapter();     
+        if($page=="")
+        {
+            $page=0;
+        }        
+        //确定页面显示的规范
+        if($page<3)
+        {
+            $set=array(1,2,3,4);
+        }else
+        {
+            $set=array($page,$page+1,$page+2,$page+3);
+        }
         //按开始时间倒序展示10条记录
         $where = '1=1';
         $order = 'begin desc';
-        $count = 10;
-        $offset = 0;
+        $count = 5;
+        $offset =$page*5;
         $result = $activity->fetchAll($where, $order, $count, $offset)->toArray();
         $this->view->result = $result;
+        $this->view->page=$page;
+        $this->view->count=$set;
+        
     }
     
     public function addactivityuiAction()

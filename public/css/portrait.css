@@ -56,8 +56,8 @@
 	 top:60px;
 	 left:180px;
 }
-#update_success{
-	 position:relative;
-	 top:50px;
-	 left:170px;
+#result{
+	 position:absolute;
+	 top:500px;
+	 left:210px;
 }

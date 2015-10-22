@@ -20,6 +20,15 @@ class HomeController extends BaseController
         
      //   print_r( $this->cookie);
      
+        $imgpath=$_SERVER['DOCUMENT_ROOT']."/WebOne/public/image/head/";
+        $id=$_SESSION["userinfo"][0][id];
+        if(file_exists($imgpath.$id.".png"))
+        {
+            $this->view->path=$baseUrl."/WebOne/public/image/head/".$id.".png";
+        }else{
+        
+            $this->view->path=$baseUrl."/WebOne/public/image/initial.png";
+        }
         
         
         
@@ -100,11 +109,25 @@ class HomeController extends BaseController
     public function portraitAction()
     {
         
+        $type=$this->getRequest()->getParam('type');
+        
+        
+        $imgpath=$_SERVER['DOCUMENT_ROOT']."/WebOne/public/image/head/";
+        $id=$_SESSION["userinfo"][0][id];
+        if(file_exists($imgpath.$id.".png"))
+        {
+            $this->view->path=$baseUrl."/WebOne/public/image/head/".$id.".jpg";
+            $this->view->type=$type;
+        }else{
+            
+            $this->view->path=$baseUrl."/WebOne/public/image/initial.jpg";
+            $this->view->type=$type;
+        }
         
         
     }
     
    
 
-}
+    }
 

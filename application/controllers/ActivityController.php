@@ -154,6 +154,11 @@ class ActivityController extends BaseController
         $activityid = $this->getRequest()->getParam('activityid','0');
         $account = $_COOKIE["account"];
         
+        if($account == null){
+            $this->view->info = '未登录';
+            $this->_forward('result3','globals');
+            return;
+        }
         
         $usertable = new UserModel();
         $db1 = $usertable->getAdapter();

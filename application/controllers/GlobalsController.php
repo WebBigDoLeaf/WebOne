@@ -14,6 +14,14 @@ class GlobalsController extends Zend_Controller_Action
         // action body
     }
 
-
+    public function result3Action()
+    {
+        // action body
+    }
+    
+    public function result4Action()
+    {
+        // action body
+    }
 }
 

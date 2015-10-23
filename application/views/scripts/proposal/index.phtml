@@ -1,0 +1,15 @@
+<h1>问题</h1>
+<table width = '500px'>
+  <tr bgcolor = 'gray'>
+    <td>title</td>
+    <td>answernum</td>
+    <td>time</td>
+  </tr>
+  <?php foreach ($this->result as $info) {?>
+  <tr>
+    <td><a href='/WebOne/public/proposal/show?questionid=<?=$info['id']?>'><?= $info['title'] ?></a></td>
+    <td><?= $info['answernum'] ?></td>
+    <td><?= $info['time'] ?></td>
+  </tr>
+  <?php }?>
+</table>

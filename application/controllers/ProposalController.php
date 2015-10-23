@@ -249,8 +249,6 @@ class ProposalController extends BaseController
         //查看是否删除干净
         $flag1 = count($db1->query('SELECT * FROM answer WHERE questionid = ?' , $questionid)->fetchAll());
         
-        echo $flag1;
-        exit();
         if($flag0 > 0 && $flag1 ==0){
             $this->view->info = 'success';
         }

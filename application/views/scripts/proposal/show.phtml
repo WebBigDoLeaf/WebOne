@@ -3,11 +3,19 @@
 <tr><td>title:</td><td><?= $this->result['title'] ?></td></tr>
 <tr><td>content:</td><td><?= $this->result['content'] ?></td></tr>
 <tr><td>time:</td><td><?= $this->result['time'] ?></td></tr>
-<tr><td>userid:</td><td><?= $this->result['userid'] ?></td></tr>
 <tr><td>answernum:</td><td><?= $this->result['answernum'] ?></td></tr>
 <tr>
-    <td><input type="button"  onclick="window.location.href='/WebOne/public/proposal/reply?questionid=<?=$this->result['id']?>'" value='评论'></td>
+    <td><input type="button"  onclick="window.location.href='/WebOne/public/proposal/replyui?questionid=<?=$this->result['id']?>&id=<?= $this->result['userid'] ?>'" value='评论'></td>
     <td><input type="button"  onclick="window.location.href='/WebOne/public/proposal/modify?questionid=<?=$this->result['id']?>'" value='修改'></td>
-    <td><input type="button"  onclick="window.location.href='/WebOne/public/proposal/delete?questionid=<?=$this->result['id']?>'" value='删除'></td>
+    <td><input type="button"  onclick="window.location.href='/WebOne/public/proposal/delete?questionid=<?=$this->result['id']?>'" value='删除'></td> 
 </tr>
 </table>
+<p>回答</p>
+
+<?php foreach ($this->answers as $info) {?>
+  <tr>
+    <td><?= $info['content'] ?> </td>
+    <td><?= $info['name'] ?> </td><td><?= $info['time'] ?> </td><td><?= $info['agrees'] ?></td>
+    <td><input type="button"  onclick="window.location.href='/WebOne/public/proposal/answerreplyui?questionid=<?=$this->result['id']?>&answerid=<?=$info['id']?>&id=<?=$info['uid']?>'" value='评论'></td>
+  </tr>
+<?php }?>

@@ -3,6 +3,7 @@ require_once 'BaseController.php';
 require_once APPLICATION_PATH.'/models/QuestionModel.php';
 require_once APPLICATION_PATH.'/models/UserModel.php';
 require_once APPLICATION_PATH.'/models/AnswerModel.php';
+require_once APPLICATION_PATH.'/models/User_AgreeModel.php';
 class ProposalController extends BaseController
 {
 
@@ -258,6 +259,64 @@ class ProposalController extends BaseController
         
         $this->_forward('result4','globals');
         
+    }
+    
+    public function agreeAction(){
+        $answerid = $this->getRequest()->getParam('answerid','0');
+        $questionid = $this->getRequest()->getParam('questionid','0');
+        $account = $_COOKIE["account"];
+        
+        if($account == 'null'){
+            $this->view->info = '未登录';
+            $this->_forward('result3','globals');
+            return;
+        }
+        
+        $usertable = new UserModel();
+        $db1 = $usertable->getAdapter();
+        
+        $user_agreetable = new User_AgreeModel();
+        $db2 = $user_agreetable->getAdapter();
+        
+        $answertable = new AnswerModel();
+        $db3 = $answertable->getAdapter();
+        //查找当前用户ID
+        $result = $usertable -> fetchRow($db1->quoteInto('email = ?', $account)) ->toArray();
+        $uid = $result['id'];
+        
+        $isAgreed = $db2->query('SELECT COUNT(*) as num FROM userconagree WHERE answerid = ? AND userid = ?' , Array($answerid,$uid))->fetchAll()[0]['num'];
+
+        if($isAgreed!=0){
+            //取消赞
+            $where = $db2->quoteInto('answerid = ? AND ', $answerid).$db2->quoteInto('userid = ?',$uid);
+            $user_agreetable->delete($where);
+            
+            $agrees = $db3->query('SELECT agrees FROM answer WHERE id = ?' , $answerid)->fetchAll()[0]['agrees'];
+            --$agrees;
+            $updateset = array(
+                'agrees'=>$agrees
+            );
+            $answertable->update($updateset, $db3->quoteInto('id = ?', $answerid));
+        }
+        else{
+            //赞
+            $set = array(
+                'answerid'=>$answerid,
+                'userid'=>$uid
+            );
+            $user_agreetable->insert($set);
+            
+            $agrees = $db3->query('SELECT agrees FROM answer WHERE id = ?' , $answerid)->fetchAll()[0]['agrees'];
+            ++$agrees;
+            $updateset = array(
+                'agrees'=>$agrees
+            );
+            $answertable->update($updateset, $db3->quoteInto('id = ?', $answerid));
+        }
+        
+        $this->view->info = 'success';
+        $this->view->id = $questionid;
+        $this->_forward('result5','globals');
     }
 
 }

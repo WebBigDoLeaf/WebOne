@@ -15,7 +15,8 @@
 <?php foreach ($this->answers as $info) {?>
   <tr>
     <td><?= $info['content'] ?> </td>
-    <td><?= $info['name'] ?> </td><td><?= $info['time'] ?> </td><td><?= $info['agrees'] ?></td>
+    <td><?= $info['name'] ?> </td><td><?= $info['time'] ?> </td><td>赞：<?= $info['agrees'] ?></td>
     <td><input type="button"  onclick="window.location.href='/WebOne/public/proposal/answerreplyui?questionid=<?=$this->result['id']?>&answerid=<?=$info['id']?>&id=<?=$info['uid']?>'" value='评论'></td>
+    <td><input type="button"  onclick="window.location.href='/WebOne/public/proposal/agree?questionid=<?=$this->result['id']?>&answerid=<?=$info['id']?>'" value='赞'></td>
   </tr>
 <?php }?>

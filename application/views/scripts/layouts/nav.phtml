@@ -2,28 +2,32 @@
 
 
 <div class="row" id="nav_common">
-<div class="col-md-6 col-md-offset-1" id="nav_home" >
-<ul class="nav nav-tabs" >
-<li class="li" id="lis"><a href=#>首页</a></li>
-<li class="li" id="lis"><a href=#>健康</a></li>
-<li class="li" id="lis"><a href=#>运动</a></li>
-<li class="li" id="lis"><a href=#>活动</a></li>
-<li class="li" id="lis"><a href=#>建议</a></li>
-<div class="col-md-2 col-md-offset-1">
-<div id="pos">
-<li class="dropdown" >
-      <a class="dropdown-toggle" data-toggle="dropdown" href=#>
-       <?=$_SESSION["userinfo"][0][name]?>
-       <span class="caret"></span>
-      </a>
-        <ul class="dropdown-menu">
-         <li class="divider"></li>
-         <li class="li"><a href="/WebOne/public/Home/userinfo?id= <?=$_SESSION["userinfo"][0][id]?>">个人设置</a></li>
-         <li class="li"><a href="/WebOne/public">退出登录</a></li>
-        </ul>
-       </li>
-      </div>
-     </div>
-   </ul>   
+  <div class="col-md-1 col-md-offset-1" id="nav_logo">  </div>
+  <div class="col-md-2" id="nav_word">
+  <p>伴你健康每一天</p>  
   </div>
- </div>
+  <div class="col-md-6 col-md-offset-1" id="nav_home" >
+   <ul class="nav nav-tabs"  id="nav-tab">
+      <li class="li" id="lis"><a href=/WebOne/public/home/home id="nav_a">首页</a></li>
+      <li class="li" id="lis"><a href=/WebOne/public/home/home id="nav_a">健康</a></li>
+      <li class="li" id="lis"><a href=# id="nav_a">运动</a></li>
+      <li class="li" id="lis"><a href=/WebOne/public/activity id="nav_a">活动</a></li>
+      <li class="li" id="lis"><a href=# id="nav_a">建议</a></li>
+      <div class="col-md-2 col-md-offset-1" id="lis">
+         <div id="pos">
+           <li class="dropdown" >
+            <a class="dropdown-toggle" data-toggle="dropdown" href=# id="nav_a">
+            <?=$_SESSION["userinfo"][0][name]?>
+            <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="divider"></li>
+              <li class="li"><a href="/WebOne/public/Home/userinfo?id= <?=$_SESSION["userinfo"][0][id]?>">个人设置</a></li>
+              <li class="li"><a href="/WebOne/public">退出登录</a></li>
+            </ul>
+           </li>
+         </div>
+       </div>
+     </ul>   
+   </div>
+</div>

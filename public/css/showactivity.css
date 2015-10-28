@@ -1,0 +1,53 @@
+@CHARSET "UTF-8";
+
+#id_activitypanel{
+	position:absolute;
+	left:450px;
+	top:100px;
+	height:700px;	
+	width:520px;
+}
+#id_contentpanel{
+	height:700px;	
+	width:520px;
+}
+#id_content{
+	height:380px;
+}
+
+#id_content_part{
+	position:relative;
+	height:150px;
+	top:-35px;
+	left:170px;
+}
+#part_img{
+	position:relative;
+	top:100px;
+	left:-160px;
+}
+#part_content{
+	position:relative;
+	top:40px;
+}
+#part_join{
+	position:relative;
+	top:-8px;
+	left:210px;
+	
+}
+#part_join_button{
+	position:relative;
+	top:-1px;
+	left:20px;
+}
+#id_poweraction{
+	position:relative;
+	top:70px;
+	left:50px;
+}
+#id_poweraction_button{
+	position:relative;
+	left:100px;
+	width:100px;
+}

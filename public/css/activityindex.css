@@ -18,6 +18,10 @@
 	height:1000px;	
 	width:520px;
 }
+#panel-heading{
+	background-color:rgb(255,255,255);
+}
+
 #id_contentpanel{
 	height:1000px;	
 	width:520px;
@@ -32,25 +36,50 @@
 }
 #part_img{
 	position:relative;
-	top:100px;
+	top:110px;
 	left:-160px;
+}
+#part_content{
+	position:relative;
+	top:12px;
+	background-color:rgb(244,244,244);
+	width:200px;
+	height:100px;
 }
 #part_content_title{
 	position:relative;
 	top:8px;
-	left:40px;
+	left:18px;
 	font-size:20px;
 }
-#part_join{
+#part_content_titleword{
+	color:rgb(166,208,3);
+}
+#part_content_time{
 	position:relative;
-	top:-45px;
-	left:230px;
+	left:20px;
+}
+#part_join{
+	background-color:rgb(166,208,3);
+	position:relative;
+	top:-88px;
+	left:202px;
+	height:100px;
+	width:100px;
+	
+}
+#part_join_word{
+	position:relative;
+	left:27px;
+	top:37px;
+	color:white;
+	font-family:STXinwei;
 	
 }
 #id_content_page{
 	position:relative;
 	left:100px;
-	top:50px;
+	top:80px;
 }
 #page{
 	position:relative;

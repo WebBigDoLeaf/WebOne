@@ -1,13 +1,46 @@
-<h1>活动信息</h1>
-<table>
-<tr><td>name:</td><td><?= $this->result['name'] ?></td></tr>
-<tr><td>content:</td><td><?= $this->result['content'] ?></td></tr>
-<tr><td>begin:</td><td><?= $this->result['begin'] ?></td></tr>
-<tr><td>end:</td><td><?= $this->result['end'] ?></td></tr>
-<tr><td>nums:</td><td><?= $this->result['nums'] ?></td></tr>
-<tr>
-    <td><input type="button"  onclick="window.location.href='/WebOne/public/activity/chooseactivity?activityid=<?=$this->result['id']?>'" value='参与'></td>
-    <td><input type="button"  onclick="window.location.href='/WebOne/public/activity/modifyactivityui?activityid=<?=$this->result['id']?>'" value='修改'></td>
-    <td><input type="button"  onclick="window.location.href='/WebOne/public/activity/deleteactivity?activityid=<?=$this->result['id']?>'" value='删除'></td>
-</tr>
-</table>
+<head>
+<link rel="stylesheet" href="<?php echo $baseUrl;?>/WebOne/public/css/bootstrap.min.css">
+<script type="text/javascript" src="<?php echo $baseUrl;?>/WebOne/public/script/jquery.js"></script>
+<script type="text/javascript" src="<?php echo $baseUrl;?>/WebOne/public/script/bootstrap.min.js"></script>
+<link rel="stylesheet" href="<?php echo $baseUrl;?>/WebOne/public/css/nav.css">
+<link rel="stylesheet" href="<?php echo $baseUrl;?>/WebOne/public/css/showactivity.css">
+</head>
+
+<body>
+  <div id=id_activitypanel>
+    <div class="panel panel-success"  id=id_contentpanel>
+      <div class="panel-heading text-center">
+       <h3 class="panel-title"><?= $this->result['name'] ?></h3>
+      </div> 
+     <div id=id_main>
+      <div id=id_content style="border-bottom:1px solid #ccc">
+       <span style="font-size:24px;">&nbsp;&nbsp;&nbsp;</span>
+       <?= $this->result['content'] ?>
+      </div>
+         <div id=id_content_part>
+             <div id=part_img>
+             <img class=img-rounded src="<?php echo $baseUrl;?>/WebOne/public/image/11.jpg" border=0 width=120 height=80 />
+             </div>
+             <div id=part_content>
+               <div id=part_content_time>
+                 <p id=part_content_begin>
+                   Start:<?= $this->result['begin'] ?>
+                 </p>
+                 <p id=part_content_end>
+                   End :<?= $this->result['end']?>
+                 </p>
+               </div>
+             </div>
+             <div id=part_join>
+                 <?=$this->result['nums']?>人参与
+                 <input type="button"  class="btn btn-success"  id="part_join_button" onclick="window.location.href='/WebOne/public/activity/chooseactivity?activityid=<?=$this->result['id']?>'" value='参与'>
+             </div>
+           </div>  
+        <div id=id_poweraction>
+         <input type="button" class="btn btn-success" id=id_poweraction_button onclick="window.location.href='/WebOne/public/activity/modifyactivityui?activityid=<?=$this->result['id']?>'" value='修改'>
+         <input type="button" class="btn btn-success" id=id_poweraction_button onclick="window.location.href='/WebOne/public/activity/deleteactivity?activityid=<?=$this->result['id']?>'" value='删除'>
+        </div>
+      </div>
+    </div>
+  </div>  
+</body>

@@ -21,18 +21,20 @@
       
    <div id="id_panel">
      <div class="panel panel-success" id="id_contentpanel">
-      <div class="panel-heading">
+      <div class="panel-heading" id=panel-heading>
       <h3 class="panel-title">最新活动</h3>
      </div>   
        <div id=id_content>
          <?php foreach ($this->result as $info) {?>
            <div id=id_content_part>
              <div id=part_img>
-             <img class=img-rounded src="<?php echo $baseUrl;?>/WebOne/public/image/11.jpg" border=0 width=120 height=80 />
+             <img class=img-rounded src="<?php echo $baseUrl;?>/WebOne/public/image/11.jpg" border=0 width=140 height=100 />
              </div>
              <div id=part_content>
                <p id=part_content_title>
-                  <a href='/WebOne/public/activity/showactivity?activityid=<?=$info['id']?>'><?= $info['name'] ?></a>
+                <a href='/WebOne/public/activity/showactivity?activityid=<?=$info['id']?>'>
+                 <span id=part_content_titleword><?= $info['name'] ?></span>
+                 </a>
                </p>
                <div id=part_content_time>
                  <p id=part_content_begin>
@@ -44,7 +46,7 @@
                </div>
              </div>
              <div id=part_join>
-                 <?=$info[nums]?>参与
+                 <p id=part_join_word><?=$info[nums]?>人参与</p>
              </div>
            </div>  
          <?php }?>

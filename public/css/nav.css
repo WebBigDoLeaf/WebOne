@@ -12,3 +12,36 @@
 	top:10px;
 	left:160px;
 }
+#nav-tab{
+	position:relative;
+	height:100px;
+}
+#lis{
+	position:relative;
+	top:30px;
+	left:50px;
+}
+#nav_a{
+	color:rgb(255,255,255);
+	font-size:20px;
+}
+
+#nav_common{
+	background-image:url(/WebOne/public/image/nav1.jpg);
+	height:100px;
+}
+#nav_word{
+	font-family:YouYuan;
+	font-size:12px;
+	font-weight:bold;
+    color:white;	
+	top:30px;
+}
+#nav_logo{
+	background-image:url(/WebOne/public/image/logo1.png);
+	position:relative;
+	left:10px;
+	top:20px;
+	height:60px;
+	width:50px;
+}

@@ -20,19 +20,44 @@ class ActivityController extends BaseController
         
         
         $activity = new ActivityModel();        
-        $db = $activity->getAdapter();     
+        $db = $activity->getAdapter();
+        $num = $db->query('SELECT COUNT(*) as num from activity')->fetchAll()[0]['num'];
+     
+        $pages=ceil($num/5);    
+        
         if($page=="")
         {
             $page=0;
         }        
-        //确定页面显示的规范
+        //确定页面显示的规范  处理分页的逻辑
         if($page<3)
         {
+            if($pages>3)
+            {
             $set=array(1,2,3,4);
-        }else
+            }else{
+               $set=array();
+              for($i=1;$i<=$pages;$i++) 
+              {
+                  $set[]=$i;
+              }
+            }            
+        }else if($page>=3)
         {
+            if($page+3<=$pages)
+            {
             $set=array($page,$page+1,$page+2,$page+3);
+            }else{
+                $set=array();
+                for($i=$page;$i<=$pages;$i++)
+                {
+                    $set[]=$i;                   
+                }
+                
+            }
         }
+        
+        
         //按开始时间倒序展示10条记录
         $where = '1=1';
         $order = 'begin desc';
@@ -217,7 +242,6 @@ class ActivityController extends BaseController
         else{
             $this->view->info = 'fail';
         }
-        
         $this->_forward('result2','globals');
         
     }

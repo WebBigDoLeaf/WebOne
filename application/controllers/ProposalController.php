@@ -16,13 +16,8 @@ class ProposalController extends BaseController
     {
         $questiontable = new QuestionModel();
         $db = $questiontable->getAdapter();
-        
         //按开始时间倒序展示10条记录
-        $where = '1=1';
-        $order = 'time desc';
-        $count = 10;
-        $offset = 0;
-        $result = $questiontable->fetchAll($where, $order, $count, $offset)->toArray();
+        $result = $db->query('SELECT question.*,User.name as uname FROM question,User WHERE question.userid = User.id order by time desc')->fetchAll();
         $this->view->result = $result; 
     }
     

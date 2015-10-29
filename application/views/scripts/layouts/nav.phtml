@@ -1,5 +1,7 @@
-
-
+<link rel="stylesheet" href="<?php echo $baseUrl;?>/WebOne/public/css/bootstrap.min.css">
+<script type="text/javascript" src="<?php echo $baseUrl;?>/WebOne/public/script/jquery.js"></script>
+<script type="text/javascript" src="<?php echo $baseUrl;?>/WebOne/public/script/bootstrap.min.js"></script>
+<link rel="stylesheet" href="<?php echo $baseUrl;?>/WebOne/public/css/nav.css">
 
 <div class="row" id="nav_common">
   <div class="col-md-1 col-md-offset-1" id="nav_logo">  </div>
@@ -9,10 +11,10 @@
   <div class="col-md-6 col-md-offset-1" id="nav_home" >
    <ul class="nav nav-tabs"  id="nav-tab">
       <li class="li" id="lis"><a href=/WebOne/public/home/home id="nav_a">首页</a></li>
-      <li class="li" id="lis"><a href=/WebOne/public/home/home id="nav_a">健康</a></li>
-      <li class="li" id="lis"><a href=# id="nav_a">运动</a></li>
+      <li class="li" id="lis"><a href=/WebOne/public/Home/userinfo?id= <?=$_SESSION["userinfo"][0][id]?> id="nav_a">个人</a></li>
+      <li class="li" id="lis"><a href=/WebOne/public/health id="nav_a">健康</a></li>
       <li class="li" id="lis"><a href=/WebOne/public/activity id="nav_a">活动</a></li>
-      <li class="li" id="lis"><a href=# id="nav_a">建议</a></li>
+      <li class="li" id="lis"><a href=/WebOne/public/proposal id="nav_a">问题</a></li>
       <div class="col-md-2 col-md-offset-1" id="lis">
          <div id="pos">
            <li class="dropdown" >

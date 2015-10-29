@@ -1,0 +1,78 @@
+<head>
+<link rel="stylesheet" href="<?php echo $baseUrl;?>/WebOne/public/css/health.css">
+<link rel="stylesheet" href="<?php echo $baseUrl;?>/WebOne/public/css/codoon.css">
+<link rel="stylesheet" href="<?php echo $baseUrl;?>/WebOne/public/css/health/fit.css">
+
+</head>
+<body>
+ <div id=health_nav>
+   <p id=health_nav_title>健康管理</p>
+      <ul class="nav nav-pills nav-stacked" id="id_health_nav">  
+       <li class=><a href="/WebOne/public/health/index">我的运动</a></li>
+       <li class="active"><a href=#>身体管理</a></li>
+      </ul>
+ </div>
+
+   <div id="id_panel">
+    <div class="panel panel-success" id="id_contentpanel">
+    
+         <div id=id_manage_title>
+          <p id=id_manage_word>身体管理</p>
+         </div>
+        
+        <div class="bmi">
+		  <div class="bmi_box1 clearfix">
+			<div class="span4" id="id_bmi_span">
+				<div class="blank40"></div>
+				<div id="id_bmi_info">
+				<p class=word2 id=id_bmi_info3>健康</p>
+				<p class=word  id=id_bmi_info1>BMI</p>
+				<p class=word  id=id_bmi_info2> 20.8</p>
+				</div>
+				<div id=id_bmi_body>
+				  <form action="#" method="post">
+				    <p class=word1 id=id_bmi_bodyinfo>身高:</p>
+				    <input type="text" id=id_bmi_bodytext class='form-control' name="height" value="170" />
+				    <p class=word1 id=id_bmi_bodyinfo1>厘米</p>
+				    <div id=id_bmi_weight>
+				    <p class=word1 id=id_bmi_bodyinfo>体重:</p> 
+				    <input type="text" id=id_bmi_bodytext class='form-control' name="weight" value="65" />
+				    <p class=word1 id=id_bmi_bodyinfo1>公斤</p>
+                    <input  type="submit"  class="btn btn-success"  id="submit" hidefocus="true" value="保存" >
+                    </div>
+                  </form>
+				</div>
+			</div>
+			<div class="fl bmi_box2 sapn8" id=bmi_pic>
+				<div class="blank30"></div>
+				<div class="blank20"></div>
+				<div class="blank20"></div>
+				<div class="bmi_bg ico3 photo_png"></div>
+				<div class="bmi_pointer ico3 photo_png co3 fb" style="left: 68.4181818181818px;">20.8</div>
+				<div class="co3 fb" style="margin-top: -20px;">
+					<span style="margin-left:25px;">18.5</span>
+					<span style="margin-left:84px;">24</span>
+					<span style="margin-left:60px;">28</span></div>
+				<div class="co4">
+					<span style="margin-left:10px;">偏轻</span>
+					<span style="margin-left: 25px;">健康</span>
+					<span style="margin-left:85px;">超重</span>
+					<span style="margin-left:50px;">肥胖</span></div>
+			</div>
+		<div class="blank30"></div>
+		<div class="bmi_result" id=bmi_advice>
+		     <div class="rpArea">
+			   <div class="blank10"></div>
+			    <div class="f18 tl co2 fl" style="width: 500px;">
+				你的理想体重<span class="f36 fb" id="opti_weight">63.6</span>公斤，还需要摄入热量<span
+					class="f36 fb" id="wanted_calories">10740</span>大卡，注意加强营养，合理搭配膳食！！
+			   </div>
+			   <div class="blank10"></div>
+		     </div>
+	      </div>
+	   </div>
+	   
+	   
+    </div>
+  </div>
+</body>

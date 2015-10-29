@@ -14,9 +14,9 @@
 #id_panel{
 	position:absolute;
 	left:450px;
-	top:100px;
+	top:80px;
 	height:1000px;	
-	width:520px;
+	width:600px;
 }
 #panel-heading{
 	background-color:rgb(255,255,255);
@@ -24,7 +24,7 @@
 
 #id_contentpanel{
 	height:1000px;	
-	width:520px;
+	width:620px;
 }
 #id_content{
 	position:relative;

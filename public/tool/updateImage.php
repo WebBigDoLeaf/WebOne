@@ -43,7 +43,7 @@ $id=$_SESSION["userinfo"][0][id];
 <body>
 <form enctype="multipart/form-data" method="post" name="upform">
   <input name="upfile" id="upfile" type="file">
-  <input type="submit"  class="btn btn-success"  id="submit" hidefocus="true" value="上传" onclick="javascript:skip()"><br>
+  <input type="submit"  class="btn btn-success"  id="portrait_submit" hidefocus="true" value="上传" onclick="javascript:skip()"><br>
 </form>
 
 <?php

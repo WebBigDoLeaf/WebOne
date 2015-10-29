@@ -1,0 +1,139 @@
+.clearfix {
+	display: inline-block;
+}
+
+.fl {
+	float: left;
+}
+
+.fr {
+    float: right;
+}
+
+div.fl {
+	float: left;
+}
+
+.ico3 {
+	background: url(../image/ico3.png) no-repeat;
+	overflow: hidden;
+}
+
+.f24 {
+	font-size: 22px;
+}
+
+.blank10 {
+	height: 10px;
+	clear: both;
+	font-size: 0px;
+	overflow: hidden;
+}
+
+.blank0 {
+	height: 0px;
+	clear: both;
+	font-size: 0px;
+	overflow: hidden;
+}
+
+.blank20 {
+	height: 20px;
+	clear: both;
+	font-size: 0px;
+	overflow: hidden;
+}
+
+.blank30 {
+  height: 30px;
+  clear: both;
+  font-size: 0px;
+  overflow: hidden;
+}
+
+.blank40 {
+  height: 40px;
+  clear: both;
+  font-size: 0px;
+  overflow: hidden;
+}
+
+.tc {
+	text-align: center;
+}
+
+/*ÐÂÔö¹¾ßË -sandy*/
+.runsport {
+	position: relative;
+	background-color: rgb(243,243,243);
+	padding-left: 2%;
+    margin-bottom: 15px;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+	height: 200px;
+}
+
+.co1 {
+    color: #919191;
+}
+
+.runsport .rp_contentBox {
+    width: 160px;
+    border-right: 1px solid #e9e9e9;
+}
+
+.rp_content.co1 {
+    padding-left: 20%;
+}
+
+.rp_contentBox.fl {
+    float: left;
+}
+
+.tc {
+    text-align: center;
+}
+
+.f30 {
+    font-size: 30px;
+}
+
+.marr10 {
+    margin-right: 10px;
+}
+
+.runsport .rpFace_cry {
+    width: 46px;
+    height: 35px;
+    background-position: -266px -4px;
+    margin: 0 auto;
+}
+.round {
+    background: url("../image/singledog.jpg" ) no-repeat;
+    overflow: hidden;
+}
+
+.f18 {
+    font-size: 18px;
+}
+
+.f14{
+    font-size: 14px;
+}
+
+.hometitle {
+    width: 86.167%;
+    height: 35px;
+    line-height: 35px;
+    border-bottom: #dfdfdf 1px solid;
+}
+
+.content_right {
+    width: 100%;
+    height: auto;
+    min-height: 400px;
+    z-index: 2;
+    overflow-x: hidden;
+
+    position: relative;
+}

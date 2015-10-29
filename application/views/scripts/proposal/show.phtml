@@ -1,23 +1,44 @@
-<h1>问题</h1>
-<table>
-<tr><td>title:</td><td><?= $this->result['title'] ?></td></tr>
-<tr><td>content:</td><td><?= $this->result['content'] ?></td></tr>
-<tr><td>time:</td><td><?= $this->result['time'] ?></td></tr>
-<tr><td>answernum:</td><td><?= $this->result['answernum'] ?></td></tr>
-<tr>
-    <td><input type="button"  onclick="window.location.href='/WebOne/public/proposal/replyui?questionid=<?=$this->result['id']?>&id=<?= $this->result['userid'] ?>'" value='评论'></td>
-    <td><input type="button"  onclick="window.location.href='/WebOne/public/proposal/modify?questionid=<?=$this->result['id']?>'" value='修改'></td>
-    <td><input type="button"  onclick="window.location.href='/WebOne/public/proposal/delete?questionid=<?=$this->result['id']?>'" value='删除'></td> 
-</tr>
-</table>
-<p>回答</p>
+<head>
+<link rel="stylesheet" href="<?php echo $baseUrl;?>/WebOne/public/css/proposalindex.css">
+</head>
 
-<?php foreach ($this->answers as $info) {?>
-  <tr>
-    <td><?= $info['content'] ?> </td>
-    <td><?= $info['name'] ?> </td><td><?= $info['time'] ?> </td><td>赞：<?= $info['agrees'] ?></td>
-    <td><input type="button"  onclick="window.location.href='/WebOne/public/proposal/answerreplyui?questionid=<?=$this->result['id']?>&answerid=<?=$info['id']?>&id=<?=$info['uid']?>'" value='评论'></td>
-    <td><input type="button"  onclick="window.location.href='/WebOne/public/proposal/agree?questionid=<?=$this->result['id']?>&answerid=<?=$info['id']?>'" value='赞'></td>
-  </tr>
-<?php }?>
+<div id=id_panel>
+  <div class="panel panel-success" id="id_contentpanel">
+      <div class="panel-heading text-center" id=panel-heading>
+      <h4 class="panel-title"><?= $this->result['title'] ?></h4>
+     </div> 
+      <div id=id_question_contents>
+       <span style="font-size:24px;">&nbsp;&nbsp;&nbsp;</span>
+        <p id=id_question_name>提问者：H77</p>
+       <p id=id_question_time>时间：<?= $this->result['time'] ?></p>
+       <p id=id_question_content>
+       <span style="font-size:24px;">&nbsp;&nbsp;&nbsp;</span>
+       <?= $this->result['content'] ?>哎，心好累好累，真的好累，怎么办啊，
+       心好累好累，真的好累，怎么办啊心好累好累，真的好累，怎么办啊</p>
+       <p id=id_question_answers>回答数：<?= $this->result['answernum'] ?></p>
+      </div>      
+      
+     
+     <div id=id_content>
+        <hr id=id_line></hr>
+      <?php foreach ($this->answers as $info) {?>
+       <div id=id_reply>
+        <p id=part_reply_content><?= $info['content'] ?> </p>
+        <p id=part_reply_answers>
+                             赞数:<?= $info['agrees'] ?>
+        </p>
+        <p id=part_reply_time>
+                              回答时间:<?= $info['time'] ?>
+        </p>
+        <p id=part_reply_name>
+        <a><?= $info['name'] ?></a>
+        </p>       
+        </div>
+      <hr id=id_reply_line></hr>     
+      <?php }?>
+       </div>
+   </div>
+</div>
+
+
 

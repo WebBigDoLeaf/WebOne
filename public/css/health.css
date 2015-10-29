@@ -1,0 +1,218 @@
+@CHARSET "UTF-8";
+
+#health_nav{
+	position:relative;
+    left:150px;
+	top:110px;
+	width:300px;
+	height:250px;
+}
+#id_health_nav{
+	position:relative;
+	width:100px;		
+	left:40px;
+}
+#health_nav_title{
+	font-size:30px;
+}
+#id_panel{
+	position:absolute;
+	left:450px;
+	top:80px;
+	height:1000px;	
+	width:620px;
+}
+#id_contentpanel{
+	height:1000px;	
+	width:600px;
+}
+#id_health_part_title,#id_sport_part_title{
+	position:relative;
+	left:40px;
+	top:30px;
+	font-family:STHeiti;
+	font-size:21px;
+	font-weight:bold;
+    color:black;		
+}
+#id_health_part,#id_sport_part{
+	height:300px;
+}
+
+#id_health_word{
+	position:relative;
+	font-family:YouYuan;
+	font-size: 20px;
+	color:black;
+	width:200px;
+	left:30px;
+	top:20px;
+}
+.health{
+	position:relative;
+	left:60px;
+	top:50px;
+}
+#id_health_heart{
+    position:relative;
+	font-size: 12px;
+	color:white;
+	height:18px;
+	left:20px;
+	top:13px;
+}
+#id_health_heart1{
+    position:relative;
+	font-size: 12px;
+	color:white;
+	height:18px;
+	left:18px;
+	top:11px;
+}
+#id_health_part_notice{
+	position:relative;
+	font-size: 12px;
+	font-family:YouYuan;
+	width:500px;
+	left:50px;
+	top:80px;
+	
+}
+#id_health_block1{
+	background-image:url(/WebOne/public/image/hui1.png);
+	width:144px;
+	height:144px;
+}
+#id_health_block2{
+	background-image:url(/WebOne/public/image/hong1.png);
+	width:144px;
+	height:144px;
+}
+#id_health_block3{
+	background-image:url(/WebOne/public/image/lan1.png);
+	width:144px;
+	height:144px;
+}
+
+#id_sport{
+	position:relative;
+	top:40px;
+	left:23px;
+}
+#sport_num{
+	position:relative;
+	top:-10px;
+}
+#sport_advice{
+	position:relative;
+	top:50px;
+	left:-15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+#id_manage_title{
+	position:relative;
+	left:30px;
+	top:40px;
+	height:40px;
+	width:200px;
+}
+#id_manage_word{
+	font-family:STHeiti;
+	font-size:23px;
+	font-weight:bold;
+    color:black;
+}
+
+#id_bmi_info{
+	position:relative;
+	left:60px;
+	top:25px;
+	background-image:url(/WebOne/public/image/round1.png);
+	width:137px;
+	height:137px;
+	
+}
+#id_bmi_info1{
+	position:relative;
+	left:35px;
+	top:25px;
+}
+#id_bmi_info2{
+	position:relative;
+	left:70px;
+	top:-10px;
+}
+#id_bmi_info3{
+	position:relative;
+	left:35px;
+	top:18px;
+}
+#id_bmi_body{
+    position:relative;
+	top:-110px;
+	left:180px;	
+}
+.word{
+	font-family:YouYuan;
+	font-size: 18px;
+	color:white;
+	width:200px;
+}
+.word2{
+	font-family:YouYuan;
+	font-size: 30px;
+	color:white;
+	width:200px;
+}
+.word1{
+	font-family:YouYuan;
+	font-size: 18px;
+	color:green;
+}
+
+
+#id_bmi_bodyinfo{
+	position:relative;
+	left:50px;
+	top:30px;
+}
+#id_bmi_bodytext{
+	position:relative;
+	left:120px;
+	top:-8px;
+	width:50px;
+}
+#id_bmi_bodyinfo1{
+	position:relative;
+	top:-40px;
+	left:180px;
+}
+#id_bmi_weight{
+	position:relative;
+	top:-60px;
+}
+#submit{
+	position:relative;
+	left:240px;
+	top:-100px;
+}
+#bmi_pic{
+	position:relative;
+	top:-240px;
+}
+#bmi_advice{
+	position:relative;
+	left:30px;
+	top:-200px;
+}
+

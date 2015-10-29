@@ -1,9 +1,6 @@
 <head>
-<link rel="stylesheet" href="<?php echo $baseUrl;?>/WebOne/public/css/bootstrap.min.css">
-<script type="text/javascript" src="<?php echo $baseUrl;?>/WebOne/public/script/jquery.js"></script>
-<script type="text/javascript" src="<?php echo $baseUrl;?>/WebOne/public/script/bootstrap.min.js"></script>
+
 <script type="text/javascript" src="<?php echo $baseUrl;?>/WebOne/public/script/slider.js"></script>
-<link rel="stylesheet" href="<?php echo $baseUrl;?>/WebOne/public/css/nav.css">
 <link rel="stylesheet" href="<?php echo $baseUrl;?>/WebOne/public/css/activityindex.css">
 </head>
 
@@ -17,8 +14,7 @@
          <h4 class="panel-title">公告消息</h4>
        </div>          
     </div>
-   
-      
+  
    <div id="id_panel">
      <div class="panel panel-success" id="id_contentpanel">
       <div class="panel-heading" id=panel-heading>
@@ -50,7 +46,6 @@
              </div>
            </div>  
          <?php }?>
-         
            <div id=id_content_page>
            <?php if($this->page>0){?>
              <a  href="/WebOne/public/Activity/index?page=<?=$this->page-1?>">上一页</a>
@@ -71,6 +66,5 @@
      </div>   
    </div>
  <script>
- new slider({id:'slider'});
  </script>
 </body>

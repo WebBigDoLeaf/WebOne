@@ -15,12 +15,10 @@
 	position:relative;
 	left:30px;
 }
-
-
 #panel{
 	position:absolute;
 	left:450px;
-	top:100px;
+	top:80px;
 	height:600px;	
 	width:520px;
 }
@@ -57,3 +55,46 @@ dt{
 	left:70px;
 	width:100px;	
 }
+#userImg{
+	position:relative;
+	top:40px;
+	left:155px;
+}
+
+
+/*  portrait里面的内 */
+
+
+
+
+#remind{
+	position:relative;
+	top:60px;
+	left:50px;
+}
+#word1{
+	position:relative;
+	left:200px;
+}
+#word2{
+	 position:relative;
+	 top:-23px;
+	 left:40px;
+	 font-size:8px;
+}
+#upfile{
+	position:relative;
+	top:10px;
+	left:140px;
+}
+#portrait_submit{
+	 position:relative;
+	 top:60px;
+	 left:180px;
+}
+#result{
+	 position:absolute;
+	 top:500px;
+	 left:210px;
+}
+

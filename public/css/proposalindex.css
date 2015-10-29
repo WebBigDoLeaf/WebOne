@@ -1,51 +1,69 @@
 @CHARSET "UTF-8";
 
-#id_notice{
-	position:absolute;
-	left:130px;
-	top:200px;
-	height:200px;
-	widteh:160px;
+
+
+#panel-heading{
+	background-color:rgb(255,255,255);
 }
-.slider li{padding:5px 0;overflow:hidden;width:100%}
-
-
-
 #id_panel{
 	position:absolute;
 	left:450px;
-	top:100px;
+	top:80px;
 	height:1000px;	
-	width:520px;
+	width:620px;
 }
 #id_contentpanel{
 	height:1000px;	
-	width:520px;
+	width:600px;
 }
 #id_content{
 	position:relative;
-	top:-55px;
+	top:15px;
 	left:200px;
 }
 #id_content_part{
-	height:150px;
+	height:190px;
 }
 #part_img{
 	position:relative;
 	top:100px;
 	left:-160px;
 }
+#part_content_question{
+	position:relative;
+	left:-190px;
+	width:560px;
+}
 #part_content_title{
 	position:relative;
-	top:8px;
 	left:40px;
 	font-size:20px;
+}
+#part_content_name{
+	position:relative;
+	left:-140px;
+	top:25px;
+}
+#part_content_time{
+	position:relative;
+	left:-40px;
+	top:55px;
+}
+#part_content_answer{
+	position:relative;
+	left:190px;
+	top:85px;
 }
 #part_join{
 	position:relative;
 	top:-45px;
 	left:230px;
 	
+}
+#id_line{
+	position:relative;
+	left:-200px;
+	width:560px;
 }
 #id_content_page{
 	position:relative;
@@ -67,4 +85,52 @@
 	font-family:YouYuan;
 	padding-left:5px;
 	padding-right:5px;
+}
+
+/*-- show里面的内 */
+
+#id_reply{
+   position:relative;
+   height:90px;
+  
+}
+#part_content_reply{
+	position:relative;
+	left:-165px;
+	top:30px;
+}
+#id_reply_line{
+	position:relative;
+	left:-200px;
+	top:20px;
+	width:560px;
+}
+#id_question_contents{
+	height:430px;
+}
+#id_question_name{
+	position:relative;
+	left:110px;
+	top:-10px;
+}
+#id_question_time{
+	position:relative;
+	left:250px;
+	top:-40px;
+}
+#id_question_content{
+	position:relative;
+	top:-20px;
+}
+#id_question_answers{
+	position:relative;
+	left:400px;
+	top:240px;
+}
+
+#part_reply_name{
+	position:relative;
+	left:-180px;
+	top:-90px;
+	
 }

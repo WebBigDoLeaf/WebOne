@@ -30,6 +30,8 @@ class ProposalController extends BaseController
         //展示问题具体内容
         $this -> view -> result = $result[0];
         
+        
+        
         //所有一级回答
         $answertable = new AnswerModel();
         $db1 = $answertable->getAdapter();

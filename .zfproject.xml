@@ -26,6 +26,12 @@
         <controllerFile controllerName="Home">
           <actionMethod actionName="index"/>
         </controllerFile>
+        <controllerFile controllerName="Sport">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="Health">
+          <actionMethod actionName="index"/>
+        </controllerFile>
       </controllersDirectory>
       <formsDirectory enabled="false"/>
       <layoutsDirectory enabled="false"/>
@@ -53,6 +59,12 @@
             <viewScriptFile forActionName="index"/>
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="Home">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Sport">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Health">
             <viewScriptFile forActionName="index"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>

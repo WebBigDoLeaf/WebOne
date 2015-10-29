@@ -1,70 +1,48 @@
 <head>
-<link rel="stylesheet" href="/WebOne/public/css/bootstrap.min.css">
-<script type="text/javascript" src="/WebOne/public/script/jquery.js"></script>
-<script type="text/javascript" src="/WebOne/public/script/bootstrap.min.js"></script>
-<script type="text/javascript" src="/WebOne/public/script/slider.js"></script>
-<link rel="stylesheet" href="/WebOne/public/css/nav.css">
-<link rel="stylesheet" href="/WebOne/public/css/proposalindex.css">
+<link rel="stylesheet" href="<?php echo $baseUrl;?>/WebOne/public/css/proposalindex.css">
 </head>
-
-
-
-
-
 <body>
    <div id="id_panel">
      <div class="panel panel-success" id="id_contentpanel">
-      <div class="panel-heading">
-      <h3 class="panel-title">问题</h3>
+      <div class="panel-heading text-center" id=panel-heading>
+      <h4 class="panel-title">问题</h4>
      </div>   
        <div id=id_content>
          <?php foreach ($this->result as $info) {?>
            <div id=id_content_part>
-           <div id=part_img>
-             <img class=img-rounded src="<?php echo $baseUrl;?>/WebOne/public/image/11.jpg" border=0 width=120 height=80 />
-             </div>
              <div id=part_content>
                <p id=part_content_title>
                   <a href='/WebOne/public/proposal/show?questionid=<?=$info['id']?>'><?= $info['title'] ?></a>
                </p>
-               <div id=part_content_time>
-                 <p id=part_content_begin>
-                   Answers:<?= $info['answernum'] ?>
+             
+               <div id=part_content_info>
+                 <p id=part_content_question>
+                   <span style="font-size:24px;">&nbsp;&nbsp;&nbsp;</span>
+                 0.0我想问一个问题啊，问什么好呢，我不知道呀；但是还是要问。0.0别烦我 我在写Web呢 你狗带</p>
+                 <p id=part_content_answer>
+                                                            回答数:<?= $info['answernum'] ?>
                  </p>
-                 <p id=part_content_end>
-                   Time :<?= $info['time'] ?>
+                 <p id=part_content_time>
+                                                            发表时间:<?= $info['time'] ?>
                  </p>
-                 <p id=part_content_end>
-                   By :<?= $info['uname'] ?>
+                 <p id=part_content_name>
+                                                              作者 :<?= $info['uname'] ?>
                  </p>
                </div>
              </div>
              <div id=part_join>
-                
              </div>
            </div>  
+           <hr id=id_line></hr>
          <?php }?>
          
            <div id=id_content_page>
-           <?php if($this->page>0){?>
-             <a  href="/WebOne/public/Activity/index?page=<?=$this->page-1?>">上一页</a>
-           <?php }?>         
-             
-         <?php foreach ($this->count as $index) {?>   
-            <?php if($index==($this->page+1)){?>
-             <span id=current><?=$index?></span>                 
-            <?php } else {?>
-           <a id=page href="/WebOne/public/Activity/index?page=<?=$index-1?>"><?=$index?></a>   
-            <?php } }?>               
-             <?php if($this->page<8){?>
-             <a  href="/WebOne/public/Activity/index?page=<?=$this->page+1?>">下一页</a>
-             <?php }?>                       
+                      
            </div>        
             
        </div>       
      </div>   
    </div>
  <script>
- new slider({id:'slider'});
  </script>
 </body>

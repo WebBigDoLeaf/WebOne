@@ -16,7 +16,7 @@
 #panel{
 	position:absolute;
 	left:450px;
-	top:100px;
+	top:80px;
 	height:600px;	
 	width:520px;
 }
@@ -40,7 +40,7 @@
 	position:relative;
 	left:200px;
 }
-#word2{
+#word2{	
 	 position:relative;
 	 top:-23px;
 	 left:40px;

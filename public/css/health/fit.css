@@ -1,0 +1,3288 @@
+.list {
+	display: block;
+}
+
+.mc {
+	margin: 0 auto;
+	height: 15px;
+}
+
+.my_d_pie {
+	height: 195px;
+}
+
+.my_pie_com {
+	position: relative;
+	width: 190px;
+	height: 190px;
+}
+
+.my_pie_night {
+	background-position: -195px -320px;
+	width: 193px;
+	height: 190px;
+	margin-left: 25px;
+}
+
+.my_pie_bmi {
+	background-position: -5px -320px;
+	width: 190px;
+	height: 190px;
+	margin-left: 44px;
+	position: relative;
+}
+
+.my_pie_bmi .bmi_cursor {
+	width: 10px;
+	height: 10px;
+	background-position: -107px -330px;
+	position: absolute;
+	top: 112px;
+	left: 20px;
+}
+
+#my_pie_com_p {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1
+}
+
+#my_pie_night_p {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1
+}
+
+#my_pie_bmi_p {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1
+}
+
+.index2 {
+	position: relative;
+	z-index: 2;
+}
+
+.sleep_G {
+	width: 20px;
+	height: 20px;
+	display: inline;
+	background-color: #bef1f3;
+}
+
+.sleep_D {
+	width: 16px;
+	height: 16px;
+	display: inline;
+	border: 2px #8ddbf1 solid;
+}
+
+.sleep_B {
+	width: 20px;
+	height: 20px;
+	display: inline;
+	background-color: #4f4f4f;
+}
+
+.Tydjl {
+	width: 220px;
+}
+
+.Tydjl_i {
+	width: 58px;
+	height: 56px;
+	background-position: -4px -65px;
+}
+
+.TydT {
+	width: 200px;
+}
+
+.TydT_i {
+	width: 58px;
+	height: 56px;
+	background-position: -61px -65px;
+}
+
+.Tydk_i {
+	width: 58px;
+	height: 56px;
+	background-position: -119px -65px;
+}
+
+.REW .REWR {
+	width: 25%;
+	height: 176px;
+	background-color: #f1cc7e;
+}
+
+.REW .REWM {
+	width: 160px;
+	height: 176px;
+	background-color: #b0b0b0;
+}
+
+.REW .REWG {
+	width: 160px;
+	height: 176px;
+	background-color: #f1cc7e;
+}
+
+.REW .REWL {
+	width: 25%;
+	height: 176px;
+	background-color: #b0b0b0;
+}
+
+.REWR_i {
+	width: 98px;
+	height: 65px;
+	background-position: -5px -128px;
+}
+
+.REWM_i {
+	width: 98px;
+	height: 65px;
+	background-position: -103px -128px;
+}
+
+.REWG_i {
+	width: 98px;
+	height: 65px;
+	background-position: -201px -128px;
+}
+
+.REWL_i {
+	width: 98px;
+	height: 65px;
+	background-position: -299px -124px;
+}
+
+.EARTH_i {
+	width: 98px;
+	height: 65px;
+	background-position: -395px -125px;
+}
+
+.f60 {
+	font-size: 50px;
+	line-height: 100%;
+}
+
+.fn {
+	font-weight: normal;
+}
+
+.Mdes {
+	line-height: 100%;
+}
+
+.Mdes div {
+	height: 22px;
+}
+
+.Mdes .MP {
+	background-color: #f3bb34;
+	width: 22px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+
+.Mdes .MA {
+	background-color: #92b452;
+	width: 22px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+
+.Mdes .MO {
+	background-color: #d8ecc7;
+	width: 22px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+
+.f60 {
+	font-size: 50px;
+}
+
+.my_postion {
+	position: relative;
+	height: 450px;
+}
+
+.my_postion_des {
+	position: absolute;
+	width: 120px;
+	height: 129px;
+	background-position: -280px -273px;
+	left: 0;
+	top: 230px;
+	z-index: 1;
+}
+
+.my_postion .APTB {
+	width: 600px;
+	height: 300px;
+	position: absolute;
+	top: 0px;
+	left: 50px;
+}
+
+.APTB .POT {
+	width: 23px;
+	height: 13px;
+	background-position: -231px -292px;
+	position: relative;
+	_margin-left: 1px;
+}
+
+.APTB .POB {
+	width: 23px;
+	height: 13px;
+	background-position: -257px -293px;
+}
+
+.APTB .POH {
+	background-color: #d8ecc7;
+	width: 23px;
+}
+
+.APTB .postion {
+	height: 100%;
+	position: relative;
+	width: 33px;
+}
+
+.APTB .MO .POT {
+	width: 23px;
+	height: 13px;
+	background-position: -231px -308px;
+	position: relative;
+	_margin-left: 1px;
+}
+
+.APTB .MO .POB {
+	width: 23px;
+	height: 13px;
+	background-position: -257px -309px;
+	_margin-left: 1px;
+}
+
+.APTB .MO .POH {
+	background-color: #f3bb34;
+	width: 23px;
+}
+
+.APTB .AO .POT {
+	width: 23px;
+	height: 13px;
+	background-position: -231px -276px;
+	position: relative;
+	_margin-left: 1px;
+}
+
+.APTB .AO .POB {
+	width: 23px;
+	height: 13px;
+	background-position: -257px -277px;
+	_margin-left: 1px;
+}
+
+.APTB .AO .POH {
+	background-color: #92b452;
+	width: 23px;
+}
+
+.DBKS {
+	left: 0px;
+	bottom: 0;
+	position: absolute;
+}
+
+.P_warn {
+	width: 600px;
+	position: absolute;
+	top: 319px;
+	left: 320px;
+}
+
+.P_warnL {
+	width: 335px;
+	height: 5px;
+	background-color: #92b452;
+}
+
+.P_warnt {
+	height: 29px;
+	width: 29px;
+	background-position: -244px -63px;
+}
+
+.POTP {
+	width: 3px;
+	height: 36px;
+	background-color: #d8ecc7;
+	margin-left: 9px;
+	margin-bottom: -1px;
+}
+
+.POTU {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: -53px;
+	left: -17px;
+	border: 3px solid #d8ecc7;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+
+.POTT {
+	position: absolute;
+	top: -53px;
+	right: 40px;
+	text-align: right;
+	height: 56px;
+	white-space: nowrap;
+	background-color: #D8ECC7;
+}
+
+.POTR {
+	position: absolute;
+	top: -53px;
+	left: 40px;
+	text-align: left;
+	height: 56px;
+	white-space: nowrap;
+	background-color: #D8ECC7;
+}
+
+.POTM {
+	width: 300px;
+	text-align: center;
+	margin-left: -140px;
+}
+
+.POTM .f12 {
+	border-radius: 2px 2px 2px 2px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	background-color: #D8ECC7;
+}
+/*health_manage*/
+.health_manage {
+	width: 100%;
+	padding-top: 30px;
+	background-color: #f3f3f3;
+	border-radius: 7px;
+}
+
+.bmi {
+	position: relative;
+	width: 100%;
+}
+
+.bmi_p {
+	position: absolute;
+	width: 40px;
+	height: 100px;
+	top: 120px;
+	left: 55px;
+	background-position: -7px -245px;
+}
+
+.bmi_box1 {
+	position:relative;
+    top:75px;
+	left:35px;
+	width: 90%;
+	height: 540px;
+	background-color: #e8eee1;
+	margin-left: 0px;
+}
+
+.bmi_box1 .bmi_pie {
+	width: 135px;
+	height: 95px;
+	background-position: -142px -176px;
+	margin-left: -68px;;
+	padding-top: 40px;
+	position: relative;
+	margin-right: 34px;
+}
+
+.bmi_box1 .health_lv {
+	position:relative;
+	left:-80px;
+	font-family:YouYuan;
+	font-size: 18px;
+	color:white;
+	line-height: 40px;
+}
+
+.bmi_box1 .ico_help {
+	width: 16px;
+	height: 15px;
+	background-position: -277px -96px;
+	position: absolute;
+	right: 10px;
+	top: 45px;
+}
+
+.bmi_box2 {
+	width: 328px;
+	height: 135px;
+	position: relative;
+	left:110px;
+	float:left;
+}
+
+.bmi_bg {
+	width: 312px;
+	height: 18px;
+	background-position: -6px -4px;
+}
+
+.bmi_pointer {
+	position: absolute;
+	top: 17px;
+	left: -20px;
+	width: 38px;
+	height: 44px;
+	background-position: -232px -193px;
+	text-align: center;
+	line-height: 35px;
+}
+
+.bmi_body {
+	width: 50px;
+	height: 105px;
+	margin-top: 17px;
+}
+
+.bmi_box3 {
+	width: 513px;
+	height: 110px;
+	padding-top: 15px;
+	margin-left: 95px;
+}
+
+.bmi_box3 .bmi_text {
+	width: 50px;
+	line-height: 200%;
+}
+
+.bmi_box3 .bmi_save {
+	
+}
+
+.input_content {
+	color: #878787;
+}
+
+.bmi_box3 .count {
+	width: 10px;
+	height: 33px;
+	background-position: -275px -194px;
+}
+
+.bmi_box3 .count_tab {
+	margin-top: 10px;
+}
+
+.count_tab input {
+	width: 30px;
+	display: none;
+	height: 20px;
+	font-size: 12px;
+	text-align: center;
+}
+
+.count_tab .on input {
+	display: block;
+	margin: 0 auto;
+}
+
+.count_tab .cancel {
+	display: none;
+	cursor: pointer;
+}
+
+.count_tab .on .cancel {
+	display: block;
+}
+
+.count_tab .on .off {
+	display: none;
+}
+
+.bmi_result {
+	position:relative;
+	width: 480px;
+	background-color: #e4e4e4;
+	overflow: hidden;
+}
+
+.bmi_marks {
+	width: 23px;
+	height: 20px;
+	background-position: -277px -66px;
+	display: inline-block;
+}
+
+.bmi_result p {
+	line-height: 35px;
+}
+
+.health_manage .bmi_chart {
+	height: 300px
+}
+
+.data_title {
+	width: 100%;
+	height: 40px;
+	overflow: hidden;
+}
+
+.bmi_change {
+	margin-top: 8px;
+}
+
+.detail_change_list {
+	width: 30px;
+	height: 23px;
+	background-position: -178px -65px;
+	border: none;
+	outline: none;
+}
+
+.detail_change_list_on {
+	width: 30px;
+	height: 23px;
+	background-position: -178px -96px;
+	border: none;
+	outline: none;
+}
+
+.detail_change_date {
+	width: 30px;
+	height: 23px;
+	background-position: -208px -65px;
+	border: none;
+	outline: none;
+}
+
+.detail_change_date_on {
+	width: 30px;
+	height: 23px;
+	background-position: -208px -96px;
+	border: none;
+	outline: none;
+}
+
+.detail_sports_date {
+	width: 62px;
+	height: 64px;
+	border-radius: 7px;
+	float: left;
+}
+
+.detail_sports_date .detail_sports_date_month {
+	background-color: #709e18;
+	border: 1px solid #709e18;
+	width: 60px;
+	height: 20px;
+	border-top-right-radius: 7px;
+	border-top-left-radius: 7px;
+	-webkit-border-top-right-radius: 7px;
+	-moz-border-top-right-radius: 7px;
+	-webkit-border-top-left-radius: 7px;
+	-moz-border-top-left-radius: 7px;
+	line-height: 20px;
+}
+
+.detail_sports_date_day {
+	width: 59px;
+	height: 40px;
+	border: 1px solid #ececec;
+	border-top: none;
+	font-size: 24px;
+	-moz-box-shadow: 1px 1px 2px #888;
+	-webkit-box-shadow: 1px 1px 2px #888;
+	box-shadow: 1px 1px 2px #888;
+}
+
+.detail_sports_content {
+	margin-left: 80px;
+	word-wrap: break-word;
+}
+
+.detail_sports_content table {
+	height: 60px;
+	background-color: #eeeeee;
+	width: 570px;
+}
+
+.detail_sports_content table td {
+	position: relative;
+}
+
+.detail_sports_content .arrows_top {
+	width: 15px;
+	height: 16px;
+	background-position: -356px -65px;
+	display: inline-block;
+}
+
+.detail_sports_content .arrows_bottom {
+	width: 15px;
+	height: 16px;
+	background-position: -381px -65px;
+	display: inline-block;
+}
+
+.detail_sports_date_list {
+	border-bottom: 1px dashed #e6e6e6;
+	padding-bottom: 30px;
+}
+
+.steps_report {
+	width: 100%;
+	padding-top: 30px;
+	background-color: #f3f3f3;
+	padding-left: 22px;
+	border-radius: 7px;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+}
+
+.steps_report_pie {
+	width: 140px;
+	height: 133px;
+	position: relative;
+}
+
+.steps_report_type {
+	width: 468px;
+	height: 32px;
+}
+
+.steps_report_type .steps_report_ul {
+	width: 195px;
+	height: 27px;
+	border: 1px solid #e2e2e2;
+	background-color: #e5e5e5;
+	line-height: 27px;
+}
+
+.steps_report_type .steps_report_ul li {
+	float: left;
+	position: relative;
+}
+
+.steps_report .steps_report_type .steps_report_ul li span {
+	display: inline-block;
+}
+
+.steps_report .steps_report_type .steps_report_ul .run {
+	width: 62px;
+	border-right: 1px solid #dddddd;
+}
+
+.steps_report .arrow_down {
+	width: 8px;
+	height: 7px;
+	background-position: -159px -272px;
+}
+
+.steps_report .run_num {
+	width: 100px;
+}
+
+.steps_report .num_btn {
+	width: 30px;
+}
+
+.steps_report_data {
+	width: 468px;
+	height: 60px;
+	margin-top: 35px;
+	margin-left: 100px
+}
+
+.steps_report_data li {
+	float: left;
+}
+
+.steps_report_data .rp_contentBoxFirst {
+	border-right: 1px solid #E9E9E9;
+	height: 52px;
+	width: 112px;
+}
+
+.steps_report_data .rp_contentBox {
+	border-right: 1px solid #E9E9E9;
+	width: 140px;
+}
+
+.steps_report_data .rp_contentBoxLast {
+	height: 44px;
+	width: 87px;
+	padding-top: 8px;
+}
+
+.steps_report_data .rp_contentBoxL {
+	height: 52px;
+	width: 120px;
+	border-right: 1px solid #E9E9E9;
+}
+
+.steps_report_data li {
+	line-height: 25px;
+}
+
+.steps_report_data .cry {
+	width: 46px;
+	height: 36px;
+	background-position: -266px -4px;
+}
+
+.steps_report_data .smile {
+	width: 46px;
+	height: 36px;
+	background-position: -313px -4px;
+}
+
+.steps_report_chart {
+	margin-top: 30px;
+	width: 100%;
+}
+
+.steps_report_chart_date {
+	width: 100px;
+	height: 30px;
+	background-color: #999999;
+	border-radius: 4px;
+	cursor: pointer;
+	position: relative;
+}
+
+.steps_report_chart_date .arrows_down {
+	width: 8px;
+	height: 5px;
+	background-position: -133px -283px;
+	display: inline-block;
+	margin-bottom: 2px;
+}
+
+.steps_report .foot {
+	width: 62px;
+}
+
+.steps_report #steps_report_c {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1
+}
+
+.SPSL{
+	width: 100%;
+	margin-right: 5%;
+}
+
+.steps_report{
+	width: 100%;
+}
+
+.steps_report .SPSL_on {
+	width: 53px;
+	height: 31px;
+	background-position: -329px -24px;
+	line-height: 24px;
+	margin-left: 5px;
+}
+
+.steps_report .SPSL_off {
+	width: 53px;
+	height: 21px;
+	background-color: #999999;
+	margin-left: 5px;
+	margin-top: 1px;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	cursor: pointer;
+	line-height: 21px;
+}
+
+.steps_report .SPSP {
+	height: 250px;
+}
+
+.steps_report #SPSPN {
+	width: 600px;
+	height: 150px;
+}
+
+.steps_report .SPSPN_L {
+	position: absolute;
+	left: 0;
+	right: 0;
+	width: 126px;
+	height: 35px;
+	z-index: 20;
+	background-position: -238px -86px;
+	display: none;
+	margin-top: -150px;
+	margin-left: -7px;
+	line-height: 30px;
+}
+
+.steps_report .SPSPN_D {
+	width: 590px;
+	height: 3px;
+	background-color: #59bedc;
+	position: absolute;
+	left: 0px;
+	bottom: 7px;
+	z-index: 1;
+	overflow: hidden;
+}
+
+.steps_report .SPSPN_M {
+	width: 625px;
+	height: 10px;
+	position: absolute;
+	left: 0;
+	bottom: -5px;
+}
+
+.steps_report .SPSPN_M td {
+	width: 50px;
+	text-align: center;
+}
+
+.steps_report .SPSPN_d {
+	position: absolute;
+	left: 150px;
+	bottom: -60px;
+}
+
+.steps_report .SPSPN_d1 {
+	height: 14px;
+	width: 7px;
+	background-color: #b3d193;
+}
+
+.steps_report .mart5 {
+	margin-top: 5px;
+	overflow: hidden;
+}
+
+.SCLD table {
+	width: 100%;
+}
+
+.SCLD table thead th {
+	text-align: center;
+	font-size: 14px;
+	color: #666666;
+	height: 30px;
+}
+
+.SCLD table tbody tr {
+	height: 90px;
+	text-align: center;
+}
+
+.SCLD table tbody tr td {
+	background-color: #f5f5f5;
+	border: 2px solid #ffffff;
+	font-size: 48px;
+	color: #ffa200;
+	line-height: 100%;
+}
+
+.SCLD_D div {
+	height: 18px;
+	line-height: 18px;
+}
+
+.SCLD_D1 {
+	width: 18px;
+	height: 18px;
+	background-color: #ffa200;
+	margin-left: 60px;
+}
+
+.SLR_scld .SCLD_D1 {
+	background-color: #8ac1d2;
+}
+
+.SCLD_D3 {
+	width: 18px;
+	height: 18px;
+	background-color: #ffd181;
+	margin-left: 60px;
+}
+
+.SLR_scld .SCLD_D3 {
+	background-color: #a1e3f5;
+}
+
+.SCLD_D5 {
+	width: 18px;
+	height: 18px;
+	background-color: #ffefd2;
+}
+
+.steps_report .SPSPN_d3 {
+	height: 14px;
+	width: 7px;
+	background-color: #ffa200;
+	margin-left: 36px;
+}
+
+.steps_report .SPSPN_d5 {
+	height: 14px;
+	width: 7px;
+	background-color: #59BEDC;
+	margin-left: 36px;
+}
+
+.weight {
+	padding-top: 35px;
+}
+
+.weight .weight_date {
+	width: 75px;
+	margin-left: 30px;
+	position: relative;
+}
+
+.drop_down_date {
+	width: 75px;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	background-color: #aaaaaa;
+	color: #fff;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 20;
+}
+
+.drop_down_date .current {
+	padding-left: 20px;
+}
+
+.drop_down_date ul {
+	display: none;
+}
+
+.drop_down_date ul li {
+	padding-left: 20px;
+	height: 25px;
+}
+
+.drop_down_date ul .index {
+	display: none;
+}
+
+.drop_down_date ul .on {
+	cursor: pointer;
+	background-color: #333333;
+}
+
+.drop_down_date .current .ico3 {
+	display: inline-block;
+	height: 8px;
+	width: 10px;
+	background-position: -307px -76px;
+	margin-left: 5px;
+	margin-top: 9px;
+}
+
+.weight .weight_date_left {
+	width: 6px;
+	height: 8px;
+	background-position: -307px -66px;
+	margin: 9px 6px 9px 6px;
+	display: inline;
+}
+
+.weight .weight_date_center {
+	width: 38px;
+	height: 25px;
+	background-color: #999999;
+}
+
+.weight .weight_date_right {
+	width: 6px;
+	height: 8px;
+	background-position: -323px -66px;
+	margin: 9px 6px 9px 6px;
+	display: inline;
+}
+
+.weight .weight_target {
+	width: 22px;
+	height: 9px;
+	background-position: -51px -244px;
+	margin-top: 7px;
+	margin-left: 130px;
+	margin-right: 5px;
+	display: inline
+}
+
+.weight .weight_true {
+	width: 22px;
+	height: 9px;
+	background-position: -51px -262px;
+	margin-top: 7px;
+	margin-right: 5px;;
+	margin-left: 50px;
+	display: inline
+}
+
+.WCHART {
+	height: 218px;
+	position: relative;
+}
+
+#weight_chart {
+	height: 150px;
+	width: 550px;
+}
+
+.WCHART_d {
+	padding-left: 16px;
+}
+
+.WCHART_d table {
+	width: 550px;
+}
+
+.f36 {
+	font-size: 36px;
+}
+/*左边导航*/
+#sports_v_nav {
+	margin: 20px 0;
+}
+
+#sports_v_nav h3 {
+	font-size: 24px;
+	padding: 0 0 0 38px;
+}
+
+#sports_v_nav ul {
+	margin: 10px;
+}
+
+#sports_v_nav li {
+	display: block;
+	margin: 10px 0;
+}
+
+#sports_v_nav a {
+	padding: 0px 30px;
+	display: block;
+	width: 140px;
+}
+
+#sports_v_nav a:hover {
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	background-color: #d8e1c8;
+	text-decoration: none;
+	color: #fff;
+}
+
+#sports_v_nav a:active {
+	background: #a2ad8b;
+	color: #fff;
+}
+
+#sports_v_nav .on {
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	background-color: #a2ad8b;
+	text-decoration: none;
+	color: #fff;
+}
+
+#sports_v_nav .on:hover {
+	background-color: #a2ad8b;
+}
+
+#sports_v_nav .on:active {
+	background-color: #a2ad8b;
+}
+
+#sports_v_nav h5 {
+	float: left;
+	margin-left: 20px;
+	padding: 11px 0;
+}
+
+#sports_v_nav img {
+	float: left;
+	padding: 11px 0;
+}
+
+#sports_v_nav .my_sports {
+	width: 19px;
+	height: 17px;
+	background-position: -231px -104px;
+	margin-top: 12px;
+}
+
+#sports_v_nav a:hover .my_sports {
+	background-position: -253px -104px;
+}
+
+#sports_v_nav .on .my_sports {
+	background-position: -253px -104px;
+}
+
+#sports_v_nav .codoon_run {
+	width: 19px;
+	height: 18px;
+	background-position: -231px -125px;
+	margin-top: 12px;
+}
+
+#sports_v_nav a:hover .codoon_run {
+	background-position: -253px -125px;
+}
+
+#sports_v_nav .on .codoon_run {
+	background-position: -253px -125px;
+}
+
+#sports_v_nav .codoon_sleep {
+	width: 19px;
+	height: 16px;
+	background-position: -230px -146px;
+	margin-top: 12px;
+}
+
+#sports_v_nav a:hover .codoon_sleep {
+	background-position: -252px -146px;
+}
+
+#sports_v_nav .on .codoon_sleep {
+	background-position: -252px -146px;
+}
+
+#sports_v_nav .healty_manage_icon {
+	width: 19px;
+	height: 18px;
+	background-position: -231px -170px;
+	margin-top: 12px;
+}
+
+#sports_v_nav a:hover .healty_manage_icon {
+	background-position: -252px -170px;
+}
+
+#sports_v_nav .on .healty_manage_icon {
+	background-position: -252px -170px;
+}
+
+#sports_v_nav .photo_app_icon {
+	width: 19px;
+	height: 18px;
+	background-position: -231px -194px;
+	margin-top: 12px;
+}
+
+#sports_v_nav a:hover .photo_app_icon {
+	background-position: -252px -194px;
+}
+
+#sports_v_nav .on .photo_app_icon {
+	background-position: -252px -194px;
+}
+
+#sports_v_nav .run_app_icon {
+	width: 19px;
+	height: 19px;
+	background-position: -274px -86px;
+	margin-top: 12px;
+}
+
+#sports_v_nav a:hover .run_app_icon {
+	background-position: -274px -110px;
+}
+
+#sports_v_nav .on .run_app_icon {
+	background-position: -274px -110px;
+}
+
+.more_data {
+	width: 570px;
+	height: 40px;
+	border-radius: 7px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	background-color: #E3EBD4;
+	height: 50px;
+	margin-left: 80px;
+	line-height: 50px;
+	color: #699000;
+	cursor: pointer;
+}
+
+.more_data .state {
+	display: none;
+}
+
+.home_arrows_down {
+	background-position: -149px -271px;
+	display: inline-block;
+	height: 7px;
+	margin-bottom: 2px;
+	width: 9px;
+}
+
+.SRT_set {
+	height: 25px;
+	border: 1px solid #cccccc;
+	background-color: #f3f3f3;
+}
+
+.SRT_ty {
+	display: inline-block;
+	width: 60px;
+	text-align: center;
+}
+
+.SRT_to {
+	width: 45px;
+	text-align: center;
+	background-color: #cccccc;
+	height: 25px;
+	cursor: pointer;
+}
+
+.SRT_set .cancel {
+	display: none;
+}
+
+.SRT_set .change {
+	display: none;
+	width: 180px;
+}
+
+.SRT_set .state {
+	width: 180px;
+}
+
+.SRT_set select {
+	height: 25px;
+	width: 70px;
+}
+
+.SRT_set input {
+	width: 50px;
+	height: 20px;
+	margin-left: 10px;
+	text-align: center;
+	line-height: 20px;
+	margin-right: 10px;
+}
+
+.SRT_set .to {
+	height: 25px;
+	line-height: 25px;
+}
+
+.boderr {
+	border-right: 1px dotted #FFF;
+}
+
+.fb1 {
+	font-weight: 900;
+}
+
+.cor6 {
+	color: #888;
+}
+
+.content .content_right {
+	overflow-x: visible;
+}
+
+#divSuccess {
+	z-index: 9999;
+}
+
+.jqplot-highlighter-tooltip {
+	background: url("../image/universal/ico3.png") no-repeat scroll -215px
+		-24px transparent;
+	color: #FFFFFF;
+	height: 35px;
+	text-align: center;
+	width: 115px;
+}
+
+.jqplot-highlighter-tooltip .weight_l {
+	float: left;
+	width: 50px;
+}
+
+.jqplot-highlighter-tooltip .weight_r {
+	float: left;
+}
+
+.goal_weight {
+	position: absolute;
+	top: 100px;
+	right: 10px;
+	background-color: #59bedc;
+}
+
+.goal_weight .target input {
+	width: 30px;
+	height: 13px;
+}
+
+.goal_weight .target {
+	display: none;
+}
+
+.goal_weight .befor_UW {
+	height: 25px;
+	color: #f1f0a0;
+	cursor: pointer;
+	display: none;
+	width: 60px;
+	text-align: center;
+}
+
+.DSDL_c {
+	display: none;
+}
+
+/*run_app*/
+#app_map {
+	width: 100%;
+	height: 400px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+}
+
+#app_map .on {
+	z-index: 800;
+}
+
+.route_chart {
+	width: 100%;
+	height: 190px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+	background-color: #e3e6d4;
+	position: relative;
+}
+
+.explain {
+	position: absolute;
+	top: 15px;
+	left: 15px;
+}
+
+.speed_p {
+	width: 25px;
+	height: 10px;
+	margin-left: 20px;
+	margin-top: 2px;
+	margin-right: 5px;
+	background-position: -198px -98px;
+}
+
+.elevation_p {
+	width: 25px;
+	height: 10px;
+	margin-left: 20px;
+	margin-top: 2px;
+	margin-right: 5px;
+	background-position: -198px -87px;
+}
+
+#route_chart {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 190px;
+	z-index: 2;
+}
+
+.run_app .jqplot-highlighter-tooltip {
+	display: none;
+	background: none;
+}
+
+.sum_up {
+	width: 100%;
+	height: 52px;
+	background-color: #EEEEEE;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	padding: 25px 0px;
+}
+
+.SCLD table tbody tr .low {
+	background-color: #FFEFD2;
+	color: #ffffff;
+}
+
+.SCLD table tbody tr .over {
+	background-color: #FFA200;
+	color: #ffffff;
+}
+
+.SCLD table tbody tr .proper {
+	background-color: #FFD181;
+	color: #ffffff;
+}
+
+.SCLD table tbody tr .disable {
+	color: #d0d0d0;
+}
+
+.SLR_scld .SCLD table tbody tr .low {
+	background-color: #a1e3f5;
+	color: #ffffff;
+}
+
+.SLR_scld .SCLD table tbody tr .over {
+	background-color: #8ac1d2;
+	color: #ffffff;
+}
+
+.SLR_scld .SCLD table tbody tr .proper {
+	background-color: #FFD181;
+	color: #ffffff;
+}
+
+#select_day {
+	border: none;
+	z-index: -1;
+	filter: alpha(opacity = 0);
+	opacity: 0;
+	width: 0;
+	margin-left: 20px;
+}
+
+.rpArea {
+	margin: 0 auto;
+	width: 600px;
+}
+
+.all_map_list {
+	cursor: pointer;
+	display: none;
+}
+
+.singleness {
+	display: none;
+}
+
+.run_app .detail_sports_content table {
+	cursor: pointer;
+}
+
+.run_app .detail_sports_content .on {
+	background-color: #d9e5c3;
+}
+
+.weight_feed {
+	width: 35px;
+	height: 35px;
+	background-position: -162px -195px;
+}
+
+.marker_text .div_img {
+	color: white;
+	font-size: 9px;
+	left: 0;
+	margin-left: -11px;
+	margin-top: -33px;
+	position: absolute;
+	top: 0;
+}
+
+.marker_text .div_text {
+	color: white;
+	font-size: 9px;
+	left: 0;
+	margin-left: -11px;
+	margin-top: -32px;
+	position: absolute;
+	text-align: center;
+	top: 0;
+	width: 22px;
+}
+
+.user_map_img {
+	margin-left: -35px;
+	margin-top: -65px;
+	width: 71px;
+	height: 73px;
+	background-image: url("../image/data_v/update_b.png");
+	background-repeat: no-repeat;
+}
+
+.user_map_img .div_img {
+	margin-top: 3px;
+	margin-left: 3px;
+	cursor: pointer;
+}
+
+.user_map_img .div_img img {
+	width: 60px;
+	height: 55px;
+}
+
+.route_chart_cursor {
+	width: 165px;
+	height: 63px;
+	background-image: url("../image/data_v/tips_22.png");
+	background-repeat: no-repeat;
+	position: absolute;
+	left: 100px;
+	top: 100px;
+	z-index: 20;
+	display: none;
+}
+
+.route_chart_cursor .elevation {
+	color: #ffbf37;
+	margin-left: 76px;
+	margin-top: 5px;
+	text-align: center;
+	width: 35px;
+}
+
+.route_chart_cursor .time {
+	width: 50px;
+	font-size: 10px;
+	margin-top: 5px;
+	text-align: center;
+}
+
+.route_chart_cursor .speed {
+	color: #94e0ff;
+	width: 37px;
+	margin-left: 25px;
+}
+
+.app_map_imgs {
+	display: none;
+}
+
+.toggle_map_imgs {
+	width: 90px;
+	height: 30px;
+	background-color: #777777;
+	text-align: center;
+	z-index: 1200;
+	position: absolute;
+	right: 10px;
+	bottom: 5px;
+	line-height: 30px;
+	cursor: pointer;
+	display: none;
+}
+
+#set_height_msg {
+	background-image: url("../image/mc/FailMeg.png");
+	color: #000000;
+	height: 76px;
+	left: 0;
+	padding: 40px 80px 0;
+	position: absolute;
+	text-align: center;
+	top: 0;
+	width: 163px;
+	display: none;
+	z-index: 200;
+}
+
+.mask_back {
+	width: 100%;
+	height: 100%;
+	background-color: #333;
+	filter: alpha(opacity = 90);
+	-moz-opacity: 0.7;
+	-khtml-opacity: 0.7;
+	opacity: 0.7;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 0 0 7px 7px;
+	z-index: 1;
+}
+
+.route_data_info {
+	width: 500px;
+	height: 90px;
+	position: absolute;
+	right: 50%;
+	top: 0px;
+	left: -250px;
+}
+
+.route_data_info table {
+	width: 100%;
+	height: 100%;
+}
+
+.center_position {
+	height: 100%;
+	width: 0px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.discovery {
+	background-image: url("../image/data_v/discovery.png");
+	background-repeat: no-repeat;
+	margin: 0 auto;
+	cursor: pointer;
+}
+
+.walk_b {
+	width: 30px;
+	height: 35px;
+	background-position: -31px -65px;
+}
+
+.run_b {
+	width: 30px;
+	height: 35px;
+	background-position: 0 -65px;
+}
+
+.bike_b {
+	width: 30px;
+	height: 35px;
+	background-position: -63px -65px;
+}
+
+.ski_b {
+	width: 30px;
+	height: 35px;
+	background-position: -103px -65px;
+}
+
+.skate_b {
+	width: 30px;
+	height: 35px;
+	background-position: -133px -65px;
+}
+
+.climb_b {
+	width: 30px;
+	height: 35px;
+	background-position: -165px -65px;
+}
+
+.change_index {
+	z-index: 200
+}
+
+.status_m {
+	width: 160px;
+	border-right: 1px solid #D5D5D5;
+}
+
+.status_m div {
+	text-align: center;
+}
+
+body .cear_border {
+	border: none;
+}
+
+.border-ra7 {
+	border-radius: 7px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	background-color: #F3F3F3;
+}
+
+.sleep_list {
+	width: 435px;
+	padding-left: 10px;
+	padding-top: 5px;
+}
+
+.sleep_list div {
+	margin-right: 5px;
+	cursor: pointer;
+}
+
+.sleep_list .on {
+	cursor: default;
+	width: 38px;
+	height: 29px;
+	background-position: -289px -194px;
+	padding-left: 25px;
+	line-height: 22px;
+}
+
+.sleep_index {
+	width: 38px;
+	height: 22px;
+	background-position: -319px 0;
+	cursor: pointer;
+	padding-left: 25px;
+	line-height: 22px;
+}
+
+.marg_auto {
+	margin: 0 auto;
+}
+
+.position_re {
+	position: relative;
+}
+
+.position_ab {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.bike_index .bike_sta_pie {
+	height: 180px;
+	width: 610px;
+	background-image: url("../image/bike/bike1.png");
+	background-repeat: no-repeat;
+}
+
+.duration {
+	width: 180px;
+}
+
+.bike_list {
+	width: 220px;
+}
+
+.bike_list .item {
+	height: 35px;
+	line-height: 30px;
+}
+
+.bike_chart_d_ico {
+	background: url("../image/bike/ico.png") no-repeat;
+}
+
+.calorie_ico {
+	width: 22px;
+	height: 8px;
+	background-position: 0 0;
+}
+
+.speed_ico {
+	width: 22px;
+	height: 8px;
+	background-position: 0 -14px;
+}
+
+.elevation_ico {
+	width: 22px;
+	height: 8px;
+	background-position: 0 -28px;
+}
+
+.bike_in_chart {
+	width: 610px;
+}
+
+.bike_chart {
+	background: url("../image/bike/bike4.png") repeat-y;
+	width: 608px;
+}
+
+#bike_index_chart {
+	width: 608px;
+	height: 240px;
+}
+
+.knob_b {
+	background: url("../image/bike/bike6.png") no-repeat;
+	height: 31px;
+	width: 33px;
+	text-align: right;
+	display: block;
+}
+
+.knob_b:hover {
+	background: url("../image/bike/bike7.png") no-repeat;
+}
+
+.knob_b div {
+	width: 20px;
+	text-align: center;
+	line-height: 17px;
+}
+
+.bike_index .knob_on {
+	background: url("../image/bike/bike7.png") no-repeat;
+}
+
+.bike_index .detail_sports_content table {
+	cursor: pointer;
+}
+
+.bike_index .detail_sports_content .on {
+	background-color: #d9e5c3;
+}
+
+.bike_index .detail_sports_content .hover {
+	background-color: #d9e5c3;
+}
+
+.bike5 {
+	background: url('../image/bike/bike5.png') no-repeat;
+	width: 86px;
+	height: 86px;
+	display: block;
+}
+
+.update_dia {
+	position: absolute;
+	top: 85px;
+	left: 0px;
+	text-decoration: none;
+	display: none;
+}
+
+.update_w {
+	position: absolute;
+	top: 85px;
+	left: 113px;
+	text-decoration: none;
+	display: none;
+}
+
+.update_dia:hover {
+	text-decoration: none;
+}
+
+.update_w:hover {
+	text-decoration: none;
+}
+
+.up_dia_o {
+	height: 80px;
+	width: 85px;
+	cursor: pointer;
+	z-index: 1000;
+	display: inline-block;
+	text-decoration: none;
+}
+
+.up_dia_o:hover {
+	text-decoration: none;
+}
+
+.up_dia_o .hover {
+	display: none;
+}
+
+.up_dia_o:hover .hover {
+	display: block;
+}
+
+.up_dia_o:hover .default {
+	display: none;
+}
+
+.up_w_o {
+	height: 80px;
+	width: 80px;
+	cursor: pointer;
+	z-index: 1000;
+	display: inline-block;
+	text-decoration: none;
+}
+
+.up_w_o:hover {
+	text-decoration: none;
+}
+
+.up_w_o .hover {
+	display: none;
+}
+
+.up_w_o:hover .hover {
+	display: block;
+}
+
+.up_w_o:hover .default {
+	display: none;
+}
+
+.vh {
+	visibility: hidden;
+}
+
+.bike_friend {
+	width: 320px;
+	height: 180px;
+	background: url("../image/bike/bike10.png") no-repeat;
+}
+
+.bike_friend_info table {
+	width: 185px;
+}
+
+.bike_friend_info table tr {
+	height: 27px;
+}
+
+.bike_friend_info  td {
+	line-height: 20px;
+	vertical-align: top;
+}
+
+.gps_friend {
+	background: url("../image/bike/bike11.png") no-repeat;
+	min-height: 122px;
+	width: 305px;
+}
+
+.gps_friend .bike_friend_info table tr {
+	height: 24px;
+}
+
+.bike_tyre table img {
+	cursor: pointer;
+}
+
+.bike_tyre table td .co6 {
+	cursor: pointer;
+}
+
+.bike_tyre table .on .co6 {
+	color: #6c8a08;
+}
+
+.bike_tyre table .on1 .co6 {
+	color: #6c8a08;
+}
+
+.blue_area {
+	background-image: url("../image/bike/blue_area.png");
+	width: 164px;
+	height: 165px;
+}
+
+.yellow_area {
+	background-image: url("../image/bike/yellow_area.png");
+	width: 164px;
+	height: 165px;
+}
+
+#statis_chart1 {
+	height: 180px;
+	width: 608px;
+	margin: 0 auto;
+	position: relative;
+}
+
+#statis_chart2 {
+	height: 180px;
+	width: 608px;
+	margin: 0 auto;
+	position: relative;
+}
+
+#statis_chart3 {
+	height: 180px;
+	width: 608px;
+	margin: 0 auto;
+	position: relative;
+}
+
+#bike_index_chart .chart_cursor {
+	background-image: url("../image/bike/bike_index_chart.png");
+	width: 200px;
+	height: 70px;
+	background-repeat: no-repeat;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 200;
+	display: none;
+}
+
+#bike_index_chart .jqplot-xaxis {
+	display: none;
+}
+
+.x_mark {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 608px;
+	border-top-style: solid;
+	border-top-width: 2px;
+	border-top-color: #c0b9c1;
+	z-index: 100;
+}
+
+.x_mark table {
+	width: 100%;
+	font-size: 12px;
+}
+
+.x_mark table td {
+	text-align: center;
+}
+
+.x_mark .c_30 {
+	margin-left: -40px;
+	width: 690px;
+}
+
+.x_mark .c_90 {
+	margin-left: 5px;
+	width: 600px;
+}
+
+.x_mark .c_180 {
+	margin-left: 5px;
+	width: 600px;
+}
+
+.bike_chart .f_180 .jqplot-highlighter-tooltip {
+	font-size: 10px;
+}
+
+.bike_chart .f_90 .jqplot-highlighter-tooltip {
+	font-size: 10px;
+}
+
+.bike_in_chart .jqplot-highlighter-tooltip {
+	background-position: -5px -25px;
+	font-size: 12px;
+	background-image: url("../image/universal/round.png");
+	background-position: -238px -86px;
+	width: 127px;
+	line-height: 27px;
+}
+
+.bike_tyre_c {
+	position: relative;
+	height: 600px;
+	background-image: url("../image/bike/bike_tyre.jpg");
+	background-repeat: no-repeat;
+	background-position: center 70px;
+}
+
+.trouble {
+	background-image: url("../image/bike/trouble.png");
+	background-repeat: no-repeat;
+	display: inline-block;
+	cursor: pointer;
+	text-decoration: none;
+	cursor: pointer;
+	position: relative;
+	z-index: 200;
+}
+
+.trouble:hover {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.tyre_type .size {
+	display: none;
+	color: #FFFFFF;
+	line-height: 17px;
+	width: 100%;
+	top: -70px;
+	position: relative;
+}
+
+.tyre_type .opacity90 {
+	background-color: #5d5d5d;
+	border-radius: 0 0 20px 20px;
+}
+
+.tyre_type .size li {
+	line-height: 18px;
+}
+
+.tyre_type .size .on {
+	background-color: #EEB064;
+	cursor: pointer;
+}
+
+.opacity90 {
+	opacity: 0.9;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.bike_tyre_c .on {
+	z-index: 3;
+}
+
+.tyre_type {
+	z-index: 1
+}
+
+.trouble .size li:hover {
+	background-color: #9EB064;
+	cursor: pointer;
+}
+
+.bike_tyre_c select {
+	height: 18px;
+	font-size: 12px;
+}
+
+.tyre01 {
+	position: absolute;
+	top: 315px;
+	left: 225px;
+}
+
+.tyre01 .trouble {
+	width: 75px;
+	height: 65px;
+	background-position: -22px -580px;
+}
+
+.tyre01 .trouble:hover {
+	background-position: -144px -579px;
+}
+
+.tyre01.on .trouble {
+	background-position: -144px -579px;
+}
+
+.tyre02 {
+	position: absolute;
+	top: 285px;
+	left: 110px;
+}
+
+.tyre02 .trouble {
+	width: 75px;
+	height: 72px;
+	background-position: -20px -500px;
+}
+
+.tyre02 .trouble:hover {
+	background-position: -144px -498px;
+}
+
+.tyre02.on .trouble {
+	background-position: -144px -498px;
+}
+
+.tyre03 {
+	position: absolute;
+	top: 190px;
+	left: 10px;
+}
+
+.tyre03 .trouble {
+	width: 90px;
+	height: 82px;
+	background-position: -11px -414px;
+}
+
+.tyre03 .trouble:hover {
+	background-position: -135px -413px;
+}
+
+.tyre03.on .trouble {
+	background-position: -135px -413px;
+}
+
+.tyre04 {
+	position: absolute;
+	top: 70px;
+	left: 65px;
+}
+
+.tyre04 .trouble {
+	width: 85px;
+	height: 87px;
+	background-position: -13px -323px;
+}
+
+.tyre04 .trouble:hover {
+	background-position: -137px -323px;
+}
+
+.tyre04.on .trouble {
+	background-position: -137px -323px;
+}
+
+.tyre05 {
+	position: absolute;
+	top: 20px;
+	left: 190px;
+}
+
+.tyre05 .trouble {
+	width: 92px;
+	height: 94px;
+	background-position: -7px -229px;
+}
+
+.tyre05 .trouble:hover {
+	background-position: -131px -230px;
+}
+
+.tyre05.on .trouble {
+	background-position: -131px -230px;
+}
+
+.tyre06 {
+	position: absolute;
+	top: 25px;
+	left: 340px;
+}
+
+.tyre06 .trouble {
+	width: 107px;
+	height: 107px;
+	background-position: -3px -121px;
+}
+
+.tyre06 .trouble:hover {
+	background-position: -125px -122px;
+}
+
+.tyre06.on .trouble {
+	background-position: -125px -122px;
+}
+
+.tyre07 {
+	position: absolute;
+	top: 90px;
+	left: 475px;
+}
+
+.tyre07 .trouble {
+	width: 117px;
+	height: 120px;
+	background-position: -0px -1px;
+}
+
+.tyre07 .trouble:hover {
+	background-position: -119px -0px;
+}
+
+.tyre07.on .trouble {
+	background-position: -119px -0px;
+}
+
+.tyre08 {
+	position: absolute;
+	top: 240px;
+	left: 400px;
+}
+
+.tyre08 .trouble {
+	width: 117px;
+	height: 120px;
+	background-position: -0px -656px;
+}
+
+.tyre08 .trouble:hover {
+	background-position: -119px -656px;
+}
+
+.tyre08.on .trouble {
+	background-position: -119px -656px;
+}
+
+.set_tyre {
+	position: absolute;
+	top: 450px;
+	left: 275px;
+}
+
+.set_tyre .welcomeCenter {
+	width: 140px;
+}
+
+label.reg_error {
+	color: red;
+}
+
+.cor_01 {
+	color: #a5b768;
+}
+
+.summary {
+	text-decoration: none;
+}
+
+.summary:hover {
+	text-decoration: none;
+}
+/*运动排行*/
+.sports_rank {
+	padding-left: 28px;
+}
+
+.sports_rank .codoon_strongman {
+	width: 258px;
+	height: 40px;
+	background-position: -33px -3px;
+}
+
+.sports_rank .sports_friend {
+	width: 258px;
+	height: 40px;
+	background-position: -34px -48px;
+}
+
+.sports_rank .yellow_number {
+	width: 29px;
+	height: 29px;
+	background-position: -1px 0;
+	line-height: 29px;
+	text-align: center;
+	color: #fff;
+}
+
+.sports_rank .gray_number {
+	width: 29px;
+	height: 29px;
+	background-position: -1px -65px;
+	line-height: 29px;
+	text-align: center;
+	color: #fff;
+}
+
+.sports_rank .greed_number {
+	width: 29px;
+	height: 29px;
+	background-position: -1px -33px;
+	line-height: 29px;
+	text-align: center;
+	color: #fff;
+}
+
+.sports_rank td img {
+	border: 1px solid #D8ECC7;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+}
+
+/* 2.0  */
+.skip_inpo .first {
+	background-position: -156px 0;
+	cursor: pointer;
+}
+
+.skip_inpo .per {
+	background-position: -63px -4px;
+	cursor: pointer;
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+}
+
+.skip_inpo .next {
+	background-position: -40px -4px;
+	cursor: pointer;
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+}
+
+.skip_inpo .last {
+	background-position: -112px 0;
+	cursor: pointer;
+}
+
+.skip_inpo .current_time {
+	width: 250px;
+	display: inline-block;
+}
+
+.skip_inpo .per.disabled {
+	background-position: -64px -33px;
+	cursor: default;
+}
+
+.skip_inpo .next.disabled {
+	cursor: default;
+	background-position: -40px -33px;
+}
+
+.data_c1 {
+	color: #F1CC7E;
+}
+
+.data_c2 {
+	color: #a1c360;
+}
+
+.f40 {
+	font-size: 40px;
+}
+
+.w325 {
+	width: 325px;
+}
+
+.rank_title {
+	background-image: url("../image/data_v/sports_title.png");
+	background-repeat: no-repeat;
+	height: 112px;
+	width: 185px;
+}
+
+.my_rank {
+	background-position: -7px 0;
+}
+
+.friend_rank {
+	background-position: -215px 0;
+}
+
+.rank_line {
+	border-bottom-color: #d9d9d9;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	height: 21px;
+	width: 246px;
+}
+
+.rank_line .tc {
+	width: 60px;
+	cursor: pointer;
+	background-color: #d9d9d9;
+}
+
+.rank_line .tc.on {
+	background-color: #f1cc7e;
+	color: #FFFFFF;
+	cursor: default;
+}
+
+.rank_list ul {
+	display: none;
+}
+
+.rank_list ul.on {
+	display: block;
+}
+
+a.sort_name {
+	line-height: 30px;
+}
+
+.sort_img {
+	background-image: url("../image/data_v/icon.png");
+	background-repeat: no-repeat;
+	width: 30px;
+	height: 30px;
+}
+
+.me_postion {
+	background-position: 0 -125px;
+}
+
+.sort_1 {
+	background-position: -29px -7px;
+}
+
+.sort_2 {
+	background-position: -29px -47px;
+}
+
+.sort_3 {
+	background-position: -29px -85px;
+}
+
+.sort_4 {
+	background-position: -29px -124px;
+}
+
+.sort_5 {
+	background-position: -29px -165px;
+}
+
+.sort_6 {
+	background-position: -29px -204px;
+}
+
+.sort_7 {
+	background-position: -29px -240px;
+}
+
+.sort_8 {
+	background-position: -29px -280px;
+}
+
+.sort_9 {
+	background-position: -29px -320px;
+}
+
+.sort_10 {
+	background-position: -29px -359px;
+}
+
+.route_run_info {
+	width: 500px;
+	height: 90px;
+	position: relative;
+	margin: auto;
+}
+
+.load18 {
+	display: none;
+}
+
+#routs_n .skip_inpo  span {
+	display: inline-block;
+	width: 200px;
+	vertical-align: top;
+}
+
+.on .load18 {
+	display: block;
+}
+
+#routs_n .on .goto {
+	display: none;
+}
+
+#routs_n .skip_inpo.on span {
+	display: none;
+}
+
+#routs_n .skip_inpo.on a {
+	display: none;
+}
+
+.infor_detail_list {
+	height: 150px;
+	overflow: auto;
+}
+
+.infor_detail_list tr {
+	height: 30px;
+	border-bottom: 1px solid #ffcc00;
+}
+
+.sort_por {
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+}
+
+#current_moth {
+	width: 200px;
+	display: inline-block;
+}
+
+#route_table .c_n {
+	width: 40px;
+	font-size: 30px;
+	display: inline-block;
+	color: #6d6c6c;
+	float: left;
+	text-align: center;
+}
+
+#route_table .c_c {
+	width: 50px;
+	float: right;
+}
+
+#route_table .c_c img {
+	float: left;
+	margin-right: 5px;
+	width: 20px;
+	margin-top: 5px;
+	cursor: pointer;
+}
+
+#route_table tr td {
+	vertical-align: top;
+	width: 88px;
+}
+
+/*  手机运动 统计  */
+.radius7 {
+	background-color: #F3F3F3;
+	border-radius: 7px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+}
+
+.routes_statistic .sta_pie {
+	margin-left: 25px;
+	width: 164px;
+	height: 164px;
+	position: relative;
+	float: left;
+}
+
+.rsta_bg_img {
+	background-image: url("../image/data_v/inco1.png");
+	background-repeat: no-repeat;
+}
+
+.sta_pie_7 {
+	width: 82px;
+	height: 82px;
+	background-position: -13px -113px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+}
+
+.sta_pie_30 {
+	width: 82px;
+	height: 82px;
+	background-position: -109px -113px;
+	position: absolute;
+	top: 0;
+	left: 82px;
+	cursor: pointer;
+}
+
+.sta_pie_90 {
+	width: 82px;
+	height: 82px;
+	background-position: -13px -206px;
+	position: absolute;
+	top: 80px;
+	left: 0;
+	cursor: pointer;
+}
+
+.sta_pie_60 {
+	width: 82px;
+	height: 82px;
+	background-position: -109px -206px;
+	position: absolute;
+	top: 80px;
+	left: 82px;
+	cursor: pointer;
+}
+
+.sta_pie .on {
+	cursor: default;
+}
+
+.sta_pie .sta_pie_7.on {
+	cursor: default;
+	top: -5px;
+	left: -5px;
+}
+
+.sta_pie .sta_pie_30.on {
+	cursor: default;
+	top: -5px;
+	left: 87px;
+}
+
+.sta_pie .sta_pie_90.on {
+	cursor: default;
+	top: 85px;
+	left: -5px;
+}
+
+.sta_pie .sta_pie_60.on {
+	cursor: default;
+	top: 85px;
+	left: 87px;
+}
+
+.sta_pie_de {
+	float: left;
+	margin-left: 25px;
+	width: 420px;
+}
+
+.co1_d {
+	color: #ffa800;
+}
+
+.co2_d {
+	color: #96cce8;
+}
+
+.width135 {
+	width: 120px;
+	margin-right: 15px;
+}
+
+.pie_step {
+	width: 25px;
+	height: 40px;
+	background-position: -91px -5px;
+}
+
+.pie_run {
+	width: 37px;
+	height: 40px;
+	background-position: -123px -7px;
+}
+
+.pie_bike {
+	width: 42px;
+	height: 40px;
+	background-position: -165px -7px;
+}
+
+.f27 {
+	font-size: 27px;
+}
+
+.f26 {
+	font-size: 26px;
+}
+
+.br1 {
+	border-right: 1px solid #D5D5D5;
+}
+
+.sta_title {
+	width: 340px;
+	height: 55px;
+	background-color: #dadada;
+	line-height: 55px;
+	padding-left: 20px;
+}
+
+#route_statis_chart1 {
+	width: 560px;
+	height: 160px;
+	margin: 0 auto;
+}
+
+#route_statis_chart2 {
+	width: 560px;
+	height: 160px;
+	margin: 0 auto;
+}
+
+#route_statis_chart3 {
+	width: 560px;
+	height: 160px;
+	margin: 0 auto;
+}
+
+.sta_char_01_line {
+	width: 560px;
+	margin: 0 auto;
+	background-color: #59bedc;
+	height: 3px;
+	z-index: 1;
+	position: relative;
+}
+
+.route_statis table {
+	width: 610px;
+	margin: 0 auto;
+	height: 25px;
+}
+
+.route_statis table td {
+	text-align: center;
+}
+
+.chart1_cursor, .chart2_cursor, .chart3_cursor {
+	width: 115px;
+	height: 35px;
+	background-position: -4px -26px;
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 3;
+	text-align: center;
+	color: #FFFFFF;
+	line-height: 20px;
+}
+
+.total_run_t {
+	background-position: -9px -3px;
+	width: 20px;
+	height: 20px;
+}
+
+.public_tab1 {
+	height: 27px;
+	padding-left: 10px;
+	position: relative;
+	width: 100%;
+	z-index: 2;
+}
+
+.public_tab1  .setshow {
+	border-radius: 4px 4px 0 0;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #709e18;
+	display: inline-block;
+	width: 110px;
+	height: 25px;
+	background-color: #709e18;
+	text-align: center;
+	color: #FFFFFF;
+}
+
+.public_tab1  .setno {
+	background-color: #d5d5d5;
+	border-radius: 4px 4px 0 0;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #d5d5d5;
+	display: inline-block;
+	width: 110px;
+	height: 25px;
+	text-align: center;
+}
+
+.table_t {
+	background-color: #edf2e3;
+	line-height: 40px;
+}
+
+#current_moth {
+	width: 100px;
+}
+
+#skip_inpo_02 {
+	height: 25px;
+}
+
+#skip_inpo_02 .per {
+	background-position: -64px -69px;
+}
+
+#skip_inpo_02 .next {
+	background-position: -40px -69px;
+}
+
+#skip_inpo_02 .load18 {
+	margin: 0 auto;
+}
+
+#skip_inpo_02.on  a {
+	display: none;
+}
+
+#skip_inpo_02.on  span {
+	display: none;
+}
+
+.routes_img_num {
+	background-position: -4px -30px;
+	width: 26px;
+	height: 26px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.weight_pie .rank_line {
+	width: 370px;
+}
+
+.route_tb_info .on {
+	border-right: 1px solid #999999;
+}
+
+.common_date {
+	height: 27px;
+	width: 126px;
+	background-color: #aaaaaa;
+	border-radius: 3px;
+	position: relative;
+	cursor: pointer;
+}
+
+.common_date .date_per {
+	height: 10px;
+	width: 17px;
+	margin-top: 8px;
+	background-position: -302px -63px;
+}
+
+.common_date .date_next {
+	height: 10px;
+	width: 17px;
+	margin-top: 8px;
+	background-position: -317px -63px;
+}
+
+.common_date .date_date {
+	height: 27px;
+	width: 79px;
+	background-color: #999999;
+	color: white;
+	font-size: 14px;
+	line-height: 27px;
+}
+
+.common_date .date_dorp {
+	background-color: #999999;
+	height: 27px;
+}
+
+.common_date .date_dorp .ico3 {
+	height: 10px;
+	width: 13px;
+	margin-top: 8px;
+	background-position: -306px -74px;
+}
+
+.common_date input {
+	position: absolute;
+	top: 27px;
+	left: 0;
+	width: 0px;
+	height: 0px;
+	border: none;
+}
+
+.disabled {
+	display: none;
+}
+
+.common_date.on div {
+	display: none;
+}
+
+.common_date.on .load18 {
+	margin: 0 auto;
+	margin-top: 5px;
+}
+
+.common_date.on .date_next {
+	display: none;
+}
+
+.common_date.on .date_dorp {
+	display: none;
+}
+
+.mar26 {
+	margin-left: 26px;
+}
+
+.gray_off {
+	background-color: #999999;
+	border-radius: 3px 3px 3px 3px;
+	cursor: pointer;
+	height: 20px;
+	line-height: 20px;
+	margin-left: 6px;
+	width: 52px;
+}
+
+.gray_off.on {
+	height: 27px;
+	background: url("../image/universal/ico3.png") no-repeat scroll -384px
+		-26px transparent;
+}
+
+.sta_h_pie {
+	position: relative;
+}
+
+.h_pie_des {
+	position: absolute;
+	top: 0;
+	right: 35px;
+	z-index: 50
+}
+
+.h_pie_des .weight_target {
+	width: 22px;
+	height: 9px;
+	background-position: -51px -244px;
+	margin-right: 5px;
+	display: inline
+}
+
+.h_pie_des .weight_true {
+	width: 22px;
+	height: 9px;
+	background-position: -51px -262px;
+	margin-right: 5px;
+	display: inline;
+}
+
+.h_pie_0 {
+	background: url("../image/data_v/scales_img.png") no-repeat scroll
+		center center transparent;
+	width: 335px;
+	height: 250px;
+	margin: 0 auto;
+}
+
+.befor_change {
+	line-height: 55px;
+	width: 30px;
+	cursor: pointer;
+}
+
+.ready_change {
+	width: 30px;
+	margin-top: 3px;
+	cursor: pointer;
+	display: none;
+}
+
+.goal_weight_info.on .befor_change {
+	display: none;
+}
+
+.goal_weight_info.on .ready_change {
+	display: block;
+}
+
+.goal_weight_info .disable {
+	cursor: no-drop;
+}
+
+.goal_weight_info {
+	color: #699000;
+	margin-right: 21px;
+}
+
+#table_weight {
+	position: absolute;
+	width: 535px;
+	right: 35px;
+	bottom: 10px;
+}
+
+#table_weight td {
+	text-align: center;
+}
+
+#weight_chart_0 {
+	width: 560px;
+	position: absolute;
+	top: 60px;
+	right: 25px;
+}
+
+.weight_y {
+	position: absolute;
+	top: 70px;
+	left: 30px;
+	background: url('../image/data_v/weight_y.jpg') no-repeat;
+	height: 171px;
+	width: 33px;
+}
+
+.cusor_info {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 130px;
+	height: 60px;
+	background-position: -381px -194px;
+	z-index: 100;
+	display: none;
+}
+
+#show_info_date {
+	width: 40px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+}
+
+#show_info_goal {
+	width: 55px;
+	height: 25px;
+	line-height: 25px;
+}
+
+#show_info_weigh {
+	width: 55px;
+	height: 25px;
+	line-height: 25px;
+}
+
+.yellow_circle {
+	background: url('../image/data_v/yellow_circle.png') no-repeat;
+	height: 100px;
+	width: 100px;
+}
+
+.green_circle {
+	background: url('../image/data_v/green_circle.png') no-repeat;
+	height: 100px;
+	width: 100px;
+}
+
+.blue_circle {
+	background: url('../image/data_v/blue_circle.png') no-repeat;
+	height: 100px;
+	width: 100px;
+}
+
+/* 追踪器统计 */
+.steps_statis_chart {
+	height: 180px;
+	margin: 0 auto;
+	position: relative;
+	width: 608px;
+	z-index: 1;
+}
+
+.steps_statis_table {
+	margin: 0 auto;
+	position: relative;
+	width: 608px;
+	text-align: center;
+}
+
+.steps_statis_line {
+	width: 590px;
+	height: 3px;
+	background-color: #59bedc;
+	z-index: 3;
+	overflow: hidden;
+	margin: -23px auto 0;
+	position: relative;
+}
+
+.SPSPN_D {
+	width: 590px;
+	height: 3px;
+	background-color: #59bedc;
+	left: 0px;
+	bottom: 7px;
+	z-index: 1;
+	overflow: hidden;
+}
+
+.SPSPN_d5 {
+	height: 14px;
+	width: 7px;
+	background-color: #59BEDC;
+}
+
+.SPSPN_d1 {
+	height: 14px;
+	width: 7px;
+	background-color: #b3d193;
+}
+
+.SPSPN_d3 {
+	height: 14px;
+	width: 7px;
+	background-color: #ffa200;
+	margin-left: 36px;
+}
+
+.SPSPN_d {
+	margin: 0 auto;
+	width: 280px;
+}
+
+.steps_dotted_line {
+	width: 590px;
+	height: 2px;
+	background-color: #CCCCCC;
+	left: 0px;
+	bottom: 7px;
+	z-index: 1;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+.steps_statistics .item_tab {
+	height: 30px;
+}
+
+.steps_statistics  .set_show {
+	background-color: #FFA200;
+	color: #E5EFFD;
+	border-color: #CCCCCC #CCCCCC #FFFFFF;
+	border-radius: 4px 4px 0 0;
+	border-style: solid;
+	border-width: 1px;
+	display: inline-block;
+	height: 29px;
+	line-height: 30px;
+	margin-right: 2px;
+	width: 90px;
+	text-align: center;
+	text-decoration: none;
+}
+
+a.set_no {
+	background-color: #FFFFFF;
+	border-radius: 4px 4px 0 0;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #d5d5d5;
+	border-bottom: none;
+	display: inline-block;
+	width: 90px;
+	height: 30px;
+	line-height: 30px;
+	color: #999999;
+	text-align: center;
+	text-decoration: none;
+}
+
+tr.infor_on {
+	border-bottom: 1px solid #CCCCCC;
+}
+
+.my_d_T {
+	height: 60px;
+	position: relative;
+	width: 700px;
+}
+
+.delete .del {
+	height: 15px;
+	width: 15px;
+	display: inline-block;
+	background-position: -70px -216px;
+	margin-left: 20px;
+}

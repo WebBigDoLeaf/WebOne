@@ -1,0 +1,103 @@
+<head>
+
+<link rel="stylesheet" href="<?php echo $baseUrl;?>/WebOne/public/css/health.css">
+<link rel="stylesheet" href="<?php echo $baseUrl;?>/WebOne/public/css/codoon.css">
+<link rel="stylesheet" href="<?php echo $baseUrl;?>/WebOne/public/css/health/fit.css">
+</head>
+<body>
+
+ <div id=health_nav>
+   <p id=health_nav_title>健康管理</p>
+      <ul class="nav nav-pills nav-stacked" id="id_health_nav">  
+       <li class="active"><a href="#">生活贴士</a></li>
+       <li><a href="/WebOne/public/health/manage">身体管理</a></li>
+      </ul>
+ </div>
+ 
+  <div id="id_panel">
+    <div class="panel panel-success" id="id_contentpanel">
+       <div id=id_health_part>
+          <p id=id_health_part_title>本周的健康状况</p>
+            <div class=row id="health_row">
+                 <div class="col-md-4 health" id=id_health_block1>
+                   <p id=id_health_word>心率</p>
+                   <p id=id_health_heart>最高：<span>112</span></p>
+                   <p id=id_health_heart>最低：<span>80</span></p>
+                   <p id=id_health_heart>平均：<span>100</span></p>
+                   
+                 </div>
+                 <div class="col-md-4 col-md-offset-1 health" id=id_health_block2>
+                   <p id=id_health_word>血压</p>
+                   <p id=id_health_heart>舒张：<span>112</span></p>
+                   <p id=id_health_heart>收缩：<span>80</span></p>
+                   <p id=id_health_heart>压差：<span>32</span></p>
+                 </div>
+                  <div class="col-md-4 col-md-offset-1 health"  id=id_health_block3>
+                    <p id=id_health_word>睡眠</p>
+                   <p id=id_health_heart1>平均：<span>7.5h</span></p>
+                   <p id=id_health_heart1>有效：<span>5.8h</span></p>
+                   <p id=id_health_heart1>有效率：<span>80%</span></p>
+                 </div>
+            </div>
+            <div id=id_health_notice>
+           <p id=id_health_part_notice>提示:正常成年人心率在75次/min,收缩压正常范围：90-120,舒张压60-90，压差为20.平均指本周平均睡眠时间，有效为有效睡眠时间，有效率表示您的睡眠有效率。请保持每天8小时的睡眠噢</p>
+            </div>
+       </div>
+         <div id=id_sport_part>
+          <p id=id_sport_part_title>本周的运动状况</p>
+                <div class="blank20"></div>
+                <div class="my_d_T" id=id_sport>
+                	<div class="clearfix fl Tydjl">
+                		<div class="fl ico3 Tydjl_i"></div>
+                		<div class="fl marl10 f14 co13">
+                			<div>累积运动距离</div>
+                			<div class="blank10"></div>
+                			<div>
+                				<span class="fb fl f30 " id=sport_num>0</span>
+                				<div class="fl" style="line-height:24px;">公里</div>
+                				<div class="blank0"></div>
+                			</div>
+                		</div>
+                	</div>
+                	<div class="clearfix fl TydT">
+                		<div class="fl ico3 TydT_i"></div>
+                		<div class="fl marl10 f14 co13">
+                			<div>累积运动时间</div>
+                			<div class="blank10"></div>
+                			<div>
+                				<span class="fb fl f30" id=sport_num>0</span>
+                				<div class="fl" style="line-height:24px;">天</div>
+                				<div class="blank0"></div>
+                			</div>
+                		</div>
+                	</div>
+                	<div class="clearfix fl TydK">
+                		<div class="fl ico3 Tydk_i"></div>
+                		<div class="fl marl10 f14 co13">
+                			<div>累积燃烧热量</div>
+                			<div class="blank10"></div>
+                			<div>
+                				<span class="fb fl f30" id=sport_num >0</span>
+                				<div class="fl" style="line-height:24px;">大卡</div>
+                				<div class="blank0"></div>
+                			</div>
+                		</div>
+                	</div>
+                	<div class="blank10"></div>
+                	<div  id=sport_advice>
+            		     <div class="rpArea">
+            			   <div class="blank10"></div>
+            			    <div class="f18 tl co2 fl" style="width: 500px;">
+            				本周您消耗的卡路里为<span class="f36 fb" id="opti_weight">1111</span>大卡，为了保持健康的体型，您还需消耗<span
+            					class="f36 fb" id="wanted_calories">10740</span>大卡，相当于慢跑<span
+            					class="f36 fb" id="wanted_calories">10</span>公里，累计运动<span
+            					class="f36 fb" id="wanted_calories">10</span>小时
+            			   </div>
+            			   <div class="blank10"></div>
+            		     </div>
+	                </div>               	
+               </div>
+             
+    </div>
+  </div>
+</body>

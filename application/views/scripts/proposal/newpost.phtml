@@ -1,8 +1,31 @@
-<h1>添加问题</h1>
-<form action='/WebOne/public/proposal/addnewpost' method="post">
-<table>
-<tr><td>title</td><td><input type='text' name='title'/></td></tr>
-<tr><td>content</td><td><input type='text' name='content'/></td></tr>
-<tr><td><input type='submit' value='add'/></td><td><input type="reset" value="reset"/></td></tr>
-</table>
-</form>
+<head>
+<link rel="stylesheet" href="<?php echo $baseUrl;?>/WebOne/public/css/proposalindex.css">
+</head>
+
+<body>
+
+   <div id=proposal_nav>
+       <p id=proposal_nav_title>问题中心</p>
+          <ul class="nav nav-pills nav-stacked" id="id_proposal_nav">  
+           <li><a href="/WebOne/public/proposal/index">问题列表</a></li>
+           <li class="active"><a>我要提问</a></li>
+           <li><a href="/WebOne/public/proposal/myquestion">我的问题</a></li>
+           <li><a href="/WebOne/public/proposal/expert">健康专家</a></li>
+          </ul>
+     </div>
+     
+     <div id="id_panel">
+      <div class="panel panel-success" id="id_question_panel1">
+            <form action='/WebOne/public/proposal/addnewpost' method="post">    
+             <div id=id_panel_part>
+             <p id=id_panel_part_question>一句话描述你的疑问</p>
+             <input type='text' id=id_panel_part_questontext name='title'/>
+             <p id=id_panel_part_content>关于问题的详细描述</p>
+             <textarea id=id_panel_part_contenttext name='context'>
+             </textarea>
+             <input type="submit" class="btn btn-default" id="question_bt" name="question" value="提问"/>
+             </div>
+             </form>
+      </div>
+     </div>
+</body>

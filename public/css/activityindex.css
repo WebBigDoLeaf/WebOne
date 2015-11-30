@@ -1,13 +1,20 @@
 @CHARSET "UTF-8";
 
-#id_notice{
-	position:absolute;
-	left:130px;
-	top:200px;
-	height:200px;
-	widteh:160px;
+#activity_nav{
+	position:relative;
+    left:150px;
+	top:110px;
+	width:300px;
+	height:250px;
 }
-.slider li{padding:5px 0;overflow:hidden;width:100%}
+#id_activity_nav{
+	position:relative;
+	width:100px;		
+	left:40px;
+}
+#activity_nav_title{
+	font-size:30px;
+}
 
 
 
@@ -96,4 +103,108 @@
 	font-family:YouYuan;
 	padding-left:5px;
 	padding-right:5px;
+}
+
+
+/*my activity */
+
+
+#id_myactivity_title{
+	position:relative;
+	top:30px;
+	left:40px;
+	font-size:23px;
+}
+
+#id_myactivity_part{
+	position:relative;
+	left:80px;
+	top:50px;
+	width:618px;
+	height:200px;
+}
+#id_myactivity_name{
+	font-size:22px;
+}
+#id_myactivity_nameword{
+}
+#id_myactivity_time{
+	position:relative;
+	top:-30px;
+	left:150px;
+	font-size:12px;
+}
+#id_myactivity_joinnums{
+	position:relative;
+	top:-110px;
+	left:350px;
+}
+#id_myactivity_nums{
+	font-size:20px;
+	font-family:YouYuan;
+}
+#id_myactivity_launchtime{
+	position:relative;
+	font-size:10px;
+	color:gray;
+	top:-20px;
+	left:370px;
+}
+#id_line{
+	position:relative;
+	width:500px;
+	top:-40px;
+	left:-80px;
+}
+
+/*addactivity*/
+.word{
+	font-size:16px;
+	font-family: "Microsoft YaHei" ! important;
+	
+}
+#id_addactivity_text
+{
+	position:relative;
+	width:220px;
+	left:140px;
+}
+#id_addactivity_word1{
+	position:relative;
+	top:35px;
+	left:60px;
+}
+#id_addactivity_word2{
+	position:relative;
+	top:10px;
+	left:60px;
+}
+#id_addactivity_textarea{
+	position:relative;
+	left:140px;
+	top:-15px;
+	width:400px;
+	height:250px;
+}
+#id_addactivity_time{
+	position:relative;
+	left:60px;
+	top:10px;
+}
+#id_addactivity_start,#id_addactivity_end{
+	position:relative;
+	width:150px;
+	left:80px;
+	top:-35px;
+	
+}
+#id_addactivity_upimage{
+	position:relative;
+	left:150px;
+}
+#id_addactivity_launch{
+	position:relative;
+	width:150px;
+	left:230px;
+	top:40px;
 }

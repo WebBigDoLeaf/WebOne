@@ -1,19 +1,23 @@
 <head>
 
-<script type="text/javascript" src="<?php echo $baseUrl;?>/WebOne/public/script/slider.js"></script>
 <link rel="stylesheet" href="<?php echo $baseUrl;?>/WebOne/public/css/activityindex.css">
 </head>
 
-
+      
 
 
 
 <body>
-    <div class="panel panel-success" id="id_notice"> 
-       <div class="panel-heading">
-         <h4 class="panel-title">公告消息</h4>
-       </div>          
-    </div>
+     <div id=activity_nav>
+           <p id=activity_nav_title>活动中心</p>
+              <ul class="nav nav-pills nav-stacked" id="id_activity_nav">  
+               <li class="active"><a href="#">活动列表</a></li>
+               <li><a href="/WebOne/public/activity/myactivity">参与活动</a></li>
+               <?php if($this->type==3){?>
+               <li><a href="/WebOne/public/activity/addactivityui">发布活动</a></li>
+               <?php }?>                               
+              </ul>
+         </div>
   
    <div id="id_panel">
      <div class="panel panel-success" id="id_contentpanel">

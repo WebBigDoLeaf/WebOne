@@ -2,6 +2,17 @@
 <link rel="stylesheet" href="<?php echo $baseUrl;?>/WebOne/public/css/proposalindex.css">
 </head>
 <body>
+
+        <div id=proposal_nav>
+           <p id=proposal_nav_title>问题中心</p>
+              <ul class="nav nav-pills nav-stacked" id="id_proposal_nav">  
+               <li class="active"><a href="#">问题列表</a></li>
+               <li><a href="/WebOne/public/proposal/newpost">我要提问</a></li>
+               <li><a href="/WebOne/public/proposal/myquestion">我的问题</a></li>
+               <li><a href="/WebOne/public/proposal/expert">健康专家</a></li>
+              </ul>
+         </div>
+         
    <div id="id_panel">
      <div class="panel panel-success" id="id_contentpanel">
       <div class="panel-heading text-center" id=panel-heading>
@@ -18,6 +29,7 @@
                <div id=part_content_info>
                  <p id=part_content_question>
                    <span style="font-size:24px;">&nbsp;&nbsp;&nbsp;</span>
+                   <?=$info['content']?>
                  0.0我想问一个问题啊，问什么好呢，我不知道呀；但是还是要问。0.0别烦我 我在写Web呢 你狗带</p>
                  <p id=part_content_answer>
                                                             回答数:<?= $info['answernum'] ?>
@@ -26,7 +38,7 @@
                                                             发表时间:<?= $info['time'] ?>
                  </p>
                  <p id=part_content_name>
-                                                              作者 :<?= $info['uname'] ?>
+                                                              提问 :<?= $info['uname'] ?>
                  </p>
                </div>
              </div>
@@ -35,9 +47,20 @@
            </div>  
            <hr id=id_line></hr>
          <?php }?>
-         
-           <div id=id_content_page>
-                      
+           <div id=id_index_page>
+                         <?php if($this->page>0){?>
+             <a  href="/WebOne/public/proposal/index?page=<?=$this->page-1?>">上一页</a>
+           <?php }?>         
+             
+            <?php foreach ($this->count as $index) {?>   
+            <?php if($index==($this->page+1)){?>
+             <span id=current><?=$index?></span>                 
+            <?php } else {?>
+           <a id=page href="/WebOne/public/proposal/index?page=<?=$index-1?>"><?=$index?></a>   
+            <?php } }?>               
+             <?php if($this->page<8){?>
+             <a  href="/WebOne/public/proposal/index?page=<?=$this->page+1?>">下一页</a>
+             <?php }?>     
            </div>        
             
        </div>       

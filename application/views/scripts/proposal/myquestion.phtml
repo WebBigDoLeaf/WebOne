@@ -1,0 +1,67 @@
+<head>
+<link rel="stylesheet" href="<?php echo $baseUrl;?>/WebOne/public/css/proposalindex.css">
+</head>
+<body>
+    <div id=proposal_nav>
+        <p id=proposal_nav_title>问题中心</p>
+        <ul class="nav nav-pills nav-stacked" id="id_proposal_nav">
+            <li ><a href="/WebOne/public/proposal">问题列表</a></li>
+            <li ><a href="/WebOne/public/proposal/newpost">我要提问</a></li>
+            <li class="active"><a href=#>我的问题</a></li>
+            <li><a href="/WebOne/public/proposal/expert">健康专家</a></li>
+        </ul>
+    </div>
+       <div id=nav_myquestion_tabs>
+         <ul class="nav nav-tabs">
+          <li class="active"><a href="#">提问</a></li>
+          <li class="active"><a href="myreply" >回答</a></li>
+        </ul>
+       </div>	
+      <div id="id_myquestion_panel">
+          <div class="panel panel-default" id="id_myquestion_contentpanel">
+              <div class="panel-heading text-left" id=panel-heading>
+                <h4 class="panel-title" id=panel-title><a><span id=myquestion_name>H77</span></a>的提问</h4>
+              </div>
+              <div id=id_myquestion_content>
+               <?php  foreach ($this->results as $info)  { ?>
+                <div id=part_myquestion_content>
+                   <p id=part_content_title>
+                      <a href='/WebOne/public/proposal/show?questionid=<?=$info['id']?>'><?= $info['title'] ?></a>
+                   </p>
+                   <div id=part_content_info>
+                     <p id=part_content_question>
+                       <span style="font-size:24px;">&nbsp;&nbsp;&nbsp;</span>
+                     <?= $info['content'] ?></p>
+                     <p id=part_content_answer>
+                                                                回答数:<?= $info['answernum'] ?>
+                     </p>
+                     <p id=part_content_time>
+                                                                发表时间:<?= $info['time'] ?>
+                     </p>
+                     <p id=part_content_name>
+                                                                  提问 :<?= $this->user['name']?>
+                     </p>
+                   </div>
+                   <hr id=id_myquestion_line></hr>
+                 </div> 
+               <?php }?>   
+               
+               <div id=id_content_page>
+              <?php if($this->page>0){?>
+             <a  href="/WebOne/public/proposal/myquestion?page=<?=$this->page-1?>">上一页</a>
+           <?php }?>         
+             
+            <?php foreach ($this->count as $index) {?>   
+            <?php if($index==($this->page+1)){?>
+             <span id=current><?=$index?></span>                 
+            <?php } else {?>
+           <a id=page href="/WebOne/public/proposal/myquestion?page=<?=$index-1?>"><?=$index?></a>   
+            <?php } }?>               
+             <?php if($this->page<8){?>
+             <a  href="/WebOne/public/proposal/myquestion?page=<?=$this->page+1?>">下一页</a>
+             <?php }?>                          
+               </div> 
+                             
+              </div>
+      </div>
+</body>

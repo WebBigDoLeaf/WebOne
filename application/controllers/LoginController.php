@@ -73,7 +73,8 @@ class LoginController extends BaseController
             'account'=>$account,
             'password'=>$password,
             'name'=>$name,
-            'email'=>$account           
+            'email'=>$account,
+            'type'=>1
         );
 
          //在注册用户的时候顺带着要建一个用户个人信息

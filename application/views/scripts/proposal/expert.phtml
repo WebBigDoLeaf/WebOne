@@ -1,0 +1,38 @@
+<head>
+<link rel="stylesheet" href="<?php echo $baseUrl;?>/WebOne/public/css/proposalindex.css">
+</head>
+<body>
+        <div id=proposal_nav>
+            <p id=proposal_nav_title>问题中心</p>
+            <ul class="nav nav-pills nav-stacked" id="id_proposal_nav">
+                <li><a href="/WebOne/public/proposal">问题列表</a></li>
+                <li><a href="/WebOne/public/proposal/newpost">我要提问</a></li>
+                <li><a href=/WebOne/public/proposal/myquestion>我的问题</a></li>
+                <li class="active"><a href=#>健康专家</a></li>
+            </ul>
+        </div>
+        
+        <div id="id_health_panel">
+          <div class="panel panel-success" id="id_health_contentpanel">
+              <p id="id_health_panel_title">专家列表：</p>
+              <div id=id_health_part>
+                 <div class="userHeaderImg" id=id_health_portarit>
+                   <a href="#">
+                   <img class=img-circle src=/WebOne/public/image/head/2.jpg  border=0 width=100 height=100 />
+                   </a>
+                 </div> 
+                 <div id=id_health_info>
+                   <a href=/WebOne/public/home/experthome><p id=id_health_name>Krystal</p></a>
+                   <p id=id_health_detail>健身专家、健康达人、《健康心情》作者</p>
+                 </div>
+                 <div>
+                     <input type="submit"  class="btn btn-default" id=id_expert_question hidefocus="true" value="咨询" onclick="javascript:skip()">      
+                     <input type="submit"  class="btn btn-default" id=id_expert_focus hidefocus="true" value="关注" onclick="javascript:skip()">                                  
+                 </div>
+              </div>
+          </div>
+        </div>
+        
+        
+                
+</body>

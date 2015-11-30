@@ -1,6 +1,17 @@
 <head>
 <link rel="stylesheet" href="<?php echo $baseUrl;?>/WebOne/public/css/proposalindex.css">
 </head>
+<body>
+      <div id=proposal_nav>
+           <p id=proposal_nav_title>问题中心</p>
+              <ul class="nav nav-pills nav-stacked" id="id_proposal_nav">  
+               <li ><a href=/WebOne/public/proposal>问题列表</a></li>
+               <li ><a href="/WebOne/public/proposal/newpost">我要提问</a></li>
+               <li><a href="/WebOne/public/proposal/myquestion">我的问题</a></li>
+               <li><a href="/WebOne/public/proposal/expert">健康专家</a></li>
+              </ul>
+         </div>
+
 
 <div id=id_panel>
   <div class="panel panel-success" id="id_contentpanel">
@@ -9,29 +20,38 @@
      </div> 
       <div id=id_question_contents>
        <span style="font-size:24px;">&nbsp;&nbsp;&nbsp;</span>
-        <p id=id_question_name>提问者：H77</p>
-       <p id=id_question_time>时间：<?= $this->result['time'] ?></p>
+       <p id=id_question_name>
+       <img class=img-circle src=/WebOne/public/image/head/1.jpg  border=0 width=30 height=30 />
+       <a>H77</a>
+       </p>
+       <p id=id_question_time><?= $this->result['time'] ?></p>
        <p id=id_question_content>
        <span style="font-size:24px;">&nbsp;&nbsp;&nbsp;</span>
        <?= $this->result['content'] ?>哎，心好累好累，真的好累，怎么办啊，
        心好累好累，真的好累，怎么办啊心好累好累，真的好累，怎么办啊</p>
-       <p id=id_question_answers>回答数：<?= $this->result['answernum'] ?></p>
+       <p id=id_question_answers>       
+       <?= $this->result['answernum'] ?>个回答
+       </p>
+       
+     <input  type="submit"  class="btn btn-default"  id="question" hidefocus="true" value="回答 " >          
       </div>      
       
      
      <div id=id_content>
-        <hr id=id_line></hr>
+        <hr id=id_reply_line></hr>
       <?php foreach ($this->answers as $info) {?>
        <div id=id_reply>
         <p id=part_reply_content><?= $info['content'] ?> </p>
         <p id=part_reply_answers>
-                             赞数:<?= $info['agrees'] ?>
+        <a>评论  </a>|
+        <input  type="submit"  class="btn btn-default"  id="submit" hidefocus="true" value="赞   <?= $info['agrees'] ?>" >        
         </p>
         <p id=part_reply_time>
-                              回答时间:<?= $info['time'] ?>
+         <?= $info['time'] ?>
         </p>
         <p id=part_reply_name>
-        <a><?= $info['name'] ?></a>
+        <img class=img-circle src=/WebOne/public/image/woman.png  border=0 width=25 height=25 />
+        <a><span id=reply_username><?= $info['name'] ?></span></a>
         </p>       
         </div>
       <hr id=id_reply_line></hr>     
@@ -39,6 +59,6 @@
        </div>
    </div>
 </div>
-
+</body>
 
 

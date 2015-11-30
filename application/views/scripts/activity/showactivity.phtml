@@ -3,9 +3,20 @@
 </head>
 
 <body>
+
+        <div id=activity_nav>
+           <p id=activity_nav_title>活动中心</p>
+              <ul class="nav nav-pills nav-stacked" id="id_activity_nav">  
+               <li><a href=/WebOne/public/activity>活动列表</a></li>
+               <li><a href="/WebOne/public/activity/myactivity">参与活动</a></li>
+               <?php if($this->type==3){?>
+               <li><a href="/WebOne/public/activity/addactivityui">发布活动</a></li>
+               <?php }?>
+              </ul>
+         </div>
   <div id=id_activitypanel>
-    <div class="panel panel-success"  id=id_contentpanel>
-      <div class="panel-heading text-center">
+    <div class="panel panel-default"  id=id_contentpanel>
+      <div class="panel-heading text-center" id=panel-heading>
        <h3 class="panel-title"><?= $this->result['name'] ?></h3>
       </div> 
      <div id=id_main>
@@ -32,10 +43,12 @@
                  <input type="button"  class="btn btn-success"  id="part_join_button" onclick="window.location.href='/WebOne/public/activity/chooseactivity?activityid=<?=$this->result['id']?>'" value='参与'>
              </div>
            </div>  
+         <?php if($this->type==3){?>
         <div id=id_poweraction>
          <input type="button" class="btn btn-success" id=id_poweraction_button onclick="window.location.href='/WebOne/public/activity/modifyactivityui?activityid=<?=$this->result['id']?>'" value='修改'>
          <input type="button" class="btn btn-success" id=id_poweraction_button onclick="window.location.href='/WebOne/public/activity/deleteactivity?activityid=<?=$this->result['id']?>'" value='删除'>
         </div>
+        <?php }?>
       </div>
     </div>
   </div>  

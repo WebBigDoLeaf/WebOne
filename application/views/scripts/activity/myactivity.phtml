@@ -1,0 +1,38 @@
+<head>
+
+<link rel="stylesheet" href="<?php echo $baseUrl;?>/WebOne/public/css/activityindex.css">
+</head>
+<body>
+        <div id=activity_nav>
+           <p id=activity_nav_title>活动中心</p>
+              <ul class="nav nav-pills nav-stacked" id="id_activity_nav">  
+               <li ><a href=/WebOne/public/activity>活动列表</a></li>
+               <li class="active"><a href="#">参与活动</a></li>
+              <?php if($this->type==3){?>
+               <li><a href="/WebOne/public/activity/addactivityui">发布活动</a></li>
+              <?php }?>
+              </ul>
+         </div>
+         
+          <div id="id_panel">
+             <div class="panel panel-success" id="id_contentpanel">
+              <div id=id_myactivity_title><p id=id_myactivity_titleword>参与活动</p></div>
+              <div id=id_myactivity_content>
+                 <?php  foreach ($this->result as $info)  {?>
+                  <div id=id_myactivity_part>
+                    <div id=id_myactivity_name><a href='/WebOne/public/activity/showactivity?activityid=<?=$info['id']?>' id=id_myactivity_nameword><?= $info['name'] ?></a></div>
+                    <div id=id_myactivity_time>
+                       <p id=start_time>开始时间:<?= $info['begin'] ?></p>
+                       <p id=end_time>结束时间:<?= $info['end'] ?></p>
+                    </div>
+                    <div id=id_myactivity_launchtime>
+                       <p>发布：<?= $info['create'] ?></p>
+                    </div>
+                    <div id=id_myactivity_joinnums>参与人数:<span id=id_myactivity_nums><?= $info['nums'] ?></span></div>
+                    <hr id=id_line></hr>
+                  </div> 
+                 <?php }?>                               
+             </div>                      
+          </div>  
+                      
+</body>

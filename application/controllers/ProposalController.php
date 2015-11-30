@@ -14,11 +14,64 @@ class ProposalController extends BaseController
 
     public function indexAction()
     {
+        
+        $page=$this->getRequest()->getParam('page');
+        
+        
+        
         $questiontable = new QuestionModel();
         $db = $questiontable->getAdapter();
         //按开始时间倒序展示10条记录
-        $result = $db->query('SELECT question.*,User.name as uname FROM question,User WHERE question.userid = User.id order by time desc')->fetchAll();
+        $num = $db->query('SELECT count(*) as num FROM question order by time desc')->fetchAll()[0][num];
+        
+        
+
+        $pages=ceil($num/3);
+        
+        if($page=="")
+        {
+            $page=0;
+        }
+        
+        //确定页面显示的规范  处理分页的逻辑
+        if($page<3)
+        {
+            if($pages>3)
+            {
+                $set=array(1,2,3,4);
+            }else{
+                $set=array();
+                for($i=1;$i<=$pages;$i++)
+                {
+                    $set[]=$i;
+                }
+            }
+        }else if($page>=3)
+        {
+            if($page+3<=$pages)
+            {
+                $set=array($page,$page+1,$page+2,$page+3);
+            }else{
+                $set=array();
+                for($i=$page;$i<=$pages;$i++)
+                {
+                    $set[]=$i;
+                }
+        
+            }
+        }
+        
+        $where = '1=1';
+        $order = 'begin by time desc';
+        $count = 3;
+        $offset =$page*3;
+        $result = $questiontable->fetchAll($where, $order, $count, $offset)->toArray();
+        
+        
         $this->view->result = $result; 
+        $this->view->page=$page;
+        $this->view->count=$set;
+        
     }
     
     public function showAction()
@@ -35,7 +88,7 @@ class ProposalController extends BaseController
         //所有一级回答
         $answertable = new AnswerModel();
         $db1 = $answertable->getAdapter();
-        $answers = $db1->query('SELECT content,time,name,agrees,answer.id as id,answer.userid as uid FROM answer,User WHERE answer.userid = User.id AND questionid = ?' , $questionid)->fetchAll();
+        $answers = $db1->query('SELECT acontent,time,name,agrees,answer.id as id,answer.userid as uid FROM answer,User WHERE answer.userid = User.id AND questionid = ?' , $questionid)->fetchAll();
         $this -> view -> answers = $answers;
     }
     
@@ -52,7 +105,9 @@ class ProposalController extends BaseController
         $questionid = $this->getRequest()->getParam('questionid','0');
         $informuid = $this->getRequest()->getParam('id','0');
         $content = $this->getRequest()->getParam('content');
+        /*
         $account = $_COOKIE["account"];
+        $account=$_SESSION["userinfo"][0][account];
         
         $usertable = new UserModel();
         $db1 = $usertable->getAdapter();
@@ -65,7 +120,8 @@ class ProposalController extends BaseController
         
         //查找当前用户ID
         $result = $usertable -> fetchRow($db1->quoteInto('email = ?', $account)) ->toArray();
-        $uid = $result['id'];
+        $uid = $result['id'];*/
+        $uid=$_SESSION["userinfo"][0][id];
         
         //获取当前时间
         $t = time();
@@ -189,7 +245,7 @@ class ProposalController extends BaseController
     {
         $account = $_COOKIE["account"];
         $title = $this->getRequest()->getParam('title');
-        $content = $this->getRequest()->getParam('content');
+        $content = $this->getRequest()->getParam('context');
         
         $usertable = new UserModel();
         $db1 = $usertable->getAdapter();
@@ -315,6 +371,182 @@ class ProposalController extends BaseController
         $this->view->id = $questionid;
         $this->_forward('result5','globals');
     }
+    
+    public function myquestionAction()
+    {
+        $page=$this->getRequest()->getParam('page');
+        
+        $account = $_COOKIE["account"];
+        
+        $usertable = new UserModel();
+        $db1 = $usertable->getAdapter();
+        
+        
+        $questiontable = new QuestionModel();
+        $db2 = $questiontable->getAdapter();
+        
+        
+        //查找当前用户ID
+        $result = $usertable -> fetchRow($db1->quoteInto('email = ?', $account)) ->toArray();
+        $uid = $result['id'];
+        
+        //查找用户question
+       // $questions = $questiontable-> fetchRow($db2->quoteInto('userid = ?', $uid)) ->toArray();
+        
+        $num= $db2->query('SELECT COUNT(*) as num FROM question,User WHERE question.userid = User.id and User.id =? order by time desc',$uid)->fetchAll()[0][num];
+        
+        
+        //$num=count($questions);
+        
+        
+        $pages=ceil($num/3);
+        
+        if($page=="")
+        {
+            $page=0;
+        }
+        
+        //确定页面显示的规范  处理分页的逻辑
+        if($page<3)
+        {
+            if($pages>3)
+            {
+                $set=array(1,2,3,4);
+            }else{
+                $set=array();
+                for($i=1;$i<=$pages;$i++)
+                {
+                    $set[]=$i;
+                }
+            }
+        }else if($page>=3)
+        {
+            if($page+3<=$pages)
+            {
+                $set=array($page,$page+1,$page+2,$page+3);
+            }else{
+                $set=array();
+                for($i=$page;$i<=$pages;$i++)
+                {
+                    $set[]=$i;
+                }
+        
+            }
+        }
+        
+        
+        $where = 'userid='+$uid;
+        $order = 'begin desc';
+        $count = 3;
+        $offset =$page*3;
+        $questions = $questiontable->fetchAll($where, $order, $count, $offset)->toArray();
+        
+        
+        
+        
+        $this->view->results=$questions;
+        $this->view->user=$result;
+        $this->view->page=$page;
+        $this->view->count=$set;
+        
+      
+        
+    }
+    public function expertAction()
+    {
+        
+    }
+    public function myreplyAction()
+    {
+        
+        $page=$this->getRequest()->getParam('page');
+        
+        
+        $account = $_COOKIE["account"];
+        
+        
+        $usertable = new UserModel();
+        $db1 = $usertable->getAdapter();
+        
+        $answertable = new AnswerModel();
+        $db3 = $answertable->getAdapter();
+        
+
+        //查找当前用户ID
+        $result = $usertable -> fetchRow($db1->quoteInto('email = ?', $account)) ->toArray();
+        $uid = $result['id'];
+        
+        
+      $num= $db3->query('SELECT COUNT(*) as num FROM answer,User WHERE answer.userid = User.id and User.id =? order by time desc',$uid)->fetchAll()[0][num];
+        
+        
+      $pages=ceil($num/3);
+      
+      if($page=="")
+      {
+          $page=0;
+      }
+      
+        
+      if($page<3)
+      {
+          if($pages>3)
+          {
+              $set=array(1,2,3,4);
+          }else{
+              $set=array();
+              for($i=1;$i<=$pages;$i++)
+              {
+                  $set[]=$i;
+              }
+          }
+      }else if($page>=3)
+      {
+          if($page+3<=$pages)
+          {
+              $set=array($page,$page+1,$page+2,$page+3);
+          }else{
+              $set=array();
+              for($i=$page;$i<=$pages;$i++)
+              {
+                  $set[]=$i;
+              }
+      
+          }
+      }
+      
+      $count = 6;
+      $offset =$page*6;
+    
+      
+      $select=$db3->select();
+      $select->from('answer','*');
+      $select->join('question','answer.questionid=question.id','*');
+      $select->where('answer.userid=?',7)
+             ->limit($count,$offset);
+      
+      $sql = $select->__toString();
+      $questions = $db3->fetchAll($sql);
+   //   print_r($questions);
+      
+      /*
+            
+      $where = $db3->quoteInto('userid = ?', 7);
+      $order = 'begin by time desc';
+      $count = 6;
+      $offset =$page*6;
+      $questions = $answertable->fetchAll($where, $order, $count, $offset)->toArray();
+ */
+      
+      $this->view->results=$questions;
+      $this->view->user=$result;
+      $this->view->page=$page;
+      $this->view->count=$set;
+      
+        
+    }
+    
+    
 
 }
 

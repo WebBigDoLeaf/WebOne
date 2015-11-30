@@ -1,11 +1,37 @@
-<h1>活动信息</h1>
-<form action='/WebOne/public/activity/modifyactivity?activityid=<?=$this->result['id']?>' method="post">
-<table>
-<tr><td>name:</td><td><input type='text' name='name' value = '<?= $this->result['name']?>'/></td></tr>
-<tr><td>content:</td><td><input type='text' name='content' value = '<?= $this->result['content']?>'/></td></tr>
-<tr><td>begin:</td><td><input type='text' name='begin' value = '<?= $this->result['begin']?>'/></td></tr>
-<tr><td>end:</td><td><input type='text' name='end' value = '<?= $this->result['end']?>'/></td></tr>
-<tr><td>nums:</td><td><input type='text' name='nums' value = '<?= $this->result['nums']?>'/></td></tr>
-<tr><td><input type='submit' value='保存'/></td></tr>
-</table>
-</form>
+<head>
+<link rel="stylesheet" href="<?php echo $baseUrl;?>/WebOne/public/css/activityindex.css">
+</head>
+<body>    
+     <div id=activity_nav>
+           <p id=activity_nav_title>活动中心</p>
+              <ul class="nav nav-pills nav-stacked" id="id_activity_nav">  
+               <li ><a href=/WebOne/public/activity>活动列表</a></li>
+               <li ><a href=/WebOne/public/activity/myactivity>我的活动</a></li>
+               <li ><a href=/WebOne/public/activity/addactivityui>发布活动</a></li>
+              </ul>
+     </div>
+      <div id="id_panel">
+         <div class="panel panel-success" id="id_contentpanel">
+              <div id=id_myactivity_title><p id=id_myactivity_titleword>修改活动</p></div>
+              <div id=id_addactivity_content>
+                   <form  action='//WebOne/public/activity/modifyactivity?activityid=<?=$this->result['id']?>' method="post">
+                      <div id=id_addactivity_title> 
+                        <p class=word id=id_addactivity_word1>活动名字</p>
+                        <input type='text'  id=id_addactivity_text class='form-control' name='name' value=<?=$this->result['name']?> />
+                      </div>
+                      <div id=id_addactivity_content>
+                         <p class=word id=id_addactivity_word2>活动内容</p>
+                       <textarea name="a" id=id_addactivity_textarea> <?=$this->result['content']?></textarea>
+                      </div>
+                      <div id=id_addactivity_time>
+                         <p class=word>开始时间</p>
+                        <input type='text' id=id_addactivity_start class='form-control' name='name' value=<?=$this->result['begin']?>/>
+                         <p class=word>结束时间</p>
+                        <input type='text' id=id_addactivity_end class='form-control' name='name' value=<?=$this->result['end']?>/>
+                      </div>
+                    <input type="submit"  class="btn btn-default" id=id_addactivity_launch hidefocus="true" value="修改" ">
+                   </form>              
+              </div>
+         </div>
+      </div> 
+</body>

@@ -10,70 +10,71 @@
      <div class="row" >
        <div class="userHeaderImg">
         <a href="#">
-          <img class=img-circle src=/WebOne/public/image/head/2.jpg  border=0 width=150 height=150 />
+          <img class=img-circle src=<?=$this->result[0][image]?>  border=0 width=150 height=150 />
         </a>
        </div>
         <div id="userinfo">
     	   <div>
-    	     <p class=word>姓名：Krystal</p>
-    	     <p class=word>职业：健身教练</p>
-    	     <p class=word>联系电话：</p>
-    	     <p class=word>15850590186</p>
-    	     <a id=id_experthome_detail><span class=aword >详细信息</span></a>
+    	     <p class=word>姓名：<?=$this->result[0][name]?></p>
+    	     <p class=word>职业：<?=$this->result[0][work]?></p>
+    	     <p class=word>关注人数：</p>
+    	     <p class=word><?=$this->result[0][concern]?></p>
+    	     <a id=id_experthome_detail><span class=aword >关注</span></a>
     	     <a id=id_experthome_question><span class=aword >咨询</span></a>    	     
     	   </div>
        </div>
       </div>
     </div>
     
-    <div id="id_top_panel">
-       <div class="panel panel-success" id="id_top_contentpanel">
+    <div id="id_top_panel"  style="display: none;" >
+       <div class="panel panel-success" id="id_top_contentpanel" >
           <p id="id_top_panel_title">咨询答复</p>
+        <?php  foreach ($this->responses as $info)  { ?>
          <div id=id_advice_reply>
              <div id=id_advice_title>
-              <p id=id_advice_titleword>为什么我运动经常会抽筋?</p>
-              <p id=id_advice_name>提问:H77</p>
+              <p id=id_advice_titleword><?=$info[question]?> &nbsp&nbsp&nbsp 提问:<?=$info[name]?></p>
              </div>
              <div id=id_advice_touser>
-             <p>回复 <a>H77</a>:</p>
+             <p>回复 <a ><?=$info[name]?></a>:</p>
              </div>
              <div id=id_advice_content>
-             <p>锻炼前要适当热身，以免产生身体的不适.建议每天持续锻炼时间不要超过1h，要多次锻炼</p>
+             <p><?=$info[response]?></p>
              </div>
              <div id=id_advice_time>
-              <p>2015/10/30 21:41</p>
+              <p><?=$info[time]?></p>
              </div>
              <hr id=id_myreply_line></hr>
          </div>
+         <?php }?>
+         
        </div>
-     <div>
-     
-     <div id="id_panel">
-       <div class="panel panel-success" id="id_contentpanel">
+     </div>     
+     <div id="id_panel"  style="display: none;">
+       <div class="panel panel-success" id="id_contentpanel" >
            <p id="id_top_panel_title">咨询列表</p>
             <div id=id_advice_question>
+               <?php  foreach ($this->question as $info)  { ?>
                <div id=id_question_part>
-               <p id=id_question_titleword>为什么我运动经常会抽筋?(已答复)</p>
-               <p id=id_question_name>提问:H77</p>
-               <p id=id_question_time>2015/10/31 13:33</p>
+               <a href=/WebOne/public/home/experthome?expertid=10&type=1&questionid=<?=$info[id]?>><p id=id_question_titleword><?=$info[title]?></p></a>
+               <p id=id_question_name>提问:<?=$info[name] ?></p>
+               <p id=id_question_time><?=$info[time]?></p>    
                </div>
-               <div id=id_question_part>
-               <p id=id_question_titleword>教练你是怎样健身的呢?(未回答)</p>
-               <p id=id_question_name>提问:H77</p>
-               <p id=id_question_time>2015/10/31 13:33</p>
-               </div>
-               <div id=id_question_part>
-               <p id=id_question_titleword>教练怎样保持体形?(未回答)</p>
-               <p id=id_question_name>提问:H77</p>
-               <p id=id_question_time>2015/10/31 13:33</p>
-               </div>
-               <div id=id_question_part>
-               <p id=id_question_titleword>为什么我运动经常会抽筋?(未回答)</p>
-               <p id=id_question_name>提问:H77</p>
-               <p id=id_question_time>2015/10/31 13:33</p>
-               </div>
+               <?php }?>           
             </div>
-       
-       </div>
-     <div>
+        </div>  
+     </div>
+     <div id="id_question_panel">
+       <div class="panel panel-success" id="id_question_contentpanel" >
+        <p id="id_question_panel_title" class=aword>怎样减肥啊</p>
+        <p id="id_question_panel_content" class=word>&nbsp&nbsp&nbsp&nbsp少吃啊，跑步啊，蠢蛋少吃啊，跑步啊，蠢蛋少吃啊，跑步啊，蠢蛋少吃啊，跑步啊，蠢蛋少吃啊，跑步啊，蠢蛋少吃啊，跑步啊，蠢蛋</p>
+        <form action="" method=post>
+          <p id=id_question_panel_explain>关于问题的解答</p>
+          <textarea id=id_question_panel_explaintext name='context'>
+          </textarea>
+        <input type="submit" class="btn btn-default" id="question_bt" name="reply"  onclick="window.location.href='/WebOne/public/home/reply?expertid=<?=$this->expertid?>'" value="回复"/>
+        <input type="submit" class="btn btn-default" id="question_bt" name="reply" value="返回"/>  
+        </form>
+        </div>
+     </div>
+          
 </body>

@@ -1,0 +1,9 @@
+<script type="text/javascript">
+alert('<?= $this->info ?>');
+if(<?=$this->location?>==0)
+{
+window.location.href = '/WebOne/public/proposal/expert';
+}else{
+window.location.href = '/WebOne/public/proposal/expertdetail?expertid=<?=$this->expertid?>';
+}
+</script>

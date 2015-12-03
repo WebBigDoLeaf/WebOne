@@ -53,19 +53,20 @@
 
 #id_top_panel{
 	position:absolute;
-	top:120px;
-	left:450px;
-	height:400px;	
+	top:450px;
+	left:420px;
+	height:550px;	
 	width:620px;
 }
 #id_panel{
 	position:absolute;
-	top:430px;
+	top:120px;
+	left:420px;
 	height:300px;	
 	width:620px;	
 }
 #id_top_contentpanel{
-	height:400px;	
+	height:550px;	
 	width:620px;
 }
 #id_contentpanel{
@@ -73,32 +74,25 @@
 	width:620px;
 }
 #id_top_panel_title{
-	font-size:20px;
-	
+	font-size:20px;	
 }
-#id_advice_title{
-	
-}
+
 #id_advice_titleword{
 	position:relative;
 	left:30px;
+	top:-10px;
 	font-size:17px;
 }
-#id_advice_name{
-	position:relative;
-	top:-35px;
-	left:430px;
-	font-size:17px;
-}
+
 #id_advice_touser{
 	position:relative;
-	top:-30px;
+	top:-20px;
 	left:30px;
 }
 #id_advice_content{
    position:relative;
-   left:30px;
-   top:-35px;
+   left:90px;
+   top:-30px;
    font-size:13px;	
 }
 #id_advice_time{
@@ -111,7 +105,8 @@
 #id_myreply_line{
 	position:relative;
 	width:520px;
-	top:-40px;
+	height:10px;
+	top:-30px;
 }
 #id_question_part{
 	height:40px;
@@ -135,3 +130,89 @@
 	font-size:13px;
 	color:gray;
 }
+
+
+/*-- 咨询部分内 容*/
+#question_panel{
+	height:700px;
+}
+#id_question_panel1{
+	height:700px;
+}
+
+#id_panel_part{
+	position:relative;
+	left:90px;
+	top:40px;
+}
+#id_panel_part_questontext{
+	position:relative;
+	width:400px;
+	top:10px;
+}
+#id_panel_part_contenttext{
+	position:relative;
+	width:400px;
+	height:380px;
+    top:20px;
+}
+#id_panel_part_question{
+	position:relative;
+	color:gray;
+	font-size:16px;
+}
+#id_panel_part_content{
+	position:relative;
+	color:gray;
+	font-size:12px;
+	top:20px;
+}
+#question_bt{
+	position:relative;
+	width:100px;
+	left:-250px;
+	top:80px;
+}
+
+/* 回复内容*/
+#id_question_panel{
+	position:absolute;
+	top:120px;
+	left:420px;
+	height:650px;	
+	width:620px;	
+}
+#id_question_contentpanel{
+	height:650px;	
+	width:620px;	
+}
+#id_question_panel_title{
+	position:relative;
+	left:230px;
+	top:20px;
+}
+#id_question_panel_content{
+	position:relative;
+	left:20px;
+	top:20px;
+	width:580px;
+}
+#id_question_panel_explain{
+	position:relative;
+	left:20px;
+	top:20px;
+	font-size:12px;
+}
+#id_question_panel_explaintext{
+	position:relative;
+	left:30px;
+	top:20px;
+	height:340px;
+	width:560px;
+}
+#question_bt{
+	position:relative;
+	left:200px;
+}
+
+

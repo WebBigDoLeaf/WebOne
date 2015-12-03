@@ -9,6 +9,7 @@ class ActivityController extends BaseController
     public function init()
     {
         parent::init();
+     
     }
 
     public function indexAction()
@@ -17,7 +18,7 @@ class ActivityController extends BaseController
         //实现分页
         $page=$this->getRequest()->getParam('page');
         
-        
+      
   
         
         
@@ -101,15 +102,14 @@ class ActivityController extends BaseController
         $begin = $this->getRequest()->getParam('begin');
         $end = $this->getRequest()->getParam('end');
         $content = $this->getRequest()->getParam('content');
+        $time=date("y-m-d  h:i:sa",time());
         
-        $time=date("y-m-d",time());
+        $num1=rand();
+        $num2=rand();
+        $imagename=$num1.$num2;
         
-        $imagename=$name.$time;
-      //  echo $time;
-       // echo $name;
-       // echo $imagename;
-       // exit();
-       storeimage($imagename);
+       $this->storeimage($imagename);
+       $imagename=$imagename.".jpg";
         
         $set = array(
             'content' => $content,
@@ -117,12 +117,9 @@ class ActivityController extends BaseController
             'begin' => $begin,
             'end' => $end,
             'name' => $name,
+            'create'=>$time,
             'image'=>$imagename
-        );
-        
-   
-        
-        
+        );   
         //添加一个新活动
         $activity = new ActivityModel();
        
@@ -134,6 +131,8 @@ class ActivityController extends BaseController
         }
         
         $this->_forward('result','globals');
+        
+        
     }
     public function storeimage($imagename)
     {
@@ -159,7 +158,7 @@ class ActivityController extends BaseController
         $imgpreviewsize=1/2;    //缩略图比例
         $id=$imagename;
     
-    
+      //  echo $id;
     
         if ($_SERVER['REQUEST_METHOD'] == 'POST')
         {
@@ -203,93 +202,12 @@ class ActivityController extends BaseController
              }
              */
     
-            if(!move_uploaded_file ($filename, $destination))
+            if(!move_uploaded_file ($filename, iconv("UTF-8","gb2312",$destination)))
             {
                 echo " <font color=red id=update_success> 移动文件出错 </font><br>";
-                exit;
             }
-            header("Location: http://localhost:8081/WebOne/public/Home/portrait?type=success");
-            exit;
-    
-            $pinfo=pathinfo($destination);
-            $fname=$pinfo["basename"];
-            echo " <font color=red id=update_success>已经成功上传</font><br>";
-            /*
-             echo " 宽度:".$image_size[0];
-             echo " 长度:".$image_size[1];
-             echo "<br> 大小:".$file["size"]." bytes";
-             */
-            if($watermark==2)
-            {
-                $iinfo=getimagesize($destination,$iinfo);
-                $nimage=imagecreatetruecolor($image_size[0],$image_size[1]);
-                $white=imagecolorallocate($nimage,255,255,255);
-                $black=imagecolorallocate($nimage,0,0,0);
-                $red=imagecolorallocate($nimage,255,0,0);
-                imagefill($nimage,0,0,$white);
-                switch ($iinfo[2])
-                {
-                    case 1:
-                        $simage =imagecreatefromgif($destination);
-                        break;
-                    case 2:
-                        $simage =imagecreatefromjpeg($destination);
-                        break;
-                    case 3:
-                        $simage =imagecreatefrompng($destination);
-                        break;
-                    case 6:
-                        $simage =imagecreatefromwbmp($destination);
-                        break;
-                    default:
-                        die("不支持的文件类型");
-                        exit;
-                }
-    
-                imagecopy($nimage,$simage,0,0,0,0,$image_size[0],$image_size[1]);
-                imagefilledrectangle($nimage,1,$image_size[1]-15,80,$image_size[1],$white);
-    
-                switch($watertype)
-                {
-                    case 1:   //加水印字符串
-                        imagestring($nimage,2,3,$image_size[1]-15,$waterstring,$black);
-                        break;
-                    case 2:   //加水印图片
-                        $simage1 =imagecreatefromgif("xplore.gif");
-                        imagecopy($nimage,$simage1,0,0,0,0,85,15);
-                        imagedestroy($simage1);
-                        break;
-                }
-    
-                switch ($iinfo[2])
-                {
-                    case 1:
-                        //imagegif($nimage, $destination);
-                        imagejpeg($nimage, $destination);
-                        break;
-                    case 2:
-                        imagejpeg($nimage, $destination);
-                        break;
-                    case 3:
-                        imagepng($nimage, $destination);
-                        break;
-                    case 6:
-                        imagewbmp($nimage, $destination);
-                        //imagejpeg($nimage, $destination);
-                        break;
-                }
-    
-                //覆盖原上传文件
-                imagedestroy($nimage);
-                imagedestroy($simage);
-            }
-    
-            if($imgpreview==1)
-            {
-                echo "<br>图片预览:<br>";
-                echo "<img src=\"".$destination."\" width=".($image_size[0]*$imgpreviewsize)." height=".($image_size[1]*$imgpreviewsize);
-                echo " alt=\"图片预览:\r文件名:".$destination."\r上传时间:\">";
-            }
+        //    header("Location: http:http://localhost:8081/WebOne/public/activity/addactivityui");
+      
         }
     
     }

@@ -1,0 +1,98 @@
+<head>   
+   <meta charset="UTF-8">
+    <link rel="stylesheet" href="<?php echo $baseUrl;?>/WebOne/public/css/proposalindex.css">   
+    <script type="text/javascript" src="<?php echo $baseUrl;?>/WebOne/public/script/proposal.js"></script>
+</head>
+
+<body>
+    <div class="container">
+    <div id="userHeader">
+     <div class="row" >
+       <div class="userHeaderImg">
+        <a href="#">
+          <img class=img-circle src=<?=$this->result[0][image]?>  border=0 width=150 height=150 />
+        </a>
+       </div>
+        <div id="userinfo">
+    	   <div>
+    	     <p class=word>姓名：<?=$this->result[0][name]?></p>
+    	     <p class=word>职业：<?=$this->result[0][work]?></p>
+    	     <p class=word>关注人数：</p>
+    	     <p class=word><?=$this->result[0][concern]?></p>
+    	     <?php if($this->Isconcern==0){?>
+             <input type="submit"  class="btn btn-default" id=id_experthome_detail hidefocus="true" onclick="window.location.href='/WebOne/public/Proposal/concern?expertid=<?=$this->expertid?>&location=1'"value="关注" ">     
+             <?php } else {?>
+             <input type="submit"  class="btn btn-default" id=id_experthome_detail hidefocus="true" onclick="window.location.href='/WebOne/public/Proposal/concern?expertid=<?=$this->expertid?>&location=1'"value="已关注" ">     
+             <?php }?>          
+             <input type="submit"  class="btn btn-default" id=id_experthome_question  hidefocus="true" onclick="window.location.href='/WebOne/public/proposal/expertdetail?expertid=<?=$this->expertid?>&type=1' "value="咨询" ">                   
+    	   </div>
+       </div>
+      </div>
+    </div>
+    
+    <div id="id_top_panel"  >
+       <div class="panel panel-success" id="id_top_contentpanel" >
+          <p id="id_top_panel_title">咨询答复</p>
+        <?php  foreach ($this->responses as $info)  { ?>
+         <div id=id_advice_reply>
+             <div id=id_advice_title>
+              <p id=id_advice_titleword><?=$info[question]?> &nbsp&nbsp&nbsp 提问:<?=$info[name]?></p>
+             </div>
+             <div id=id_advice_touser>
+             <p>回复 <a ><?=$info[name]?></a>:</p>
+             </div>
+             <div id=id_advice_content>
+             <p><?=$info[response]?></p>
+             </div>
+             <div id=id_advice_time>
+              <p><?=$info[time]?></p>
+             </div>
+             <hr id=id_myreply_line></hr>
+         </div>
+         <?php }?>
+         
+       </div>
+          <div id=question1_panel  style="display: none;">
+           <div class="panel panel-success" id="id_question_panel1">
+                <form action='/WebOne/public/proposal/expertquestion?userid=<?=$this->userid?>&expertid=<?=$this->expertid?>' method="post">    
+                 <div id=id_panel_part>
+                 <p id=id_panel_part_question>问题简述</p>
+                 <input type='text' id=id_panel_part_questontext name='title'/>
+                 <p id=id_panel_part_content>关于问题的详细描述</p>
+                 <textarea id=id_panel_part_contenttext name='context'>
+                 </textarea>
+                 <input type="submit" class="btn btn-default" id="question_bt" name="question" value="提问"/>
+                 </div>
+                 </form>
+            </div>
+           </div>
+     </div>
+     
+     <div id="id2_panel"  >
+       <div class="panel panel-success" id="id1_contentpanel" >
+           <p id="id_top_panel_title">咨询列表</p>
+            <div id=id_advice_question>
+               <?php  foreach ($this->question as $info)  { ?>
+               <div id=id_question_part>
+               <p id=id_question_titleword><?=$info[title]?></p>
+               <p id=id_question_name>提问:<?=$info[name] ?></p>
+               <p id=id_question_time><?=$info[time]?></p>
+               </div>
+               <?php }?>
+            </div>
+       </div>  
+     </div>
+     
+     
+ 
+     <script>
+
+     if(<?=$this->type?>==0)
+     {
+     showmain();
+     }else if(<?=$this->type?>==1){
+     showquestion();	
+     }
+     
+     </script>     
+</body>

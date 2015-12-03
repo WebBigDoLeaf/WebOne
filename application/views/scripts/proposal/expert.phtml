@@ -1,5 +1,6 @@
 <head>
 <link rel="stylesheet" href="<?php echo $baseUrl;?>/WebOne/public/css/proposalindex.css">
+
 </head>
 <body>
         <div id=proposal_nav>
@@ -15,23 +16,45 @@
         <div id="id_health_panel">
           <div class="panel panel-success" id="id_health_contentpanel">
               <p id="id_health_panel_title">专家列表：</p>
+               <?php  foreach ($this->result as $info)  { ?>
               <div id=id_health_part>
                  <div class="userHeaderImg" id=id_health_portarit>
                    <a href="#">
-                   <img class=img-circle src=/WebOne/public/image/head/2.jpg  border=0 width=100 height=100 />
+                   <img class=img-circle src=<?=$info[image]?>  border=0 width=100 height=100 />
                    </a>
                  </div> 
                  <div id=id_health_info>
-                   <a href=/WebOne/public/home/experthome><p id=id_health_name>Krystal</p></a>
-                   <p id=id_health_detail>健身专家、健康达人、《健康心情》作者</p>
+                   <a href=/WebOne/public/proposal/expertdetail?expertid=<?=$info[userid]?>><p id=id_health_name><?=$info[name]?></p></a>
+                   <p id=id_health_detail><?=$info[info]?></p>
                  </div>
                  <div>
-                     <input type="submit"  class="btn btn-default" id=id_expert_question hidefocus="true" value="咨询" onclick="javascript:skip()">      
-                     <input type="submit"  class="btn btn-default" id=id_expert_focus hidefocus="true" value="关注" onclick="javascript:skip()">                                  
-                 </div>
+                     <?php if($info[Isconcern]==0){?>
+                     <input type="submit"  class="btn btn-default" id=id_expert_focus hidefocus="true" onclick="window.location.href='/WebOne/public/Proposal/concern?expertid=<?=$info[userid]?>&location=0'"value="关注" ">     
+                     <?php } else {?>
+                     <input type="submit"  class="btn btn-default" id=id_expert_focus hidefocus="true" onclick="window.location.href='/WebOne/public/Proposal/concern?expertid=<?=$info[userid]?>&location=0'"value="已关注" ">     
+                     <?php }?>
+                     
+                 </div>               
               </div>
+              <?php }?>
+                <div id=id_expert_page>
+              <?php if($this->page>0){?>
+             <a  href="/WebOne/public/proposal/expert?page=<?=$this->page-1?>">上一页</a>
+           <?php }?>         
+             
+            <?php foreach ($this->count as $index) {?>   
+            <?php if($index==($this->page+1)){?>
+             <span id=current><?=$index?></span>                 
+            <?php } else {?>
+           <a id=page href="/WebOne/public/proposal/expert?page=<?=$index-1?>"><?=$index?></a>   
+            <?php } }?>               
+             <?php if($this->page<8){?>
+             <a  href="/WebOne/public/proposal/expert?page=<?=$this->page+1?>">下一页</a>
+             <?php }?>                          
+               </div> 
           </div>
         </div>
+        
         
         
                 

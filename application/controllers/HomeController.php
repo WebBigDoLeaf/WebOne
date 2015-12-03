@@ -1,6 +1,10 @@
 <?php
 require_once 'BaseController.php';
 require_once APPLICATION_PATH.'/models/userinfoModel.php';
+require_once APPLICATION_PATH.'/models/UserModel.php';
+require_once APPLICATION_PATH.'/models/expertinfoModel.php';
+require_once APPLICATION_PATH.'/models/User_QuestionModel.php';
+require_once APPLICATION_PATH.'/models/Expert_ResponseModel.php';
 
 class HomeController extends BaseController
 {
@@ -130,7 +134,104 @@ class HomeController extends BaseController
     public function experthomeAction()
     {
         
+        
+        $id = $this->getRequest()->getParam('expertid','0');
+        $questionid=$this->getRequest()->getParam('questionid','0');
+        $type=$this->getRequest()->getParam('type','0');
+        
+       // $id=$_SESSION["userinfo"][0][id];
+        //echo $id;
+        //exit();
+        $usertable = new UserModel();
+        $db1 = $usertable->getAdapter();
+        
+        $expertinfo=new expertinfoModel();
+        $db2=$expertinfo->getAdapter();
+        
+        $expert= $db2->query('SELECT * FROM expertinfo,User WHERE expertinfo.userid = User.id and User.id =? ',$id)->fetchAll();
+        //print_r($expert);   
+        
+        $question=new User_QuestionModel();        
+        $db3=$question->getAdapter();
+        
+        $response=new Expert_ResponseModel();
+        $db4=$response->getAdapter();
+        
+        $questions=$db3->query('SELECT userconquestion.*,User.name FROM userconquestion,User WHERE userconquestion.state=1 and userconquestion.userid=User.id and userconquestion.expertid=? order by time desc ',$id)->fetchAll();
+       // print_r($questions);
+       // exit();
+       
+        $responses=$db4->query('select * from expertconresponse,userconquestion,User where expertconresponse.expertid=9 and expertconresponse.questionid=userconquestion.id and userconquestion.userid=User.id order by time desc')->fetchAll();
+        //print_r($responses);
+        
+       // exit();
+        
+        $this->view->result=$expert;
+        $this->view->question=$questions;
+        $this->view->responses=$responses;
+        $this->view->type=$type;
+        $this->view->questionid=$questionid;
+        
     }
+    
+    public function replyAction(){
+        
+        $questionid=$this->getRequest()->getParam('questionid','0');
+        $response=$this->getRequest()->getParam('context');
+        
+        //得到expertid
+        $expertid=$_SESSION["userinfo"][0][id];
+        
+        
+        $usertable = new UserModel();
+        $db1 = $usertable->getAdapter();
+        
+        
+        $response=new Expert_ResponseModel();
+        $db2=$response->getAdapter();
+        
+        $question=new User_QuestionModel();
+        $db3=$question->getAdapter();
+      //  exit();
+        
+        $questions=$db3->query('SELECT userconquestion.* FROM userconquestion WHERE id=? ',$questionid)->fetchAll();
+        
+        $userid=$questions[0][userid];
+        print_r($questions);
+        //获取当前时间
+        $t = time();
+        $time = date("Y-m-d H:i:s",$t);
+        
+        $set=array(
+            'expertid'=>$expertid,
+            'userid'=>$userid,
+            'questionid'=>$questionid,
+            'response'=>$response,
+            'time'=>$time          
+        );
+        
+        $flag1=$response->insert($set);
+        
+        $state=0;
+        $updateset = array(
+            'state'=>$state
+        );
+        $question->update($updateset, $db3->quoteInto('id = ?', $questionid));
+        $this->view->result='回复成功'
+            
+        
+      
+        
+        
+        
+        
+        
+        
+        
+        
+    }
+    
+    
     
    
 

@@ -1,0 +1,64 @@
+<head>
+<link rel="stylesheet" href="<?php echo $baseUrl;?>/WebOne/public/css/bootstrap.min.css">
+<script type="text/javascript" src="<?php echo $baseUrl;?>/WebOne/public/script/jquery.js"></script>
+<script type="text/javascript" src="<?php echo $baseUrl;?>/WebOne/public/script/bootstrap.min.js"></script>
+<script type="text/javascript" src="<?php echo $baseUrl;?>/WebOne/public/script/slider.js"></script>
+<link rel="stylesheet" href="<?php echo $baseUrl;?>/WebOne/public/css/nav.css">
+<link rel="stylesheet" href="<?php echo $baseUrl;?>/WebOne/public/css/activityindex.css">
+</head>
+
+
+
+
+
+<body>
+   <div id="id_panel">
+     <div class="panel panel-success" id="id_contentpanel">
+      <div class="panel-heading">
+      <h3 class="panel-title">最新活动</h3>
+     </div>   
+       <div id=id_content>
+         <?php foreach ($this->result as $info) {?>
+           <div id=id_content_part>
+             <div id=part_content>
+               <p id=part_content_title>
+                  <a href='/WebOne/public/activity/showactivity?activityid=<?=$info['id']?>'><?= $info['name'] ?></a>
+               </p>
+               <div id=part_content_time>
+                 <p id=part_content_begin>
+                   Start:<?= $info['begin'] ?>
+                 </p>
+                 <p id=part_content_end>
+                   End :<?= $info['end'] ?>
+                 </p>
+               </div>
+             </div>
+             <div id=part_join>
+                 <?=$info[nums]?>参与
+             </div>
+           </div>  
+         <?php }?>
+         
+           <div id=id_content_page>
+           <?php if($this->page>0){?>
+             <a  href="/WebOne/public/Activity/index?page=<?=$this->page-1?>">上一页</a>
+           <?php }?>         
+             
+         <?php foreach ($this->count as $index) {?>   
+            <?php if($index==($this->page+1)){?>
+             <span id=current><?=$index?></span>                 
+            <?php } else {?>
+           <a id=page href="/WebOne/public/Activity/index?page=<?=$index-1?>"><?=$index?></a>   
+            <?php } }?>               
+             <?php if($this->page<8){?>
+             <a  href="/WebOne/public/Activity/index?page=<?=$this->page+1?>">下一页</a>
+             <?php }?>                       
+           </div>        
+            
+       </div>       
+     </div>   
+   </div>
+ <script>
+ new slider({id:'slider'});
+ </script>
+</body>

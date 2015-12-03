@@ -5,6 +5,8 @@ require_once APPLICATION_PATH.'/models/UserModel.php';
 require_once APPLICATION_PATH.'/models/expertinfoModel.php';
 require_once APPLICATION_PATH.'/models/User_QuestionModel.php';
 require_once APPLICATION_PATH.'/models/Expert_ResponseModel.php';
+require_once APPLICATION_PATH.'/models/ActivityModel.php';
+require_once APPLICATION_PATH.'/models/QuestionModel.php';
 
 class HomeController extends BaseController
 {
@@ -26,17 +28,54 @@ class HomeController extends BaseController
      
         $imgpath=$_SERVER['DOCUMENT_ROOT']."/WebOne/public/image/head/";
         $id=$_SESSION["userinfo"][0][id];
-        if(file_exists($imgpath.$id.".png"))
+       // print_r($_SESSION["userinfo"][0]);
+       
+        
+        $userinfo=new userinfoModel();
+        $db = $userinfo->getAdapter();
+        
+        $user = $db->query('SELECT * FROM userinfo where userid=?',$id)->fetchAll()[0];
+        
+    
+        $activitys=new ActivityModel();
+        $db1=$activitys->getAdapter();
+        
+        $hotactivity=$db1->query('select * from activity order by nums desc limit 0,1')->fetchAll()[0];
+        
+        
+        $questions=new QuestionModel();
+        $db2=$questions->getAdapter();
+        
+        $hotquestion=$db2->query('select * from question order by answernum desc limit 0,1')->fetchAll()[0];
+        
+      
+        
+        if(file_exists($imgpath.$id.".jpg"))
         {
-            $this->view->path=$baseUrl."/WebOne/public/image/head/".$id.".png";
+            $this->view->path=$baseUrl."/WebOne/public/image/head/".$id.".jpg";
         }else{
         
-            $this->view->path=$baseUrl."/WebOne/public/image/initial.png";
+            $this->view->path=$baseUrl."/WebOne/public/image/initial.jpg";
         }
         
         
+        $userid=$hotquestion[userid];
+        $Usertable=new UserModel();
+        $db3= $Usertable->getAdapter();
+        $name=$db3->query('select name from User where id=?',$userid)->fetchAll()[0][name];
+       
         
-    }
+        
+        
+        
+        $this->view->user=$user;
+        $this->view->info=$_SESSION["userinfo"];
+      
+        $this->view->activity=$hotactivity;
+        $this->view->question=$hotquestion;
+        $this->view->name=$name;
+        
+     }
     
     
     
@@ -118,12 +157,29 @@ class HomeController extends BaseController
         
         $imgpath=$_SERVER['DOCUMENT_ROOT']."/WebOne/public/image/head/";
         $id=$_SESSION["userinfo"][0][id];
-        if(file_exists($imgpath.$id.".png"))
-        {
-            $this->view->path=$baseUrl."/WebOne/public/image/head/".$id.".jpg";
-            $this->view->type=$type;
-        }else{
+        
+        $expertinfo=new expertinfoModel();
+        $db2=$expertinfo->getAdapter();
+        
+        
+        if(file_exists($imgpath.$id.".jpg"))
+        {  
             
+            $this->view->path=$baseUrl."/WebOne/public/image/head/".$id.".jpg";
+            
+            $path="/WebOne/public/image/head/".$id.".jpg";
+            
+            //更新专家的头像
+            if($type=='success'&&$_SESSION["userinfo"][0][type]==2)
+            {          
+                $updateset = array(
+                    'image'=>$path
+                );
+                $expertinfo->update($updateset, $db2->quoteInto('userid = ?', $id));
+      
+            }            
+            $this->view->type=$type;
+        }else{         
             $this->view->path=$baseUrl."/WebOne/public/image/initial.jpg";
             $this->view->type=$type;
         }
@@ -139,31 +195,36 @@ class HomeController extends BaseController
         $questionid=$this->getRequest()->getParam('questionid','0');
         $type=$this->getRequest()->getParam('type','0');
         
+        
        // $id=$_SESSION["userinfo"][0][id];
         //echo $id;
         //exit();
-        if($type==0)
-        {
         $usertable = new UserModel();
         $db1 = $usertable->getAdapter();
         
         $expertinfo=new expertinfoModel();
         $db2=$expertinfo->getAdapter();
         
-        $expert= $db2->query('SELECT * FROM expertinfo,User WHERE expertinfo.userid = User.id and User.id =? ',$id)->fetchAll();
-        //print_r($expert);   
-        
-        $question=new User_QuestionModel();        
+        $question=new User_QuestionModel();
         $db3=$question->getAdapter();
         
         $response=new Expert_ResponseModel();
         $db4=$response->getAdapter();
         
+        if($type==0)
+        {
+       
+        
+        $expert= $db2->query('SELECT * FROM expertinfo,User WHERE expertinfo.userid = User.id and User.id =? ',$id)->fetchAll();
+        //print_r($expert);   
+        
+      
+        
         $questions=$db3->query('SELECT userconquestion.*,User.name FROM userconquestion,User WHERE userconquestion.state=1 and userconquestion.userid=User.id and userconquestion.expertid=? order by time desc ',$id)->fetchAll();
        // print_r($questions);
        // exit();
        
-        $responses=$db4->query('select * from expertconresponse,userconquestion,User where expertconresponse.expertid=9 and expertconresponse.questionid=userconquestion.id and userconquestion.userid=User.id order by time desc')->fetchAll();
+        $responses=$db4->query('select * from expertconresponse,userconquestion,User where expertconresponse.expertid=? and expertconresponse.questionid=userconquestion.id and userconquestion.userid=User.id order by time desc',$id)->fetchAll();
         //print_r($responses);       
        // exit();
         $this->view->result=$expert;
@@ -173,10 +234,22 @@ class HomeController extends BaseController
         $this->view->questionid=$questionid;
         }else if($type==1)
         {
-         
-            
-            
-        }
+    $expert= $db2->query('SELECT * FROM expertinfo,User WHERE expertinfo.userid = User.id and User.id =? ',$id)->fetchAll();
+    $question=$db3->query('SELECT userconquestion.*,User.name FROM userconquestion,User WHERE  userconquestion.userid=User.id and userconquestion.id=? order by time desc ',$questionid)->fetchAll();
+                      
+    $set=array( 
+        'expertid'=>$id,
+        'questionid'=>$questionid,
+    );
+      
+        $_SESSION["question"]=$set;
+    
+        $this->view->expertid=$id;
+        $this->view->result=$expert;
+        $this->view->question=$question;    
+        $this->view->questionid=$questionid;  
+        $this->view->type=$type;
+         }
         
         
         
@@ -184,12 +257,11 @@ class HomeController extends BaseController
     
     public function replyAction(){
         
-        $questionid=$this->getRequest()->getParam('questionid','0');
-        $response=$this->getRequest()->getParam('context');
-        
+        $content=$this->getRequest()->getParam('context');
+       // echo $content;
         //得到expertid
         $expertid=$_SESSION["userinfo"][0][id];
-        
+        $questionid=$_SESSION["question"][questionid];
         
         $usertable = new UserModel();
         $db1 = $usertable->getAdapter();
@@ -205,7 +277,7 @@ class HomeController extends BaseController
         $questions=$db3->query('SELECT userconquestion.* FROM userconquestion WHERE id=? ',$questionid)->fetchAll();
         
         $userid=$questions[0][userid];
-        print_r($questions);
+     //   print_r($questions);
         //获取当前时间
         $t = time();
         $time = date("Y-m-d H:i:s",$t);
@@ -214,10 +286,10 @@ class HomeController extends BaseController
             'expertid'=>$expertid,
             'userid'=>$userid,
             'questionid'=>$questionid,
-            'response'=>$response,
+            'response'=>$content,
             'time'=>$time          
         );
-        
+     //   print_r($insertset);
         $flag1=$response->insert($set);
         
         $state=0;
@@ -225,24 +297,11 @@ class HomeController extends BaseController
             'state'=>$state
         );
         $question->update($updateset, $db3->quoteInto('id = ?', $questionid));
-        $this->view->result='回复成功';
+        $this->view->info='回复成功';
         $this->view->expertid=$expertid;
         $this->_forward('result7','globals');
         
         
         }
-        
-        
-        
-        
-        
-        
-        
-    
-    
-    
-    
-   
-
     }
 

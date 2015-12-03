@@ -19,9 +19,19 @@
     </a>
    </div>
     <div id="userinfo">
-	 <p id="userinfo_word">欢迎<?php  echo $this->info[0][name] ?></p>
-	 <a href="/WebOne/public/Home/userinfo?id=<?=$this->info[0][id]?>"><?php  echo $this->info[0][name] ?></a>
-   </div>
+	 <p id="userinfo_word">欢迎&nbsp&nbsp<a href="/WebOne/public/Home/userinfo?id=<?=$this->info[0][id]?>"><?= $this->info[0][name] ?></a>
+	 </p>
+	 <?php if($this->info[0][type]==2){?>
+	 <a href="/WebOne/public/Home/experthome?expertid=<?=$this->info[0][id]?>">专家咨询</a>
+	 <?php }?>
+	 <p id=address><?=$this->user[sheng]?>&nbsp<?=$this->user[shi]?>&nbsp<?=$this->user[xian]?></p>
+	 <p id=birth>出生：<?=$this->user[birth]?></p>
+	<?php if($this->user[sex]=='M'){?> <p id=sex>性别：男</p><?php } else {?>
+	 <p id=sex>性别女</p>
+	<?php }?>
+	 
+	 
+    </div>
   </div>
 </div>
 
@@ -32,33 +42,58 @@
        </div>
      </div>
      <div class="panel panel-default ">
-      </br>
-     <div class="btn-group" data-toggle="buttons" >
-       <label class="btn  btn-success">
-         <input type="radio" name="options" id="option1"> 分享
-       </label>
-       <label class="btn  btn-success">
-         <input type="radio" name="options" id="option2"> 动态
-       </label>
-     </div>	
+     <p id=activitytitle>热门活动</p>
+     <div class="panel panel-default " id=hotactivity>
+        <div id=id_content_part>
+             <div id=part_img>
+             <img class=img-rounded src="<?php echo $baseUrl;?>/WebOne/public/image/11.jpg" border=0 width=140 height=100 />
+             </div>
+             <div id=part_content>
+               <p id=part_content_title>
+                <a href='/WebOne/public/activity/showactivity?activityid=<?=$this->activity['id']?>'>
+                 <span id=part_content_titleword><?= $this->activity['name'] ?></span>
+                 </a>
+               </p>
+               <div id=part_content_time>
+                 <p id=part_content_begin>
+                   Start:<?= $this->activity['begin'] ?>
+                 </p>
+                 <p id=part_content_end>
+                   End :<?= $this->activity['end'] ?>
+                 </p>
+               </div>
+             </div>
+             <div id=part_join>
+                 <p id=part_join_word><?=$this->activity[nums]?>人参与</p>
+             </div>
+           </div>  
+     </div>  
+     　   　<div style="border-bottom:1px solid #ccc"></div>
+     <p id=questiontitle>热门问题</p>
+     <div  class="panel panel-default "  id=hotquestion>
+             <div id=part_content1>
+               <p id=part_content1_title>
+                  <a href='/WebOne/public/proposal/show?questionid=<?=$this->question['id']?>'><?= $this->question['title'] ?></a>
+               </p>
+               <div id=part_content_info>
+                 <p id=part_content_question>
+                   <span style="font-size:24px;">&nbsp;&nbsp;&nbsp;</span>
+                   <?=$this->question['content']?>
+                 0.0我想问一个问题啊，问什么好呢，我不知道呀；但是还是要问。0.0别烦我 我在写Web呢 你狗带</p>
+                 <p id=part_content_answer>
+                                                            回答数:<?= $this->question['answernum'] ?>
+                 </p>
+                 <p id=part_content1_time>
+                                                            发表时间:<?= $this->question['time'] ?>
+                 </p>
+                 <p id=part_content_name>
+                                                              提问 :<?= $this->name ?>
+                 </p>
+               </div>
+             </div>
      
-     　　<div style="border-bottom:1px solid #ccc"></div>
-     </br>
-     <?php  
-     $i=0;
-     while($i<5)
-     {
-         $i++;
-         echo "<div style=\"border-bottom:1px dashed #ccc\">"; 
-         echo "<tr><p>韩奇祺到此一游哈哈哈</p>";   
-         echo "<p>韩奇祺到此一游哈哈哈</p></tr>";
-         echo "</div>";
-     }
-                 
-     ?>
-     </br>
-     
-    </div>
+     </div>
+     </div>
 </div>
 
 </div>

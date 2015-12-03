@@ -307,11 +307,11 @@
 	position:relative;
 	left:400px;
 	top:-160px;
-	width:60px;'
+	width:80px;'
 }
 #id_expert_page{
 	position:relative;
-	top:20px;
+	top:30px;
 	left:450px;
 	
 	
@@ -459,6 +459,18 @@
 	left:450px;
 	font-size:13px;
 	color:gray;
+}
+/*--分页 */
+
+#id_reply1_page{
+	position:relative;
+	top:-20px;
+	left:500px;
+}
+#id_advice_page{
+	position:relative;
+	top:10px;
+	left:400px;
 }
 
 

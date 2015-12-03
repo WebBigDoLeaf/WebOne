@@ -28,6 +28,7 @@
                    <p id=id_health_detail><?=$info[info]?></p>
                  </div>
                  <div>
+                      <p id=id_expert_focus>关注数：<?=$info[concern]?></p>
                      <?php if($info[Isconcern]==0){?>
                      <input type="submit"  class="btn btn-default" id=id_expert_focus hidefocus="true" onclick="window.location.href='/WebOne/public/Proposal/concern?expertid=<?=$info[userid]?>&location=0'"value="关注" ">     
                      <?php } else {?>

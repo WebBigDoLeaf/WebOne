@@ -1,3 +1,83 @@
+<script type="text/javascript">
+<!--
+	//5000表示每隔5秒去调用;
+	//window.setInterval("sendRequest()",5000);//现在注释掉 等界面完工再启用
+	
+	//定义一个http_request
+	var http_request;
+	var http_request_foraddanswer;
+	
+	//发送请求到服务器
+	function sendRequest(){
+			//创建ajax引擎.
+			if(window.ActiveXObject){
+				http_request=new ActiveXObject("Microsoft.XMLHTTP");
+			}else{				
+				http_request=new XMLHttpRequest();
+			}
+
+			//如果ajax引擎创建ok
+			if(http_request){				
+				var url="WeatherProcess.php";				
+				http_request.open("GET",url,true);				
+				http_request.onreadystatechange=function deal(){
+
+					var res=http_request.responseText;
+					if(http_request.readyState==4){
+						if(http_request.status==200){
+							if(res=="err"){
+								window.alert("服务器崩溃");
+							}
+							else{
+								//需要改变的界面代码
+								//document.getElementById
+							}
+							
+						}
+					}
+
+
+				};
+				
+				http_request.send();				
+			}		
+	}
+
+	function sendAddNewAnswerRequest(){
+		
+		//创建ajax引擎.
+		if(window.ActiveXObject){
+			http_request_foraddanswer=new ActiveXObject("Microsoft.XMLHTTP");
+		}else{				
+			http_request_foraddanswer=new XMLHttpRequest();
+		}
+		
+		//如果ajax引擎创建ok
+		if(http_request_foraddanswer){				
+			var url="/WebOne/public/tool/addnewanswer.php";//处理数据的php
+			http_request_foraddanswer.open("POST",url,true);
+			http_request_foraddanswer.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+			http_request_foraddanswer.onreadystatechange=function adddeal(){
+				if(http_request_foraddanswer.readyState==4){
+					if(http_request_foraddanswer.status==200){
+						var res=http_request_foraddanswer.responseText;window.alert(res);
+						if(res=="err"){
+							window.alert("服务器崩溃");
+						}
+						else{
+							//需要改变的界面代码
+							//document.getElementById
+						}
+					
+					}
+				}
+			};
+			$data="acontent=aaaaaa&replyid=1&userid=1&questionid=1&inform_userid=1";//更新的数据
+			http_request_foraddanswer.send($data);			
+		}		
+}
+-->
+</script>
 <head>
 <link rel="stylesheet" href="<?php echo $baseUrl;?>/WebOne/public/css/proposalindex.css">
 </head>
@@ -33,7 +113,7 @@
        <?= $this->result['answernum'] ?>个回答
        </p>
        
-     <input  type="submit"  class="btn btn-default"  id="question" hidefocus="true" value="回答 " >          
+     <input  type="submit"  class="btn btn-default"  id="question" hidefocus="true" onclick="sendAddNewAnswerRequest();" value="回答 " >          
       </div>      
       
      

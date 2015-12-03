@@ -78,7 +78,7 @@
 }
 
 
-#inEmail,#inName,#inPassword
+#inEmail,#inName,#inPassword,#inwork
 {
     position:relative;
 	width:200px;
@@ -111,6 +111,35 @@
 }
 
 
+#register_expert{
+	position:relative;
+	top:100px;
+	left:380px;
+	
+	
+}
 
 
+#introduce{
+	position:relative;
+	top:-115px;
+    font-size:14px;
+}
+#introduce_contenttext {
+	position:relative;
+	left:10px;
+	top:20px;
+	width:200px;
+	height:150px;
+}
+#reagister_head1{
+	position:relative;
+	left:-50px;
+	top:-40px;
+}
+#register_content1{
+    position:relative;
+	left:460px;
+	top:-650px;	
+}
 

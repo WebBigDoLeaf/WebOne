@@ -762,6 +762,10 @@ class ProposalController extends BaseController
     public function expertdetailAction()
     {
         
+        $replypage=$this->getRequest()->getParam('replypage','0');
+        $questionpage=$this->getRequest()->getParam('questionpage','0');
+        
+        
         $id = $this->getRequest()->getParam('expertid','0');
         $type = $this->getRequest()->getParam('type','0');
         
@@ -784,13 +788,86 @@ class ProposalController extends BaseController
         $questions=$db3->query('SELECT * FROM userconquestion,User WHERE userconquestion.state=1 and userconquestion.userid=User.id and userconquestion.expertid=? order by time desc ',$id)->fetchAll();
         //  exit();
         //print_r($questions);
+        $questionnum=count($questions);
         
         $responses=$db4->query('select * from expertconresponse,userconquestion,User where expertconresponse.expertid=? and expertconresponse.questionid=userconquestion.id and userconquestion.userid=User.id order by time desc',$id)->fetchAll();
         //print_r($responses);
+        $replynum=count($responses);
+        
+        
        
         $Isconcern= $db3->query('SELECT COUNT(*) as num FROM userconexpert where expertid=? and userid=? ',Array($id,$userid))->fetchAll()[0][num];
         
       
+        
+        
+        $replypages=ceil($replynum/3);
+        
+     
+        //确定页面显示的规范  处理分页的逻辑  这是reply的
+        if($replypage<3)
+        {
+            if($replypages>3)
+            {
+                $set=array(1,2,3,4);
+            }else{
+                $set=array();
+                for($i=1;$i<=$replypages;$i++)
+                {
+                    $set[]=$i;
+                }
+            }
+        }else if($replypage>=3)
+        {
+            if($replypage+3<=$replypages)
+            {
+                $set=array($replypage,$replypage+1,$replypage+2,$replypage+3);
+            }else{
+                $set=array();
+                for($i=$replypage;$i<=$replypages;$i++)
+                {
+                    $set[]=$i;
+                }
+        
+            }
+        }
+        
+        
+        $questionpages=ceil($questionnum/6);       
+        if($questionpage<3)
+        {
+            if($questionpages>3)
+            {
+                $questionset=array(1,2,3,4);
+            }else{
+                $questionset=array();
+                for($i=1;$i<=$questionpages;$i++)
+                {
+                    $questionset[]=$i;
+                }
+            }
+        }else if($questionpage>=3)
+        {
+            if($questionpage+3<=$questionpages)
+            {
+                $questionset=array($questionpage,$questionpage+1,$questionpage+2,$questionpage+3);
+            }else{
+                $questionset=array();
+                for($i=$questionpage;$i<=$questionpages;$i++)
+                {
+                    $questionset[]=$i;
+                }
+        
+            }
+        }
+        
+ 
+        $this->view->replypage=$replypage;
+        $this->view->replynums=$replynum;
+        $this->view->questionpage=$questionpage;
+        $this->view->questionnums=$questionnum;
+        $this->view->replys=$set;
+        $this->view->questions=$questionset;
         
         
         $this->view->expertid=$id;

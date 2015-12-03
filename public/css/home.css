@@ -214,5 +214,70 @@
 	position:relative;
 	left:200px;
 }
+#question_bt1{
+	position:relative;
+	top:30px;
+	left:320px;
+	width:100px
+}
 
+/* 热门活动 热门问题*/
+#activitytitle,#questiontitle{
+	position:relative;
+	top:3px;
+	left:10px;
+	font-size:18px;
+	font-family: "Microsoft YaHei" ! important;
+}
+#part_img{
+ position:relative;
+ left:40px;
+ top:50px;
+	
+}
+#part_content{
+	position:relative;
+	left:240px;
+	top:-40px;
+	color:gray;
+	
+}
+#part_content_title{
+	font-size:18px;
+}
+#part_join{
+	position:relative;
+	left:470px;
+	top:-90px;
+	color:gray;
+}
+
+#part_content1_title{
+	position:relative;
+    font-size:17px;
+	left:260px;
+	top:10px;
+}
+#part_content_name{
+	position:relative;
+	left:40px;
+	top:-5px;
+	font-size:12px;
+	color:gray;
+	
+}
+#part_content1_time{
+	position:relative;
+	left:170px;
+	top:20px;
+	font-size:12px;
+	color:gray;
+}
+#part_content_answer{
+	position:relative;
+	left:480px;
+	top:45px;
+	font-size:12px;
+	color:gray;
+}
 

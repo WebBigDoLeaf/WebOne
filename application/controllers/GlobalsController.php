@@ -32,5 +32,9 @@ class GlobalsController extends Zend_Controller_Action
     {
         // action body
     }
+    public function result7Action()
+    {
+        
+    }
 }
 

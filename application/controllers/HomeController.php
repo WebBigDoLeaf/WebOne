@@ -142,6 +142,8 @@ class HomeController extends BaseController
        // $id=$_SESSION["userinfo"][0][id];
         //echo $id;
         //exit();
+        if($type==0)
+        {
         $usertable = new UserModel();
         $db1 = $usertable->getAdapter();
         
@@ -162,15 +164,21 @@ class HomeController extends BaseController
        // exit();
        
         $responses=$db4->query('select * from expertconresponse,userconquestion,User where expertconresponse.expertid=9 and expertconresponse.questionid=userconquestion.id and userconquestion.userid=User.id order by time desc')->fetchAll();
-        //print_r($responses);
-        
+        //print_r($responses);       
        // exit();
-        
         $this->view->result=$expert;
         $this->view->question=$questions;
         $this->view->responses=$responses;
         $this->view->type=$type;
         $this->view->questionid=$questionid;
+        }else if($type==1)
+        {
+         
+            
+            
+        }
+        
+        
         
     }
     
@@ -217,19 +225,20 @@ class HomeController extends BaseController
             'state'=>$state
         );
         $question->update($updateset, $db3->quoteInto('id = ?', $questionid));
-        $this->view->result='回复成功'
-            
-        
-      
-        
+        $this->view->result='回复成功';
+        $this->view->expertid=$expertid;
+        $this->_forward('result7','globals');
         
         
-        
+        }
         
         
         
         
-    }
+        
+        
+        
+    
     
     
     

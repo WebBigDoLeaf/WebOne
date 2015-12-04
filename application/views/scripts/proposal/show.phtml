@@ -8,20 +8,20 @@
 	var http_request_foraddanswer;
 	
 	//发送请求到服务器
-	function sendRequest(){
+	function sendRequest(questionid){
 			//创建ajax引擎.
 			if(window.ActiveXObject){
 				http_request=new ActiveXObject("Microsoft.XMLHTTP");
 			}else{				
 				http_request=new XMLHttpRequest();
 			}
-
+			
 			//如果ajax引擎创建ok
 			if(http_request){				
-				var url="WeatherProcess.php";				
-				http_request.open("GET",url,true);				
+				var url="/WebOne/public/tool/getAllAnswer.php?questionid="+questionid;				
+				http_request.open("GET",url,true);	
 				http_request.onreadystatechange=function deal(){
-
+					
 					var res=http_request.responseText;
 					if(http_request.readyState==4){
 						if(http_request.status==200){
@@ -31,6 +31,7 @@
 							else{
 								//需要改变的界面代码
 								//document.getElementById
+								window.alert(res);
 							}
 							
 						}
@@ -113,7 +114,7 @@
        <?= $this->result['answernum'] ?>个回答
        </p>
        
-     <input  type="submit"  class="btn btn-default"  id="question" hidefocus="true" onclick="sendAddNewAnswerRequest();" value="回答 " >          
+     <input  type="submit"  class="btn btn-default"  id="question" hidefocus="true" onclick="sendRequest(5);" value="回答 " >          
       </div>      
       
      

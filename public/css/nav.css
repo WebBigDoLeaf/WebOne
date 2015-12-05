@@ -27,7 +27,7 @@
 }
 
 #nav_common{
-	background-image:url(/WebOne/public/image/nav1.jpg);
+	background-image:url(/WebOne/public/image/nav2.jpg);
 	height:100px;
 }
 #nav_word{
@@ -38,10 +38,10 @@
 	top:30px;
 }
 #nav_logo{
-	background-image:url(/WebOne/public/image/logo1.png);
+	background-image:url(/WebOne/public/image/logo2.png);
 	position:relative;
 	left:10px;
 	top:20px;
 	height:60px;
-	width:50px;
+	width:60px;
 }
